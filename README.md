@@ -14,6 +14,9 @@ for ages sometimes.
 
 This could help to modernize them into something more readable today.
 
+Today we are developing in dojo, so many samples may involve 'old dojo' APIs and 
+refactoring to ES5,6 APIs, but the idea can be taken to other codes as well.
+
 ## Goal
 
 Provide tools/procedures/guidelines for refactoring old syntaxes and patterns to something new.
@@ -22,6 +25,88 @@ Provide tools/procedures/guidelines for refactoring old syntaxes and patterns to
 - es5,6 APIs
 - es6 syntax
 - ...
+
+# Idea explained
+
+## refactoring [for](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for) cycles
+
+We do not like them, most of them can be map, filter, reduce 
+or any reasonable [array method](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array).
+
+### for cycles with single push() = map
+
+Detector (very general):
+
+	grasp -e 'for(__;__;__){ __.push(_$) }' -r .
+
+Refactoring (one off):
+
+	// before
+	for (i = 0; i < opts.length; i++) {
+	    retVal.push(opts[i].value);
+	}
+
+ 	grasp -e 'for($i=0;$i<$arr.length;$i++){ $out.push($arr[$i].$prop) }'\
+ 	-R '{{out}}={{arr}}.map(function(item){return item.{{prop}};});' \
+ 	-r .
+
+	// after (formated)
+	retVal = opts.map(function(item) {
+    	return item.value;
+	});
+
+# Using on your project
+
+Idea:
+
+	cd $YOUR_JS_PROJECT
+	
+	git checkout -b refactoring-anti-babel
+
+	# run (pick a refactoring script and run)
+	src/form2map
+
+	# review manually
+	git diff
+
+	# run your unit tests !!!!
+	# run your unit tests !!!!
+	# run your unit tests !!!!
+	
+	# format your re-actored code
+	# ????
+
+	# commit 
+	git commit -am "[REAFCTOR] ...."
+
+
+# Contributing
+
+- add more pattern variations to existing scripts
+- add new patterns and scripts
+- add samples from real project code to /samples folder
+
+# TODO:
+
+- test
+- runner
+- formating results
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
 
 
 

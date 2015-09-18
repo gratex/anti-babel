@@ -1,0 +1,6 @@
+#!/bin/bash
+
+## simples variant #TODO: concat to $out
+grasp -e 'for($i=0;$i<$arr.length;$i++){ $out.push($arr[$i].$prop) }'\
+ 	-R '{{out}}={{arr}}.map(function(item){return item.{{prop}};});' \
+ 	-r .
