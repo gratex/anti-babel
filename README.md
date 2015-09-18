@@ -1,9 +1,9 @@
 # anti-babel
 
-There are [plenty of projects](TODO:link) to translate es6 syntax to older syntaxes.
+There are [plenty of projects](https://github.com/addyosmani/es6-tools) to translate es6 syntax to older syntaxes.
 This allows you to write modern syntax and run on 'old machines'.
 
-This project is opposite (hence anti- in the name), it shell help you to port 
+This project is opposite (hence anti- in the name and [babel](https://babeljs.io), it shell help you to port 
 old code base to new code base if you have new machines and 
 probably want more readable and nicer codes.
 
