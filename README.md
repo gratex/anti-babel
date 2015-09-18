@@ -66,8 +66,6 @@ Example:
 [String.prototype.trim)[https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim] 
 
 
-
-
 # Using on your project
 
 Idea:
@@ -77,9 +75,9 @@ Idea:
 	git checkout -b refactoring-anti-babel
 
 	# run (pick a refactoring script and run)
-	src/for2map/v01
-	src/dojo2es
-	# ... others to come
+	src/js/for2map.v01
+	src/dojo/trim
+	# ... see src folder and file names for available refactorings
 
 
 	# review manually
