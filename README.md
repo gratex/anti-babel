@@ -55,6 +55,19 @@ Refactoring (one off):
     	return item.value;
 	});
 
+## dojo
+
+We are developing in dojo.
+Dojo contains a lot of good ideas, but a lot of APIs is not needed anymore.
+
+Example: 
+
+[dojo/string/trim](https://dojotoolkit.org/reference-guide/1.7/dojo/string/trim.html) vs.
+[String.prototype.trim)[https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim] 
+
+
+
+
 # Using on your project
 
 Idea:
@@ -64,7 +77,10 @@ Idea:
 	git checkout -b refactoring-anti-babel
 
 	# run (pick a refactoring script and run)
-	src/form2map
+	src/for2map/v01
+	src/dojo2es
+	# ... others to come
+
 
 	# review manually
 	git diff

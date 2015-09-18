@@ -1,0 +1,5 @@
+#!/bin/bash
+
+grasp -e '$dstring.trim($str)' -r . -i -R '{{str}}.trim()' 
+
+## TODO: remove unused imports after ? part of this or one special script ?
