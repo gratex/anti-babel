@@ -63,7 +63,7 @@ Dojo contains a lot of good ideas, but a lot of APIs is not needed anymore.
 Example: 
 
 [dojo/string/trim](https://dojotoolkit.org/reference-guide/1.7/dojo/string/trim.html) vs.
-[String.prototype.trim)[https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim] 
+[String.prototype.trim][https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim) 
 
 
 # Using on your project
