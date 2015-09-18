@@ -3,9 +3,12 @@
 There are [plenty of projects](https://github.com/addyosmani/es6-tools) to translate es6 syntax to older syntaxes.
 This allows you to write modern syntax and run on 'old machines'.
 
-This project is opposite (hence anti- in the name and [babel](https://babeljs.io), it shell help you to port 
-old code base to new code base if you have new machines and 
-probably want more readable and nicer codes.
+This project is opposite (hence anti- in the name and [babel](https://babeljs.io) as one of 'them'.
+
+This project is opposite. 
+Helping you to 
+CONVERT OLD CODE BASE TO NEW API AND SYNTAX.
+
 
 ## Background
 We are writing JavaScript from 'dark ages' (somewhere 19XX), and 
@@ -16,6 +19,9 @@ This could help to modernize them into something more readable today.
 
 Today we are developing in dojo, so many samples may involve 'old dojo' APIs and 
 refactoring to ES5,6 APIs, but the idea can be taken to other codes as well.
+
+To see if you can/should refactor you can use [compat-tables as UI](https://kangax.github.io/compat-table/es6/) 
+or [out CLI](https://github.com/gratex/compat-table)
 
 ## Goal
 
