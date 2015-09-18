@@ -3,12 +3,11 @@
 There are [plenty of projects](https://github.com/addyosmani/es6-tools) to translate es6 syntax to older syntaxes.
 This allows you to write modern syntax and run on 'old machines'.
 
-This project is opposite (hence anti- in the name and [babel](https://babeljs.io) as one of 'them'.
+This project is opposite.
 
-This project is opposite. 
 Helping you to 
 CONVERT OLD CODE BASE TO NEW API AND SYNTAX.
-
+(hence anti- in the name and [babel](https://babeljs.io) as one of 'them'.)
 
 ## Background
 We are writing JavaScript from 'dark ages' (somewhere 19XX), and 
