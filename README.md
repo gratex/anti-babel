@@ -44,7 +44,7 @@ Detector (very general):
 
 	grasp -e 'for(__;__;__){ __.push(_$) }' -r .
 
-Refactoring (one off):
+Refactoring (one of, simple case):
 
 	// before
 	for (i = 0; i < opts.length; i++) {
