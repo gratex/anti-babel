@@ -1,0 +1,45 @@
+es5										;	dojo
+
+Object.create							;
+Object.defineProperty					;
+Object.defineProperties					;
+Object.getPrototypeOf					;
+Object.keys								;	df.keys 
+Object.seal 							;	
+Object.freeze							;
+Object.preventExtensions 				;
+Object.isSealed 						;
+Object.isFrozen							;
+Object.isExtensible						;
+Object.getOwnPropertyDescriptor			;
+Object.getOwnPropertyNames				;
+
+Date.prototype.toISOString 				;   date/stamp.toISOString
+Date.now								;	
+
+Array.isArray							;	_base/lang.isArray
+
+JSON									; 	json	
+
+Function.prototype.bind					; 	_base/lang.hitch, _base/lang.partial
+
+String.prototype.trim					; 	_base/lang.trim
+
+Array.prototype.indexOf 				; 	_base/array.indexOf
+Array.prototype.lastIndexOf				; 	_base/array.lastIndexOf
+Array.prototype.every					;	_base/array.every
+Array.prototype.some					;	_base/array.some
+Array.prototype.forEach					;	_base/array.forEach
+Array.prototype.map						;	_base/array.map
+Array.prototype.filter					;	_base/array.filter
+Array.prototype.reduce 					;	lang/functional/reduce
+Array.prototype.reduceRight 			; 	lang/functional/reduceRight
+
+Getter in property initializer 			;	
+Setter in property initializer 			;
+Property access on strings 				;
+Reserved words as property names 		;
+Zero-width chars in identifiers			;
+parseInt() ignores leading zeros		;
+Immutable undefined						;
+Strict mode								;
