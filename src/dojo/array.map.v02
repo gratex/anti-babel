@@ -1,8 +1,8 @@
 #!/bin/bash
 
-# 2 oparams variant with second param being function
+# 2 params variant with second param being function
 # TODO: deal with contactPersons || [] (now we add () just in case)
-# TODO: also deal with map(null) wich is [] in dojo and error in es of course
+# TODO: also deal with map(null) which is [] in dojo and error in es of course
 # results on [] || [] sometimes
 grasp -e 'array.map($a,function($args){$body})' \
 	-i -R '({{a}} || [] ).map(function({{args}}){ {{body}} })' \
