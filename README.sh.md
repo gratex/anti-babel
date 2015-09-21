@@ -106,20 +106,21 @@ Idea:
 es5 features mapped to dojo apis. This is only approx mapping and
 for caveats you must learn both APIs, to understand if you can(not) refactor:
 
-ES5 features mapped to dojo API:
+ES5 features mapped to dojo API, all of these except strict mode are supported in IE9.
 
-$(<es5.csv grep "." | xs-sed "s/;$/;;/" | md-escape-emphasis | md-table '\;' | md-table-header '|')
+
+$(< es5.txt clmn | md-indent)
 
 Note: es5,6 features derived from compat-tables
 "
 cat <<<'
-	(echo "es5;dojo";node ../compat-table/cli.js es6 tests | jsontool -a name) > es5.csv
-	(echo "es6;dojo";node ../compat-table/cli.js es6 tests | jsontool -a name) > es6.csv
+	node ../compat-table/cli.js es6 tests | jsontool -a name > es5.txt
+	node ../compat-table/cli.js es6 tests | jsontool -a name > es6.txt
 '
 echo "
 ES6 features (TODO: mapping)
 
-$(< es6.csv grep "." | md-escape-emphasis | md-table '\;' | md-table-header '|')
+$(< es6.txt clmn | md-indent)
 
 # Contributing
 
