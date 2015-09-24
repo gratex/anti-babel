@@ -41,7 +41,7 @@ for (i = 0; i &lt; opts.length; i++) {
     retVal.push(opts[i].value);
 }
 
-grasp -e 'for(=0;&lt;.length;++){ .push([].) }'    -R '{{out}}={{arr}}.map(function(item){return item.{{prop}};});'    -r .
+grasp -e 'for(/etc/profile.d/*.sh=0;/etc/profile.d/*.sh&lt;.length;/etc/profile.d/*.sh++){ .push([/etc/profile.d/*.sh].) }'    -R '{{out}}={{arr}}.map(function(item){return item.{{prop}};});'    -r .
 
 // after (formated)
 retVal = opts.map(function(item) {
@@ -78,649 +78,2546 @@ git commit -am [REAFCTOR] ....</code></pre>
 <h1 id="unlearn-dojo-learn-es56">'Unlearn dojo', learn es5,6</h1>
 <p>es5 features mapped to dojo apis. This is only approx mapping and for caveats you must learn both APIs, to understand if you can(not) refactor:</p>
 <p>ES5 features mapped to dojo API, all of these except strict mode are supported in IE9.</p>
-<pre><code>Object.create                      
-Object.defineProperty              
-Object.defineProperties            
-Object.getPrototypeOf              
-Object.keys                       df.keys
-Object.seal                        
-Object.freeze                      
-Object.preventExtensions           
-Object.isSealed                    
-Object.isFrozen                    
-Object.isExtensible                
-Object.getOwnPropertyDescriptor    
-Object.getOwnPropertyNames         
-                                   
-Date.prototype.toISOString        date/stamp.toISOString
-Date.now                           
-                                   
-Array.isArray                     _base/lang.isArray
-                                   
-JSON                              json
-                                   
-Function.prototype.bind           _base/lang.hitch, _base/lang.partial
-                                   
-String.prototype.trim             _base/lang.trim
-                                   
-Array.prototype.indexOf           _base/array.indexOf
-Array.prototype.lastIndexOf       _base/array.lastIndexOf
-Array.prototype.every             _base/array.every
-Array.prototype.some              _base/array.some
-Array.prototype.forEach           _base/array.forEach
-Array.prototype.map               _base/array.map
-Array.prototype.filter            _base/array.filter
-Array.prototype.reduce            lang/functional/reduce
-Array.prototype.reduceRight       lang/functional/reduceRight
-                                   
-Getter in property initializer     
-Setter in property initializer     
-Property access on strings         
-Reserved words as property names   
-Zero-width chars in identifiers    
-parseInt() ignores leading zeros   
-Immutable undefined                
-Strict mode                        </code></pre>
+<table>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Object.create</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Object.defineProperty</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Object.defineProperties</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Object.getPrototypeOf</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Object.keys</td>
+<td style="text-align: left;">df.keys</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Object.seal</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Object.freeze</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Object.preventExtensions</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Object.isSealed</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Object.isFrozen</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Object.isExtensible</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Object.getOwnPropertyDescriptor</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Object.getOwnPropertyNames</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Date.prototype.toISOString</td>
+<td style="text-align: left;">date/stamp.toISOString</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Date.now</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Array.isArray</td>
+<td style="text-align: left;">_base/lang.isArray</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">JSON</td>
+<td style="text-align: left;">json</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Function.prototype.bind</td>
+<td style="text-align: left;"><em>base/lang.hitch, </em>base/lang.partial</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">String.prototype.trim</td>
+<td style="text-align: left;">_base/lang.trim</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Array.prototype.indexOf</td>
+<td style="text-align: left;">_base/array.indexOf</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Array.prototype.lastIndexOf</td>
+<td style="text-align: left;">_base/array.lastIndexOf</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Array.prototype.every</td>
+<td style="text-align: left;">_base/array.every</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Array.prototype.some</td>
+<td style="text-align: left;">_base/array.some</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Array.prototype.forEach</td>
+<td style="text-align: left;">_base/array.forEach</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Array.prototype.map</td>
+<td style="text-align: left;">_base/array.map</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Array.prototype.filter</td>
+<td style="text-align: left;">_base/array.filter</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Array.prototype.reduce</td>
+<td style="text-align: left;">lang/functional/reduce</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Array.prototype.reduceRight</td>
+<td style="text-align: left;">lang/functional/reduceRight</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Getter in property initializer</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Setter in property initializer</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Property access on strings</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Reserved words as property names</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Zero-width chars in identifiers</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">parseInt() ignores leading zeros</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Immutable undefined</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Strict mode</td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
 <p>Note: es5,6 features derived from compat-tables</p>
 <pre><code>node ../compat-table/cli.js es6 tests | jsontool -a name &gt; es5.txt
 node ../compat-table/cli.js es6 tests | jsontool -a name &gt; es6.txt</code></pre>
 <p>ES6 features (TODO: mapping)</p>
-<pre><code>proper tail calls (tail call optimisation) - direct recursion                        
-proper tail calls (tail call optimisation) - mutual recursion                        
-default function parameters - basic functionality                                    
-default function parameters - explicit undefined defers to the default               
-default function parameters - defaults can refer to previous params                  
-default function parameters - arguments object interaction                           
-default function parameters - temporal dead zone                                     
-default function parameters - separate scope                                         
-default function parameters - new Function() support                                 
-rest parameters - basic functionality                                                
-rest parameters - function 'length' property                                         
-rest parameters - arguments object interaction                                       
-rest parameters - can't be used in setters                                           
-rest parameters - new Function() support                                             
-spread (...) operator - with arrays, in function calls                               
-spread (...) operator - with arrays, in array literals                               
-spread (...) operator - with sparse arrays, in function calls                        
-spread (...) operator - with sparse arrays, in array literals                        
-spread (...) operator - with strings, in function calls                              
-spread (...) operator - with strings, in array literals                              
-spread (...) operator - with astral plane strings, in function calls                 
-spread (...) operator - with astral plane strings, in array literals                 
-spread (...) operator - with generator instances, in calls                           
-spread (...) operator - with generator instances, in arrays                          
-spread (...) operator - with generic iterables, in calls                             
-spread (...) operator - with generic iterables, in arrays                            
-spread (...) operator - with instances of iterables, in calls                        
-spread (...) operator - with instances of iterables, in arrays                       
-spread (...) operator - spreading non-iterables is a runtime error                   
-object literal extensions - computed properties                                      
-object literal extensions - shorthand properties                                     
-object literal extensions - shorthand methods                                        
-object literal extensions - string-keyed shorthand methods                           
-object literal extensions - computed shorthand methods                               
-object literal extensions - computed accessors                                       
-for..of loops - with arrays                                                          
-for..of loops - with sparse arrays                                                   
-for..of loops - with strings                                                         
-for..of loops - with astral plane strings                                            
-for..of loops - with generator instances                                             
-for..of loops - with generic iterables                                               
-for..of loops - with instances of generic iterables                                  
-for..of loops - iterator closing, break                                              
-for..of loops - iterator closing, throw                                              
-octal and binary literals - octal literals                                           
-octal and binary literals - binary literals                                          
-octal and binary literals - octal supported by Number()                              
-octal and binary literals - binary supported by Number()                             
-template strings - basic functionality                                               
-template strings - toString conversion                                               
-template strings - tagged template strings                                           
-template strings - passed array is frozen                                            
-template strings - line break normalisation                                          
-RegExp &quot;y&quot; and &quot;u&quot; flags - &quot;y&quot; flag                                                  
-RegExp &quot;y&quot; and &quot;u&quot; flags - &quot;y&quot; flag, lastIndex                                       
-RegExp &quot;y&quot; and &quot;u&quot; flags - &quot;u&quot; flag                                                  
-RegExp &quot;y&quot; and &quot;u&quot; flags - &quot;u&quot; flag, Unicode code point escapes                      
-destructuring - with arrays                                                          
-destructuring - with sparse arrays                                                   
-destructuring - with strings                                                         
-destructuring - with astral plane strings                                            
-destructuring - with generator instances                                             
-destructuring - with generic iterables                                               
-destructuring - with instances of generic iterables                                  
-destructuring - iterator closing                                                     
-destructuring - iterable destructuring expression                                    
-destructuring - chained iterable destructuring                                       
-destructuring - trailing commas in iterable patterns                                 
-destructuring - with objects                                                         
-destructuring - object destructuring with primitives                                 
-destructuring - trailing commas in object patterns                                   
-destructuring - object destructuring expression                                      
-destructuring - parenthesised left-hand-side is a syntax error                       
-destructuring - chained object destructuring                                         
-destructuring - throws on null and undefined                                         
-destructuring - computed properties                                                  
-destructuring - multiples in a single var statement                                  
-destructuring - nested                                                               
-destructuring - in parameters                                                        
-destructuring - in parameters, 'arguments' interaction                               
-destructuring - in parameters, new Function() support                                
-destructuring - in parameters, function 'length' property                            
-destructuring - in for-in loop heads                                                 
-destructuring - in for-of loop heads                                                 
-destructuring - rest                                                                 
-destructuring - nested rest                                                          
-destructuring - empty patterns                                                       
-destructuring - empty patterns in parameters                                         
-destructuring - defaults                                                             
-destructuring - defaults in parameters                                               
-destructuring - defaults, let temporal dead zone                                     
-destructuring - defaults in parameters, separate scope                               
-destructuring - defaults in parameters, new Function() support                       
-Unicode code point escapes - in strings                                              
-Unicode code point escapes - in identifiers                                          
-new.target - in constructors                                                         
-new.target - assignment is an early error                                            
-const - basic support                                                                
-const - is block-scoped                                                              
-const - redefining a const is an error                                               
-const - temporal dead zone                                                           
-const - basic support (strict mode)                                                  
-const - is block-scoped (strict mode)                                                
-const - redefining a const (strict mode)                                             
-const - temporal dead zone (strict mode)                                             
-let - basic support                                                                  
-let - is block-scoped                                                                
-let - for-loop statement scope                                                       
-let - temporal dead zone                                                             
-let - for-loop iteration scope                                                       
-let - basic support (strict mode)                                                    
-let - is block-scoped (strict mode)                                                  
-let - for-loop statement scope (strict mode)                                         
-let - temporal dead zone (strict mode)                                               
-let - for-loop iteration scope (strict mode)                                         
-block-level function declaration                                                     
-arrow functions - 0 parameters                                                       
-arrow functions - 1 parameter, no brackets                                           
-arrow functions - multiple parameters                                                
-arrow functions - lexical &quot;this&quot; binding                                             
-arrow functions - &quot;this&quot; unchanged by call or apply                                  
-arrow functions - can't be bound, can be curried                                     
-arrow functions - lexical &quot;arguments&quot; binding                                        
-arrow functions - no line break between params and &lt;code&gt;=&gt;&lt;/code&gt;                   
-arrow functions - correct precedence                                                 
-arrow functions - no &quot;prototype&quot; property                                            
-arrow functions - lexical &quot;super&quot; binding                                            
-arrow functions - lexical &quot;new.target&quot; binding                                       
-class - class statement                                                              
-class - is block-scoped                                                              
-class - class expression                                                             
-class - anonymous class                                                              
-class - constructor                                                                  
-class - prototype methods                                                            
-class - string-keyed methods                                                         
-class - computed prototype methods                                                   
-class - static methods                                                               
-class - computed static methods                                                      
-class - accessor properties                                                          
-class - computed accessor properties                                                 
-class - static accessor properties                                                   
-class - computed static accessor properties                                          
-class - class name is lexically scoped                                               
-class - computed names, temporal dead zone                                           
-class - methods aren't enumerable                                                    
-class - implicit strict mode                                                         
-class - constructor requires new                                                     
-class - extends                                                                      
-class - extends expressions                                                          
-class - extends null                                                                 
-class - new.target                                                                   
-super - statement in constructors                                                    
-super - expression in constructors                                                   
-super - in methods, property access                                                  
-super - in methods, method calls                                                     
-super - method calls use correct &quot;this&quot; binding                                      
-super - constructor calls use correct &quot;new.target&quot; binding                           
-super - is statically bound                                                          
-super - super() invokes the correct constructor                                      
-generators - basic functionality                                                     
-generators - generator function expressions                                          
-generators - correct &quot;this&quot; binding                                                  
-generators - can't use &quot;this&quot; with new                                               
-generators - sending                                                                 
-generators - %GeneratorPrototype%                                                    
-generators - %GeneratorPrototype%.constructor                                        
-generators - %GeneratorPrototype%.throw                                              
-generators - %GeneratorPrototype%.return                                             
-generators - yield operator precedence                                               
-generators - yield *, arrays                                                         
-generators - yield *, sparse arrays                                                  
-generators - yield *, strings                                                        
-generators - yield *, astral plane strings                                           
-generators - yield *, generator instances                                            
-generators - yield *, generic iterables                                              
-generators - yield *, instances of iterables                                         
-generators - yield * on non-iterables is a runtime error                             
-generators - yield *, iterator closing                                               
-generators - yield *, iterator closing via throw()                                   
-generators - shorthand generator methods                                             
-generators - string-keyed shorthand generator methods                                
-generators - computed shorthand generators                                           
-generators - shorthand generator methods, classes                                    
-generators - computed shorthand generators, classes                                  
-typed arrays - Int8Array                                                             
-typed arrays - Uint8Array                                                            
-typed arrays - Uint8ClampedArray                                                     
-typed arrays - Int16Array                                                            
-typed arrays - Uint16Array                                                           
-typed arrays - Int32Array                                                            
-typed arrays - Uint32Array                                                           
-typed arrays - Float32Array                                                          
-typed arrays - Float64Array                                                          
-typed arrays - DataView (Int8)                                                       
-typed arrays - DataView (Uint8)                                                      
-typed arrays - DataView (Int16)                                                      
-typed arrays - DataView (Uint16)                                                     
-typed arrays - DataView (Int32)                                                      
-typed arrays - DataView (Uint32)                                                     
-typed arrays - DataView (Float32)                                                    
-typed arrays - DataView (Float64)                                                    
-typed arrays - ArrayBuffer[Symbol.species]                                           
-typed arrays - constructors require new                                              
-typed arrays - constructors accepts generic iterables                                
-typed arrays - correct prototype chains                                              
-typed arrays - %TypedArray%.from                                                     
-typed arrays - %TypedArray%.of                                                       
-typed arrays - %TypedArray%.prototype.subarray                                       
-typed arrays - %TypedArray%.prototype.join                                           
-typed arrays - %TypedArray%.prototype.indexOf                                        
-typed arrays - %TypedArray%.prototype.lastIndexOf                                    
-typed arrays - %TypedArray%.prototype.slice                                          
-typed arrays - %TypedArray%.prototype.every                                          
-typed arrays - %TypedArray%.prototype.filter                                         
-typed arrays - %TypedArray%.prototype.forEach                                        
-typed arrays - %TypedArray%.prototype.map                                            
-typed arrays - %TypedArray%.prototype.reduce                                         
-typed arrays - %TypedArray%.prototype.reduceRight                                    
-typed arrays - %TypedArray%.prototype.reverse                                        
-typed arrays - %TypedArray%.prototype.some                                           
-typed arrays - %TypedArray%.prototype.sort                                           
-typed arrays - %TypedArray%.prototype.copyWithin                                     
-typed arrays - %TypedArray%.prototype.find                                           
-typed arrays - %TypedArray%.prototype.findIndex                                      
-typed arrays - %TypedArray%.prototype.fill                                           
-typed arrays - %TypedArray%.prototype.keys                                           
-typed arrays - %TypedArray%.prototype.values                                         
-typed arrays - %TypedArray%.prototype.entries                                        
-typed arrays - %TypedArray%.prototype[Symbol.iterator]                               
-typed arrays - %TypedArray%[Symbol.species]                                          
-Map - basic functionality                                                            
-Map - constructor arguments                                                          
-Map - constructor requires new                                                       
-Map - constructor accepts null                                                       
-Map - constructor invokes set                                                        
-Map - iterator closing                                                               
-Map - Map.prototype.set returns this                                                 
-Map - -0 key converts to +0                                                          
-Map - Map.prototype.size                                                             
-Map - Map.prototype.delete                                                           
-Map - Map.prototype.clear                                                            
-Map - Map.prototype.forEach                                                          
-Map - Map.prototype.keys                                                             
-Map - Map.prototype.values                                                           
-Map - Map.prototype.entries                                                          
-Map - Map.prototype[Symbol.iterator]                                                 
-Map - Map iterator prototype chain                                                   
-Map - Map[Symbol.species]                                                            
-Set - basic functionality                                                            
-Set - constructor arguments                                                          
-Set - constructor requires new                                                       
-Set - constructor accepts null                                                       
-Set - constructor invokes add                                                        
-Set - iterator closing                                                               
-Set - Set.prototype.add returns this                                                 
-Set - -0 key converts to +0                                                          
-Set - Set.prototype.size                                                             
-Set - Set.prototype.delete                                                           
-Set - Set.prototype.clear                                                            
-Set - Set.prototype.forEach                                                          
-Set - Set.prototype.keys                                                             
-Set - Set.prototype.values                                                           
-Set - Set.prototype.entries                                                          
-Set - Set.prototype[Symbol.iterator]                                                 
-Set - Set iterator prototype chain                                                   
-Set - Set[Symbol.species]                                                            
-WeakMap - basic functionality                                                        
-WeakMap - constructor arguments                                                      
-WeakMap - constructor requires new                                                   
-WeakMap - constructor accepts null                                                   
-WeakMap - constructor invokes set                                                    
-WeakMap - frozen objects as keys                                                     
-WeakMap - iterator closing                                                           
-WeakMap - WeakMap.prototype.set returns this                                         
-WeakMap - WeakMap.prototype.delete                                                   
-WeakMap - no WeakMap.prototype.clear method                                          
-WeakSet - basic functionality                                                        
-WeakSet - constructor arguments                                                      
-WeakSet - constructor requires new                                                   
-WeakSet - constructor accepts null                                                   
-WeakSet - constructor invokes add                                                    
-WeakSet - iterator closing                                                           
-WeakSet - WeakSet.prototype.add returns this                                         
-WeakSet - WeakSet.prototype.delete                                                   
-WeakSet - no WeakSet.prototype.clear method                                          
-Proxy - constructor requires new                                                     
-Proxy - &quot;get&quot; handler                                                                
-Proxy - &quot;get&quot; handler, instances of proxies                                          
-Proxy - &quot;set&quot; handler                                                                
-Proxy - &quot;set&quot; handler, instances of proxies                                          
-Proxy - &quot;has&quot; handler                                                                
-Proxy - &quot;has&quot; handler, instances of proxies                                          
-Proxy - &quot;deleteProperty&quot; handler                                                     
-Proxy - &quot;getOwnPropertyDescriptor&quot; handler                                           
-Proxy - &quot;defineProperty&quot; handler                                                     
-Proxy - &quot;getPrototypeOf&quot; handler                                                     
-Proxy - &quot;setPrototypeOf&quot; handler                                                     
-Proxy - &quot;isExtensible&quot; handler                                                       
-Proxy - &quot;preventExtensions&quot; handler                                                  
-Proxy - &quot;enumerate&quot; handler                                                          
-Proxy - &quot;ownKeys&quot; handler                                                            
-Proxy - &quot;apply&quot; handler                                                              
-Proxy - &quot;construct&quot; handler                                                          
-Proxy - Proxy.revocable                                                              
-Proxy - Array.isArray support                                                        
-Proxy - JSON.stringify support                                                       
-Reflect - Reflect.get                                                                
-Reflect - Reflect.set                                                                
-Reflect - Reflect.has                                                                
-Reflect - Reflect.deleteProperty                                                     
-Reflect - Reflect.getOwnPropertyDescriptor                                           
-Reflect - Reflect.defineProperty                                                     
-Reflect - Reflect.getPrototypeOf                                                     
-Reflect - Reflect.setPrototypeOf                                                     
-Reflect - Reflect.isExtensible                                                       
-Reflect - Reflect.preventExtensions                                                  
-Reflect - Reflect.enumerate                                                          
-Reflect - Reflect.ownKeys, string keys                                               
-Reflect - Reflect.ownKeys, symbol keys                                               
-Reflect - Reflect.apply                                                              
-Reflect - Reflect.construct                                                          
-Reflect - Reflect.construct sets new.target meta property                            
-Reflect - Reflect.construct creates instance from newTarget argument                 
-Promise - basic functionality                                                        
-Promise - constructor requires new                                                   
-Promise - Promise.all                                                               promise/all
-Promise - Promise.all, generic iterables                                             
-Promise - Promise.race                                                               
-Promise - Promise.race, generic iterables                                            
-Promise - Promise[Symbol.species]                                                    
-Symbol - basic functionality                                                         
-Symbol - typeof support                                                              
-Symbol - symbol keys are hidden to pre-ES6 code                                      
-Symbol - Object.defineProperty support                                               
-Symbol - cannot coerce to string or number                                           
-Symbol - can convert with String()                                                   
-Symbol - new Symbol() throws                                                         
-Symbol - Object(symbol)                                                              
-Symbol - JSON.stringify ignores symbols                                              
-Symbol - global symbol registry                                                      
-well-known symbols - Symbol.hasInstance                                              
-well-known symbols - Symbol.isConcatSpreadable                                       
-well-known symbols - Symbol.iterator, existence                                      
-well-known symbols - Symbol.iterator, arguments object                               
-well-known symbols - Symbol.species, existence                                       
-well-known symbols - Symbol.species, Array.prototype.concat                          
-well-known symbols - Symbol.species, Array.prototype.filter                          
-well-known symbols - Symbol.species, Array.prototype.map                             
-well-known symbols - Symbol.species, Array.prototype.slice                           
-well-known symbols - Symbol.species, Array.prototype.splice                          
-well-known symbols - Symbol.species, RegExp.prototype[Symbol.split]                  
-well-known symbols - Symbol.replace                                                  
-well-known symbols - Symbol.search                                                   
-well-known symbols - Symbol.split                                                    
-well-known symbols - Symbol.match                                                    
-well-known symbols - Symbol.match, RegExp constructor                                
-well-known symbols - Symbol.match, String.prototype.startsWith                       
-well-known symbols - Symbol.match, String.prototype.endsWith                         
-well-known symbols - Symbol.match, String.prototype.includes                         
-well-known symbols - Symbol.toPrimitive                                              
-well-known symbols - Symbol.toStringTag                                              
-well-known symbols - Symbol.toStringTag, misc. built-ins                             
-well-known symbols - Symbol.unscopables                                              
-Object static methods - Object.assign                                                
-Object static methods - Object.is                                                    
-Object static methods - Object.getOwnPropertySymbols                                 
-Object static methods - Object.setPrototypeOf                                        
-function &quot;name&quot; property - function statements                                       
-function &quot;name&quot; property - function expressions                                      
-function &quot;name&quot; property - new Function                                              
-function &quot;name&quot; property - bound functions                                           
-function &quot;name&quot; property - variables (function)                                      
-function &quot;name&quot; property - object methods (function)                                 
-function &quot;name&quot; property - accessor properties                                       
-function &quot;name&quot; property - shorthand methods                                         
-function &quot;name&quot; property - shorthand methods (no lexical binding)                    
-function &quot;name&quot; property - symbol-keyed methods                                      
-function &quot;name&quot; property - class statements                                          
-function &quot;name&quot; property - class expressions                                         
-function &quot;name&quot; property - variables (class)                                         
-function &quot;name&quot; property - object methods (class)                                    
-function &quot;name&quot; property - class prototype methods                                   
-function &quot;name&quot; property - class static methods                                      
-function &quot;name&quot; property - isn't writable, is configurable                           
-String static methods - String.raw                                                   
-String static methods - String.fromCodePoint                                         
-String.prototype methods - String.prototype.codePointAt                              
-String.prototype methods - String.prototype.normalize                                
-String.prototype methods - String.prototype.repeat                                   
-String.prototype methods - String.prototype.startsWith                               
-String.prototype methods - String.prototype.endsWith                                 
-String.prototype methods - String.prototype.includes                                 
-String.prototype methods - String.prototype[Symbol.iterator]                         
-String.prototype methods - String iterator prototype chain                           
-RegExp.prototype properties - RegExp.prototype.flags                                 
-RegExp.prototype properties - RegExp.prototype[Symbol.match]                         
-RegExp.prototype properties - RegExp.prototype[Symbol.replace]                       
-RegExp.prototype properties - RegExp.prototype[Symbol.split]                         
-RegExp.prototype properties - RegExp.prototype[Symbol.search]                        
-RegExp.prototype properties - RegExp[Symbol.species]                                 
-Array static methods - Array.from, array-like objects                                
-Array static methods - Array.from, generator instances                               
-Array static methods - Array.from, generic iterables                                 
-Array static methods - Array.from, instances of generic iterables                    
-Array static methods - Array.from map function, array-like objects                   
-Array static methods - Array.from map function, generator instances                  
-Array static methods - Array.from map function, generic iterables                    
-Array static methods - Array.from map function, instances of iterables               
-Array static methods - Array.from, iterator closing                                  
-Array static methods - Array.of                                                      
-Array static methods - Array[Symbol.species]                                         
-Array.prototype methods - Array.prototype.copyWithin                                 
-Array.prototype methods - Array.prototype.find                                       
-Array.prototype methods - Array.prototype.findIndex                                  
-Array.prototype methods - Array.prototype.fill                                       
-Array.prototype methods - Array.prototype.keys                                       
-Array.prototype methods - Array.prototype.values                                     
-Array.prototype methods - Array.prototype.entries                                    
-Array.prototype methods - Array.prototype[Symbol.iterator]                           
-Array.prototype methods - Array iterator prototype chain                             
-Array.prototype methods - Array.prototype[Symbol.unscopables]                        
-Number properties - Number.isFinite                                                  
-Number properties - Number.isInteger                                                 
-Number properties - Number.isSafeInteger                                             
-Number properties - Number.isNaN                                                     
-Number properties - Number.EPSILON                                                   
-Number properties - Number.MIN_SAFE_INTEGER                                          
-Number properties - Number.MAX_SAFE_INTEGER                                          
-Math methods - Math.clz32                                                            
-Math methods - Math.imul                                                             
-Math methods - Math.sign                                                             
-Math methods - Math.log10                                                            
-Math methods - Math.log2                                                             
-Math methods - Math.log1p                                                            
-Math methods - Math.expm1                                                            
-Math methods - Math.cosh                                                             
-Math methods - Math.sinh                                                             
-Math methods - Math.tanh                                                             
-Math methods - Math.acosh                                                            
-Math methods - Math.asinh                                                            
-Math methods - Math.atanh                                                            
-Math methods - Math.trunc                                                            
-Math methods - Math.fround                                                           
-Math methods - Math.cbrt                                                             
-Math methods - Math.hypot                                                            
-Array is subclassable - length property (accessing)                                  
-Array is subclassable - length property (setting)                                    
-Array is subclassable - correct prototype chain                                      
-Array is subclassable - Array.isArray support                                        
-Array is subclassable - Array.prototype.concat                                       
-Array is subclassable - Array.prototype.filter                                       
-Array is subclassable - Array.prototype.map                                          
-Array is subclassable - Array.prototype.slice                                        
-Array is subclassable - Array.prototype.splice                                       
-Array is subclassable - Array.from                                                   
-Array is subclassable - Array.of                                                     
-RegExp is subclassable - basic functionality                                         
-RegExp is subclassable - correct prototype chain                                     
-RegExp is subclassable - RegExp.prototype.exec                                       
-RegExp is subclassable - RegExp.prototype.test                                       
-Function is subclassable - can be called                                             
-Function is subclassable - correct prototype chain                                   
-Function is subclassable - can be used with &quot;new&quot;                                    
-Function is subclassable - Function.prototype.call                                   
-Function is subclassable - Function.prototype.apply                                  
-Function is subclassable - Function.prototype.bind                                   
-Promise is subclassable - basic functionality                                        
-Promise is subclassable - correct prototype chain                                    
-Promise is subclassable - Promise.all                                                
-Promise is subclassable - Promise.race                                               
-miscellaneous subclassables - Boolean is subclassable                                
-miscellaneous subclassables - Number is subclassable                                 
-miscellaneous subclassables - String is subclassable                                 
-miscellaneous subclassables - Map is subclassable                                    
-miscellaneous subclassables - Set is subclassable                                    
-prototype of bound functions - basic functions                                       
-prototype of bound functions - generator functions                                   
-prototype of bound functions - arrow functions                                       
-prototype of bound functions - classes                                               
-prototype of bound functions - subclasses                                            
-Proxy, internal 'get' calls - ToPrimitive                                            
-Proxy, internal 'get' calls - CreateListFromArrayLike                                
-Proxy, internal 'get' calls - instanceof operator                                    
-Proxy, internal 'get' calls - HasBinding                                             
-Proxy, internal 'get' calls - CreateDynamicFunction                                  
-Proxy, internal 'get' calls - ClassDefinitionEvaluation                              
-Proxy, internal 'get' calls - IteratorComplete, IteratorValue                        
-Proxy, internal 'get' calls - ToPropertyDescriptor                                   
-Proxy, internal 'get' calls - Object.assign                                          
-Proxy, internal 'get' calls - Object.defineProperties                                
-Proxy, internal 'get' calls - Function.prototype.bind                                
-Proxy, internal 'get' calls - Error.prototype.toString                               
-Proxy, internal 'get' calls - String.raw                                             
-Proxy, internal 'get' calls - RegExp constructor                                     
-Proxy, internal 'get' calls - RegExp.prototype.flags                                 
-Proxy, internal 'get' calls - RegExp.prototype.test                                  
-Proxy, internal 'get' calls - RegExp.prototype[Symbol.match]                         
-Proxy, internal 'get' calls - RegExp.prototype[Symbol.replace]                       
-Proxy, internal 'get' calls - RegExp.prototype[Symbol.search]                        
-Proxy, internal 'get' calls - RegExp.prototype[Symbol.split]                         
-Proxy, internal 'get' calls - Array.from                                             
-Proxy, internal 'get' calls - Array.prototype.concat                                 
-Proxy, internal 'get' calls - Array.prototype iteration methods                      
-Proxy, internal 'get' calls - Array.prototype.pop                                    
-Proxy, internal 'get' calls - Array.prototype.reverse                                
-Proxy, internal 'get' calls - Array.prototype.shift                                  
-Proxy, internal 'get' calls - Array.prototype.splice                                 
-Proxy, internal 'get' calls - Array.prototype.toString                               
-Proxy, internal 'get' calls - JSON.stringify                                         
-Proxy, internal 'get' calls - Promise resolve functions                              
-Proxy, internal 'get' calls - String.prototype.match                                 
-Proxy, internal 'get' calls - String.prototype.replace                               
-Proxy, internal 'get' calls - String.prototype.search                                
-Proxy, internal 'get' calls - String.prototype.split                                 
-Proxy, internal 'get' calls - Date.prototype.toJSON                                  
-Proxy, internal 'set' calls - Object.assign                                          
-Proxy, internal 'set' calls - Array.from                                             
-Proxy, internal 'set' calls - Array.of                                               
-Proxy, internal 'set' calls - Array.prototype.copyWithin                             
-Proxy, internal 'set' calls - Array.prototype.fill                                   
-Proxy, internal 'set' calls - Array.prototype.pop                                    
-Proxy, internal 'set' calls - Array.prototype.push                                   
-Proxy, internal 'set' calls - Array.prototype.reverse                                
-Proxy, internal 'set' calls - Array.prototype.shift                                  
-Proxy, internal 'set' calls - Array.prototype.splice                                 
-Proxy, internal 'set' calls - Array.prototype.unshift                                
-Proxy, internal 'defineProperty' calls - [[Set]]                                     
-Proxy, internal 'defineProperty' calls - SetIntegrityLevel                           
-Proxy, internal 'deleteProperty' calls - Array.prototype.copyWithin                  
-Proxy, internal 'deleteProperty' calls - Array.prototype.pop                         
-Proxy, internal 'deleteProperty' calls - Array.prototype.reverse                     
-Proxy, internal 'deleteProperty' calls - Array.prototype.shift                       
-Proxy, internal 'deleteProperty' calls - Array.prototype.splice                      
-Proxy, internal 'deleteProperty' calls - Array.prototype.unshift                     
-Proxy, internal 'getOwnPropertyDescriptor' calls - [[Set]]                           
-Proxy, internal 'getOwnPropertyDescriptor' calls - Object.assign                     
-Proxy, internal 'getOwnPropertyDescriptor' calls - Object.prototype.hasOwnProperty   
-Proxy, internal 'getOwnPropertyDescriptor' calls - Function.prototype.bind           
-Proxy, internal 'ownKeys' calls - SetIntegrityLevel                                  
-Proxy, internal 'ownKeys' calls - TestIntegrityLevel                                 
-Proxy, internal 'ownKeys' calls - SerializeJSONObject                                
-Object static methods accept primitives - Object.getPrototypeOf                      
-Object static methods accept primitives - Object.getOwnPropertyDescriptor            
-Object static methods accept primitives - Object.getOwnPropertyNames                 
-Object static methods accept primitives - Object.seal                                
-Object static methods accept primitives - Object.freeze                              
-Object static methods accept primitives - Object.preventExtensions                   
-Object static methods accept primitives - Object.isSealed                            
-Object static methods accept primitives - Object.isFrozen                            
-Object static methods accept primitives - Object.isExtensible                        
-Object static methods accept primitives - Object.keys                                
-own property order - for..in                                                         
-own property order - Object.keys                                                     
-own property order - Object.getOwnPropertyNames                                      
-own property order - Object.assign                                                   
-own property order - JSON.stringify                                                  
-own property order - JSON.parse                                                      
-own property order - Reflect.ownKeys, string key order                               
-own property order - Reflect.ownKeys, symbol key order                               
-miscellaneous - no escaped reserved words as identifiers                             
-miscellaneous - duplicate property names in strict mode                              
-miscellaneous - no semicolon needed after do-while                                   
-miscellaneous - no assignments allowed in for-in head                                
-miscellaneous - accessors aren't constructors                                        
-miscellaneous - Invalid Date                                                         
-miscellaneous - RegExp constructor can alter flags                                   
-miscellaneous - built-in prototypes are not instances                                
-miscellaneous - function 'length' is configurable                                    
-miscellaneous - String.prototype case methods, Unicode support                       
-non-strict function semantics - hoisted block-level function declaration             
-non-strict function semantics - labeled function statements                          
-non-strict function semantics - function statements in if-statement clauses          
-__proto__ in object literals - basic support                                         
-__proto__ in object literals - multiple __proto__ is an error                        
-__proto__ in object literals - not a computed property                               
-__proto__ in object literals - not a shorthand property                              
-__proto__ in object literals - not a shorthand method                                
-Object.prototype.__proto__ - get prototype                                           
-Object.prototype.__proto__ - set prototype                                           
-Object.prototype.__proto__ - absent from Object.create(null)                         
-Object.prototype.__proto__ - present in hasOwnProperty()                             
-Object.prototype.__proto__ - correct property descriptor                             
-Object.prototype.__proto__ - present in Object.getOwnPropertyNames()                 
-String.prototype HTML methods - existence                                            
-String.prototype HTML methods - tags' names are lowercase                            
-String.prototype HTML methods - quotes in arguments are escaped                      
-RegExp.prototype.compile                                                             
-RegExp syntax extensions - hyphens in character sets                                 
-RegExp syntax extensions - invalid character escapes                                 
-RegExp syntax extensions - invalid control-character escapes                         
-RegExp syntax extensions - invalid Unicode escapes                                   
-RegExp syntax extensions - invalid hexadecimal escapes                               
-RegExp syntax extensions - incomplete patterns and quantifiers                       
-RegExp syntax extensions - octal escape sequences                                    
-RegExp syntax extensions - invalid backreferences become octal escapes               
-HTML-style comments                                                                  </code></pre>
+<table>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">proper tail calls (tail call optimisation) - direct recursion</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">proper tail calls (tail call optimisation) - mutual recursion</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">default function parameters - basic functionality</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">default function parameters - explicit undefined defers to the default</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">default function parameters - defaults can refer to previous params</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">default function parameters - arguments object interaction</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">default function parameters - temporal dead zone</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">default function parameters - separate scope</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">default function parameters - new Function() support</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">rest parameters - basic functionality</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">rest parameters - function 'length' property</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">rest parameters - arguments object interaction</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">rest parameters - can't be used in setters</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">rest parameters - new Function() support</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">spread (...) operator - with arrays, in function calls</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">spread (...) operator - with arrays, in array literals</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">spread (...) operator - with sparse arrays, in function calls</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">spread (...) operator - with sparse arrays, in array literals</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">spread (...) operator - with strings, in function calls</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">spread (...) operator - with strings, in array literals</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">spread (...) operator - with astral plane strings, in function calls</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">spread (...) operator - with astral plane strings, in array literals</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">spread (...) operator - with generator instances, in calls</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">spread (...) operator - with generator instances, in arrays</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">spread (...) operator - with generic iterables, in calls</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">spread (...) operator - with generic iterables, in arrays</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">spread (...) operator - with instances of iterables, in calls</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">spread (...) operator - with instances of iterables, in arrays</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">spread (...) operator - spreading non-iterables is a runtime error</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">object literal extensions - computed properties</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">object literal extensions - shorthand properties</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">object literal extensions - shorthand methods</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">object literal extensions - string-keyed shorthand methods</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">object literal extensions - computed shorthand methods</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">object literal extensions - computed accessors</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">for..of loops - with arrays</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">for..of loops - with sparse arrays</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">for..of loops - with strings</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">for..of loops - with astral plane strings</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">for..of loops - with generator instances</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">for..of loops - with generic iterables</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">for..of loops - with instances of generic iterables</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">for..of loops - iterator closing, break</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">for..of loops - iterator closing, throw</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">octal and binary literals - octal literals</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">octal and binary literals - binary literals</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">octal and binary literals - octal supported by Number()</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">octal and binary literals - binary supported by Number()</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">template strings - basic functionality</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">template strings - toString conversion</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">template strings - tagged template strings</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">template strings - passed array is frozen</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">template strings - line break normalisation</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">RegExp &quot;y&quot; and &quot;u&quot; flags - &quot;y&quot; flag</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">RegExp &quot;y&quot; and &quot;u&quot; flags - &quot;y&quot; flag, lastIndex</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">RegExp &quot;y&quot; and &quot;u&quot; flags - &quot;u&quot; flag</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">RegExp &quot;y&quot; and &quot;u&quot; flags - &quot;u&quot; flag, Unicode code point escapes</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">destructuring - with arrays</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">destructuring - with sparse arrays</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">destructuring - with strings</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">destructuring - with astral plane strings</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">destructuring - with generator instances</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">destructuring - with generic iterables</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">destructuring - with instances of generic iterables</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">destructuring - iterator closing</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">destructuring - iterable destructuring expression</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">destructuring - chained iterable destructuring</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">destructuring - trailing commas in iterable patterns</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">destructuring - with objects</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">destructuring - object destructuring with primitives</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">destructuring - trailing commas in object patterns</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">destructuring - object destructuring expression</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">destructuring - parenthesised left-hand-side is a syntax error</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">destructuring - chained object destructuring</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">destructuring - throws on null and undefined</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">destructuring - computed properties</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">destructuring - multiples in a single var statement</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">destructuring - nested</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">destructuring - in parameters</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">destructuring - in parameters, 'arguments' interaction</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">destructuring - in parameters, new Function() support</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">destructuring - in parameters, function 'length' property</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">destructuring - in for-in loop heads</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">destructuring - in for-of loop heads</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">destructuring - rest</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">destructuring - nested rest</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">destructuring - empty patterns</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">destructuring - empty patterns in parameters</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">destructuring - defaults</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">destructuring - defaults in parameters</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">destructuring - defaults, let temporal dead zone</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">destructuring - defaults in parameters, separate scope</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">destructuring - defaults in parameters, new Function() support</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Unicode code point escapes - in strings</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Unicode code point escapes - in identifiers</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">new.target - in constructors</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">new.target - assignment is an early error</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">const - basic support</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">const - is block-scoped</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">const - redefining a const is an error</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">const - temporal dead zone</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">const - basic support (strict mode)</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">const - is block-scoped (strict mode)</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">const - redefining a const (strict mode)</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">const - temporal dead zone (strict mode)</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">let - basic support</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">let - is block-scoped</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">let - for-loop statement scope</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">let - temporal dead zone</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">let - for-loop iteration scope</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">let - basic support (strict mode)</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">let - is block-scoped (strict mode)</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">let - for-loop statement scope (strict mode)</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">let - temporal dead zone (strict mode)</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">let - for-loop iteration scope (strict mode)</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">block-level function declaration</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">arrow functions - 0 parameters</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">arrow functions - 1 parameter, no brackets</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">arrow functions - multiple parameters</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">arrow functions - lexical &quot;this&quot; binding</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">arrow functions - &quot;this&quot; unchanged by call or apply</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">arrow functions - can't be bound, can be curried</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">arrow functions - lexical &quot;arguments&quot; binding</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">arrow functions - no line break between params and <code>=&gt;</code></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">arrow functions - correct precedence</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">arrow functions - no &quot;prototype&quot; property</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">arrow functions - lexical &quot;super&quot; binding</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">arrow functions - lexical &quot;new.target&quot; binding</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">class - class statement</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">class - is block-scoped</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">class - class expression</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">class - anonymous class</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">class - constructor</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">class - prototype methods</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">class - string-keyed methods</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">class - computed prototype methods</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">class - static methods</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">class - computed static methods</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">class - accessor properties</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">class - computed accessor properties</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">class - static accessor properties</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">class - computed static accessor properties</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">class - class name is lexically scoped</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">class - computed names, temporal dead zone</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">class - methods aren't enumerable</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">class - implicit strict mode</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">class - constructor requires new</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">class - extends</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">class - extends expressions</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">class - extends null</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">class - new.target</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">super - statement in constructors</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">super - expression in constructors</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">super - in methods, property access</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">super - in methods, method calls</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">super - method calls use correct &quot;this&quot; binding</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">super - constructor calls use correct &quot;new.target&quot; binding</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">super - is statically bound</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">super - super() invokes the correct constructor</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">generators - basic functionality</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">generators - generator function expressions</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">generators - correct &quot;this&quot; binding</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">generators - can't use &quot;this&quot; with new</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">generators - sending</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">generators - %GeneratorPrototype%</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">generators - %GeneratorPrototype%.constructor</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">generators - %GeneratorPrototype%.throw</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">generators - %GeneratorPrototype%.return</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">generators - yield operator precedence</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">generators - yield *, arrays</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">generators - yield *, sparse arrays</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">generators - yield *, strings</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">generators - yield *, astral plane strings</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">generators - yield *, generator instances</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">generators - yield *, generic iterables</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">generators - yield *, instances of iterables</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">generators - yield * on non-iterables is a runtime error</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">generators - yield *, iterator closing</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">generators - yield *, iterator closing via throw()</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">generators - shorthand generator methods</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">generators - string-keyed shorthand generator methods</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">generators - computed shorthand generators</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">generators - shorthand generator methods, classes</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">generators - computed shorthand generators, classes</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">typed arrays - Int8Array</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">typed arrays - Uint8Array</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">typed arrays - Uint8ClampedArray</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">typed arrays - Int16Array</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">typed arrays - Uint16Array</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">typed arrays - Int32Array</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">typed arrays - Uint32Array</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">typed arrays - Float32Array</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">typed arrays - Float64Array</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">typed arrays - DataView (Int8)</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">typed arrays - DataView (Uint8)</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">typed arrays - DataView (Int16)</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">typed arrays - DataView (Uint16)</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">typed arrays - DataView (Int32)</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">typed arrays - DataView (Uint32)</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">typed arrays - DataView (Float32)</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">typed arrays - DataView (Float64)</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">typed arrays - ArrayBuffer[Symbol.species]</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">typed arrays - constructors require new</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">typed arrays - constructors accepts generic iterables</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">typed arrays - correct prototype chains</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">typed arrays - %TypedArray%.from</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">typed arrays - %TypedArray%.of</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">typed arrays - %TypedArray%.prototype.subarray</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">typed arrays - %TypedArray%.prototype.join</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">typed arrays - %TypedArray%.prototype.indexOf</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">typed arrays - %TypedArray%.prototype.lastIndexOf</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">typed arrays - %TypedArray%.prototype.slice</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">typed arrays - %TypedArray%.prototype.every</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">typed arrays - %TypedArray%.prototype.filter</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">typed arrays - %TypedArray%.prototype.forEach</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">typed arrays - %TypedArray%.prototype.map</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">typed arrays - %TypedArray%.prototype.reduce</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">typed arrays - %TypedArray%.prototype.reduceRight</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">typed arrays - %TypedArray%.prototype.reverse</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">typed arrays - %TypedArray%.prototype.some</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">typed arrays - %TypedArray%.prototype.sort</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">typed arrays - %TypedArray%.prototype.copyWithin</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">typed arrays - %TypedArray%.prototype.find</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">typed arrays - %TypedArray%.prototype.findIndex</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">typed arrays - %TypedArray%.prototype.fill</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">typed arrays - %TypedArray%.prototype.keys</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">typed arrays - %TypedArray%.prototype.values</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">typed arrays - %TypedArray%.prototype.entries</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">typed arrays - %TypedArray%.prototype[Symbol.iterator]</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">typed arrays - %TypedArray%[Symbol.species]</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Map - basic functionality</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Map - constructor arguments</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Map - constructor requires new</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Map - constructor accepts null</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Map - constructor invokes set</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Map - iterator closing</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Map - Map.prototype.set returns this</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Map - -0 key converts to +0</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Map - Map.prototype.size</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Map - Map.prototype.delete</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Map - Map.prototype.clear</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Map - Map.prototype.forEach</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Map - Map.prototype.keys</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Map - Map.prototype.values</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Map - Map.prototype.entries</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Map - Map.prototype[Symbol.iterator]</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Map - Map iterator prototype chain</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Map - Map[Symbol.species]</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Set - basic functionality</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Set - constructor arguments</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Set - constructor requires new</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Set - constructor accepts null</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Set - constructor invokes add</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Set - iterator closing</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Set - Set.prototype.add returns this</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Set - -0 key converts to +0</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Set - Set.prototype.size</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Set - Set.prototype.delete</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Set - Set.prototype.clear</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Set - Set.prototype.forEach</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Set - Set.prototype.keys</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Set - Set.prototype.values</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Set - Set.prototype.entries</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Set - Set.prototype[Symbol.iterator]</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Set - Set iterator prototype chain</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Set - Set[Symbol.species]</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">WeakMap - basic functionality</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">WeakMap - constructor arguments</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">WeakMap - constructor requires new</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">WeakMap - constructor accepts null</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">WeakMap - constructor invokes set</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">WeakMap - frozen objects as keys</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">WeakMap - iterator closing</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">WeakMap - WeakMap.prototype.set returns this</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">WeakMap - WeakMap.prototype.delete</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">WeakMap - no WeakMap.prototype.clear method</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">WeakSet - basic functionality</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">WeakSet - constructor arguments</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">WeakSet - constructor requires new</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">WeakSet - constructor accepts null</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">WeakSet - constructor invokes add</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">WeakSet - iterator closing</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">WeakSet - WeakSet.prototype.add returns this</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">WeakSet - WeakSet.prototype.delete</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">WeakSet - no WeakSet.prototype.clear method</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Proxy - constructor requires new</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Proxy - &quot;get&quot; handler</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Proxy - &quot;get&quot; handler, instances of proxies</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Proxy - &quot;set&quot; handler</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Proxy - &quot;set&quot; handler, instances of proxies</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Proxy - &quot;has&quot; handler</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Proxy - &quot;has&quot; handler, instances of proxies</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Proxy - &quot;deleteProperty&quot; handler</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Proxy - &quot;getOwnPropertyDescriptor&quot; handler</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Proxy - &quot;defineProperty&quot; handler</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Proxy - &quot;getPrototypeOf&quot; handler</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Proxy - &quot;setPrototypeOf&quot; handler</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Proxy - &quot;isExtensible&quot; handler</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Proxy - &quot;preventExtensions&quot; handler</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Proxy - &quot;enumerate&quot; handler</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Proxy - &quot;ownKeys&quot; handler</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Proxy - &quot;apply&quot; handler</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Proxy - &quot;construct&quot; handler</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Proxy - Proxy.revocable</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Proxy - Array.isArray support</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Proxy - JSON.stringify support</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Reflect - Reflect.get</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Reflect - Reflect.set</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Reflect - Reflect.has</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Reflect - Reflect.deleteProperty</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Reflect - Reflect.getOwnPropertyDescriptor</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Reflect - Reflect.defineProperty</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Reflect - Reflect.getPrototypeOf</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Reflect - Reflect.setPrototypeOf</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Reflect - Reflect.isExtensible</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Reflect - Reflect.preventExtensions</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Reflect - Reflect.enumerate</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Reflect - Reflect.ownKeys, string keys</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Reflect - Reflect.ownKeys, symbol keys</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Reflect - Reflect.apply</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Reflect - Reflect.construct</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Reflect - Reflect.construct sets new.target meta property</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Reflect - Reflect.construct creates instance from newTarget argument</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Promise - basic functionality</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Promise - constructor requires new</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Promise - Promise.all</td>
+<td style="text-align: left;">promise/all</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Promise - Promise.all, generic iterables</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Promise - Promise.race</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Promise - Promise.race, generic iterables</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Promise - Promise[Symbol.species]</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Symbol - basic functionality</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Symbol - typeof support</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Symbol - symbol keys are hidden to pre-ES6 code</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Symbol - Object.defineProperty support</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Symbol - cannot coerce to string or number</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Symbol - can convert with String()</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Symbol - new Symbol() throws</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Symbol - Object(symbol)</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Symbol - JSON.stringify ignores symbols</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Symbol - global symbol registry</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">well-known symbols - Symbol.hasInstance</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">well-known symbols - Symbol.isConcatSpreadable</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">well-known symbols - Symbol.iterator, existence</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">well-known symbols - Symbol.iterator, arguments object</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">well-known symbols - Symbol.species, existence</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">well-known symbols - Symbol.species, Array.prototype.concat</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">well-known symbols - Symbol.species, Array.prototype.filter</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">well-known symbols - Symbol.species, Array.prototype.map</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">well-known symbols - Symbol.species, Array.prototype.slice</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">well-known symbols - Symbol.species, Array.prototype.splice</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">well-known symbols - Symbol.species, RegExp.prototype[Symbol.split]</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">well-known symbols - Symbol.replace</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">well-known symbols - Symbol.search</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">well-known symbols - Symbol.split</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">well-known symbols - Symbol.match</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">well-known symbols - Symbol.match, RegExp constructor</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">well-known symbols - Symbol.match, String.prototype.startsWith</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">well-known symbols - Symbol.match, String.prototype.endsWith</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">well-known symbols - Symbol.match, String.prototype.includes</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">well-known symbols - Symbol.toPrimitive</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">well-known symbols - Symbol.toStringTag</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">well-known symbols - Symbol.toStringTag, misc. built-ins</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">well-known symbols - Symbol.unscopables</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Object static methods - Object.assign</td>
+<td style="text-align: left;">lang.mixin</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Object static methods - Object.is</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Object static methods - Object.getOwnPropertySymbols</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Object static methods - Object.setPrototypeOf</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">function &quot;name&quot; property - function statements</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">function &quot;name&quot; property - function expressions</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">function &quot;name&quot; property - new Function</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">function &quot;name&quot; property - bound functions</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">function &quot;name&quot; property - variables (function)</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">function &quot;name&quot; property - object methods (function)</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">function &quot;name&quot; property - accessor properties</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">function &quot;name&quot; property - shorthand methods</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">function &quot;name&quot; property - shorthand methods (no lexical binding)</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">function &quot;name&quot; property - symbol-keyed methods</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">function &quot;name&quot; property - class statements</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">function &quot;name&quot; property - class expressions</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">function &quot;name&quot; property - variables (class)</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">function &quot;name&quot; property - object methods (class)</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">function &quot;name&quot; property - class prototype methods</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">function &quot;name&quot; property - class static methods</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">function &quot;name&quot; property - isn't writable, is configurable</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">String static methods - String.raw</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">String static methods - String.fromCodePoint</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">String.prototype methods - String.prototype.codePointAt</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">String.prototype methods - String.prototype.normalize</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">String.prototype methods - String.prototype.repeat</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">String.prototype methods - String.prototype.startsWith</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">String.prototype methods - String.prototype.endsWith</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">String.prototype methods - String.prototype.includes</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">String.prototype methods - String.prototype[Symbol.iterator]</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">String.prototype methods - String iterator prototype chain</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">RegExp.prototype properties - RegExp.prototype.flags</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">RegExp.prototype properties - RegExp.prototype[Symbol.match]</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">RegExp.prototype properties - RegExp.prototype[Symbol.replace]</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">RegExp.prototype properties - RegExp.prototype[Symbol.split]</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">RegExp.prototype properties - RegExp.prototype[Symbol.search]</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">RegExp.prototype properties - RegExp[Symbol.species]</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Array static methods - Array.from, array-like objects</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Array static methods - Array.from, generator instances</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Array static methods - Array.from, generic iterables</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Array static methods - Array.from, instances of generic iterables</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Array static methods - Array.from map function, array-like objects</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Array static methods - Array.from map function, generator instances</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Array static methods - Array.from map function, generic iterables</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Array static methods - Array.from map function, instances of iterables</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Array static methods - Array.from, iterator closing</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Array static methods - Array.of</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Array static methods - Array[Symbol.species]</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Array.prototype methods - Array.prototype.copyWithin</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Array.prototype methods - Array.prototype.find</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Array.prototype methods - Array.prototype.findIndex</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Array.prototype methods - Array.prototype.fill</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Array.prototype methods - Array.prototype.keys</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Array.prototype methods - Array.prototype.values</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Array.prototype methods - Array.prototype.entries</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Array.prototype methods - Array.prototype[Symbol.iterator]</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Array.prototype methods - Array iterator prototype chain</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Array.prototype methods - Array.prototype[Symbol.unscopables]</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Number properties - Number.isFinite</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Number properties - Number.isInteger</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Number properties - Number.isSafeInteger</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Number properties - Number.isNaN</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Number properties - Number.EPSILON</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Number properties - Number.MIN_SAFE_INTEGER</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Number properties - Number.MAX_SAFE_INTEGER</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Math methods - Math.clz32</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Math methods - Math.imul</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Math methods - Math.sign</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Math methods - Math.log10</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Math methods - Math.log2</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Math methods - Math.log1p</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Math methods - Math.expm1</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Math methods - Math.cosh</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Math methods - Math.sinh</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Math methods - Math.tanh</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Math methods - Math.acosh</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Math methods - Math.asinh</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Math methods - Math.atanh</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Math methods - Math.trunc</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Math methods - Math.fround</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Math methods - Math.cbrt</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Math methods - Math.hypot</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Array is subclassable - length property (accessing)</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Array is subclassable - length property (setting)</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Array is subclassable - correct prototype chain</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Array is subclassable - Array.isArray support</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Array is subclassable - Array.prototype.concat</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Array is subclassable - Array.prototype.filter</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Array is subclassable - Array.prototype.map</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Array is subclassable - Array.prototype.slice</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Array is subclassable - Array.prototype.splice</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Array is subclassable - Array.from</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Array is subclassable - Array.of</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">RegExp is subclassable - basic functionality</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">RegExp is subclassable - correct prototype chain</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">RegExp is subclassable - RegExp.prototype.exec</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">RegExp is subclassable - RegExp.prototype.test</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Function is subclassable - can be called</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Function is subclassable - correct prototype chain</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Function is subclassable - can be used with &quot;new&quot;</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Function is subclassable - Function.prototype.call</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Function is subclassable - Function.prototype.apply</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Function is subclassable - Function.prototype.bind</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Promise is subclassable - basic functionality</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Promise is subclassable - correct prototype chain</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Promise is subclassable - Promise.all</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Promise is subclassable - Promise.race</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">miscellaneous subclassables - Boolean is subclassable</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">miscellaneous subclassables - Number is subclassable</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">miscellaneous subclassables - String is subclassable</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">miscellaneous subclassables - Map is subclassable</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">miscellaneous subclassables - Set is subclassable</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">prototype of bound functions - basic functions</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">prototype of bound functions - generator functions</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">prototype of bound functions - arrow functions</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">prototype of bound functions - classes</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">prototype of bound functions - subclasses</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Proxy, internal 'get' calls - ToPrimitive</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Proxy, internal 'get' calls - CreateListFromArrayLike</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Proxy, internal 'get' calls - instanceof operator</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Proxy, internal 'get' calls - HasBinding</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Proxy, internal 'get' calls - CreateDynamicFunction</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Proxy, internal 'get' calls - ClassDefinitionEvaluation</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Proxy, internal 'get' calls - IteratorComplete, IteratorValue</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Proxy, internal 'get' calls - ToPropertyDescriptor</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Proxy, internal 'get' calls - Object.assign</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Proxy, internal 'get' calls - Object.defineProperties</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Proxy, internal 'get' calls - Function.prototype.bind</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Proxy, internal 'get' calls - Error.prototype.toString</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Proxy, internal 'get' calls - String.raw</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Proxy, internal 'get' calls - RegExp constructor</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Proxy, internal 'get' calls - RegExp.prototype.flags</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Proxy, internal 'get' calls - RegExp.prototype.test</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Proxy, internal 'get' calls - RegExp.prototype[Symbol.match]</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Proxy, internal 'get' calls - RegExp.prototype[Symbol.replace]</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Proxy, internal 'get' calls - RegExp.prototype[Symbol.search]</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Proxy, internal 'get' calls - RegExp.prototype[Symbol.split]</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Proxy, internal 'get' calls - Array.from</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Proxy, internal 'get' calls - Array.prototype.concat</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Proxy, internal 'get' calls - Array.prototype iteration methods</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Proxy, internal 'get' calls - Array.prototype.pop</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Proxy, internal 'get' calls - Array.prototype.reverse</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Proxy, internal 'get' calls - Array.prototype.shift</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Proxy, internal 'get' calls - Array.prototype.splice</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Proxy, internal 'get' calls - Array.prototype.toString</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Proxy, internal 'get' calls - JSON.stringify</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Proxy, internal 'get' calls - Promise resolve functions</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Proxy, internal 'get' calls - String.prototype.match</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Proxy, internal 'get' calls - String.prototype.replace</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Proxy, internal 'get' calls - String.prototype.search</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Proxy, internal 'get' calls - String.prototype.split</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Proxy, internal 'get' calls - Date.prototype.toJSON</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Proxy, internal 'set' calls - Object.assign</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Proxy, internal 'set' calls - Array.from</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Proxy, internal 'set' calls - Array.of</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Proxy, internal 'set' calls - Array.prototype.copyWithin</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Proxy, internal 'set' calls - Array.prototype.fill</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Proxy, internal 'set' calls - Array.prototype.pop</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Proxy, internal 'set' calls - Array.prototype.push</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Proxy, internal 'set' calls - Array.prototype.reverse</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Proxy, internal 'set' calls - Array.prototype.shift</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Proxy, internal 'set' calls - Array.prototype.splice</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Proxy, internal 'set' calls - Array.prototype.unshift</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Proxy, internal 'defineProperty' calls - [[Set]]</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Proxy, internal 'defineProperty' calls - SetIntegrityLevel</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Proxy, internal 'deleteProperty' calls - Array.prototype.copyWithin</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Proxy, internal 'deleteProperty' calls - Array.prototype.pop</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Proxy, internal 'deleteProperty' calls - Array.prototype.reverse</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Proxy, internal 'deleteProperty' calls - Array.prototype.shift</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Proxy, internal 'deleteProperty' calls - Array.prototype.splice</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Proxy, internal 'deleteProperty' calls - Array.prototype.unshift</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Proxy, internal 'getOwnPropertyDescriptor' calls - [[Set]]</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Proxy, internal 'getOwnPropertyDescriptor' calls - Object.assign</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Proxy, internal 'getOwnPropertyDescriptor' calls - Object.prototype.hasOwnProperty</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Proxy, internal 'getOwnPropertyDescriptor' calls - Function.prototype.bind</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Proxy, internal 'ownKeys' calls - SetIntegrityLevel</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Proxy, internal 'ownKeys' calls - TestIntegrityLevel</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Proxy, internal 'ownKeys' calls - SerializeJSONObject</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Object static methods accept primitives - Object.getPrototypeOf</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Object static methods accept primitives - Object.getOwnPropertyDescriptor</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Object static methods accept primitives - Object.getOwnPropertyNames</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Object static methods accept primitives - Object.seal</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Object static methods accept primitives - Object.freeze</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Object static methods accept primitives - Object.preventExtensions</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Object static methods accept primitives - Object.isSealed</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Object static methods accept primitives - Object.isFrozen</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Object static methods accept primitives - Object.isExtensible</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Object static methods accept primitives - Object.keys</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">own property order - for..in</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">own property order - Object.keys</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">own property order - Object.getOwnPropertyNames</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">own property order - Object.assign</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">own property order - JSON.stringify</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">own property order - JSON.parse</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">own property order - Reflect.ownKeys, string key order</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">own property order - Reflect.ownKeys, symbol key order</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">miscellaneous - no escaped reserved words as identifiers</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">miscellaneous - duplicate property names in strict mode</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">miscellaneous - no semicolon needed after do-while</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">miscellaneous - no assignments allowed in for-in head</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">miscellaneous - accessors aren't constructors</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">miscellaneous - Invalid Date</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">miscellaneous - RegExp constructor can alter flags</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">miscellaneous - built-in prototypes are not instances</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">miscellaneous - function 'length' is configurable</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">miscellaneous - String.prototype case methods, Unicode support</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">non-strict function semantics - hoisted block-level function declaration</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">non-strict function semantics - labeled function statements</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">non-strict function semantics - function statements in if-statement clauses</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>proto</strong> in object literals - basic support</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>proto</strong> in object literals - multiple <strong>proto</strong> is an error</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>proto</strong> in object literals - not a computed property</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>proto</strong> in object literals - not a shorthand property</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>proto</strong> in object literals - not a shorthand method</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Object.prototype.<strong>proto</strong> - get prototype</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Object.prototype.<strong>proto</strong> - set prototype</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Object.prototype.<strong>proto</strong> - absent from Object.create(null)</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Object.prototype.<strong>proto</strong> - present in hasOwnProperty()</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Object.prototype.<strong>proto</strong> - correct property descriptor</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Object.prototype.<strong>proto</strong> - present in Object.getOwnPropertyNames()</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">String.prototype HTML methods - existence</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">String.prototype HTML methods - tags' names are lowercase</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">String.prototype HTML methods - quotes in arguments are escaped</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">RegExp.prototype.compile</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">RegExp syntax extensions - hyphens in character sets</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">RegExp syntax extensions - invalid character escapes</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">RegExp syntax extensions - invalid control-character escapes</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">RegExp syntax extensions - invalid Unicode escapes</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">RegExp syntax extensions - invalid hexadecimal escapes</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">RegExp syntax extensions - incomplete patterns and quantifiers</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">RegExp syntax extensions - octal escape sequences</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">RegExp syntax extensions - invalid backreferences become octal escapes</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">HTML-style comments</td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
 <h1 id="contributing">Contributing</h1>
 <ul>
 <li>es5.csv, es6.csv need more work</li>

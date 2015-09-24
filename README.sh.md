@@ -109,7 +109,9 @@ for caveats you must learn both APIs, to understand if you can(not) refactor:
 ES5 features mapped to dojo API, all of these except strict mode are supported in IE9.
 
 
-$(< es5.txt clmn | md-indent)
+$((echo -e "----\t----";< es5.txt grep "." ;echo -e "----\t----")|clmn)	 
+
+
 
 Note: es5,6 features derived from compat-tables
 "
@@ -120,7 +122,7 @@ cat <<<'
 echo "
 ES6 features (TODO: mapping)
 
-$(< es6.txt clmn | md-indent)
+$((echo -e "----\t----";< es6.txt grep "." ;echo -e "----\t----")|clmn)	 
 
 # Contributing
 

@@ -361,7 +361,7 @@ well-known symbols - Symbol.toPrimitive
 well-known symbols - Symbol.toStringTag
 well-known symbols - Symbol.toStringTag, misc. built-ins
 well-known symbols - Symbol.unscopables
-Object static methods - Object.assign
+Object static methods - Object.assign	lang.mixin 	
 Object static methods - Object.is
 Object static methods - Object.getOwnPropertySymbols
 Object static methods - Object.setPrototypeOf
