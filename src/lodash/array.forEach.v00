@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# simples with [] literal
+# shell not match assigned or chained calls (see sample)
+
+grasp \
+	-e '_.forEach(_arr,$func_exp);' \
+	-R '{{_arr}}.forEach({{func_exp}});' \
+	"$@"
+
+# alternative replacement	
+# -R '({{arr}} || []).forEach({{_func_exp}});' \

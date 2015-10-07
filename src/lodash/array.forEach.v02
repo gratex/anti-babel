@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# assignment
+# hope, noone uses this in the code
+
+grasp \
+	-e '$self=_.forEach($arr,_func_exp);' \
+	-R '{{self}}=({{arr}} && {{arr}}.forEach({{_func_exp}}),{{arr}});' \
+	"$@"
+	
+

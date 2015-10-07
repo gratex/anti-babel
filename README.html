@@ -14,7 +14,8 @@
 <body>
 <h1 id="anti-babel">anti-babel</h1>
 <h2 id="tldr">TL;DR;</h2>
-<p>Refactorings from proptietary libraries code to ES5, ES6 constructions</p>
+<p>Refactorings from proptietary libraries code to ES5, ES6 constructions.</p>
+<p>NOTE: The code of scripts DOES NOT cover all possible scenarios, some usages of api may not me matched, or we just do not want to automate their usage (working on safest possible scenarios, but sometimes it is better to convert border cases by humans). You are always welcomed to CONTRIBUTE another variants.</p>
 <p>Currently available refactoring scripts:</p>
 <ul>
 <li>all</li>
@@ -23,9 +24,18 @@
 <li>dojo/hitch2bind</li>
 <li>dojo/trim</li>
 <li>js/for2map</li>
+<li>lodash/array.forEach</li>
 </ul>
 <p>Apply refactoring (on sample files)</p>
 <pre><code>&lt; samples/hitch2bind/hitch2bind.before.js hitch2bind.v03</code></pre>
+<p>Check what is changed and if behaves same (naive samples for now):</p>
+<pre><code># before: print source and results
+
+&lt; samples/lodash/array.forEach.js | tee /dev/fd/2 | node
+
+# after: print source and results
+
+&lt; samples/lodash/array.forEach.js ./src/lodash/array.forEach.v02 | tee /dev/fd/2 | node</code></pre>
 <p>Run on your project:</p>
 <pre><code># set anti-babel root to path
 AB=$PWD
@@ -41,6 +51,10 @@ $AB/src/dojo/hitch2bind.v02 -i -r .
 $AB/src/dojo/hitch2bind.v03 -i -r .
 $AB/src/dojo/trim -i -r .
 $AB/src/js/for2map.v01 -i -r .
+$AB/src/lodash/array.forEach.v00 -i -r .
+$AB/src/lodash/array.forEach.v01 -i -r .
+$AB/src/lodash/array.forEach.v02 -i -r .
+$AB/src/lodash/array.forEach.v03 -i -r .
 # review
 git diff
 

@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# simple matching anything in first param (needs null sanitation)
+# shell not match assigned or chained calls (see sample)
+
+grasp \
+	-e '_.forEach($arr,$func_exp);' \
+	-R '({{arr}} || []).forEach({{_func_exp}});' \
+	"$@"
+
+# alternative replacements
+# -R '{{arr}} && {{arr}}.forEach({{func_exp}});' \	
+# -R '({{arr}} || []).forEach({{_func_exp}});' \

@@ -4,7 +4,13 @@ echo "
 # anti-babel
 
 ## TL;DR;
-Refactorings from proptietary libraries code to ES5, ES6 constructions 
+Refactorings from proptietary libraries code to ES5, ES6 constructions.
+
+NOTE: The code of scripts DOES NOT cover all possible scenarios,
+some usages of api may not me matched, or we just do not want
+to automate their usage (working on safest possible scenarios, but sometimes it is better to convert border cases by humans).
+You are always welcomed to CONTRIBUTE another variants.
+
 
 Currently available refactoring scripts:
 
@@ -14,9 +20,20 @@ $(
 	| md-ul
 )
 
+
 Apply refactoring (on sample files)
 
 	< samples/hitch2bind/hitch2bind.before.js hitch2bind.v03
+
+Check what is changed and if behaves same (naive samples for now):
+
+	# before: print source and results
+
+	< samples/lodash/array.forEach.js | tee /dev/fd/2 | node
+	
+	# after: print source and results
+
+	< samples/lodash/array.forEach.js ./src/lodash/array.forEach.v02 | tee /dev/fd/2 | node
 
 Run on your project:
 	
