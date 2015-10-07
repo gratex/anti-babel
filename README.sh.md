@@ -21,6 +21,11 @@ $(
 )
 
 
+
+Install external tools:
+
+	npm install -g grasp 	#yes for now as global, sorry
+
 Apply refactoring (on sample files)
 
 	< samples/hitch2bind/hitch2bind.before.js hitch2bind.v03
