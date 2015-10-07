@@ -8,9 +8,6 @@ Currently available refactoring scripts:
 
 - all
 - dojo/array.map
-- dojo/array.map
-- dojo/hitch2bind
-- dojo/hitch2bind
 - dojo/hitch2bind
 - dojo/trim
 - js/for2map

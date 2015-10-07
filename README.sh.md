@@ -10,6 +10,7 @@ Currently available refactoring scripts:
 
 $(
 	git ls-files src | sed "s;\.v[0-9]*$;;" | cut -d"/" -f2- \
+	| sort -u \
 	| md-ul
 )
 
