@@ -1,6 +1,17 @@
 
 # anti-babel
 
+## TL;DR;
+Refactorings from proptietary libraries code to ES5, ES6 constructions 
+
+Currently supported refactorings
+
+- dojo/array.map
+- dojo/array.map
+- dojo/trim
+- js/for2map
+
+## Details
 There are [plenty of projects](https://github.com/addyosmani/es6-tools) to translate es6 syntax to older syntaxes.
 This allows you to write modern syntax and run on 'old machines'.
 
@@ -74,8 +85,19 @@ Example:
 
 Idea:
 
+	# clone this repo somewhere
+
+	git clone https://github.com/gratex/anti-babel
+	cd anti-babel
+
+	# add scripts to path (easier usage) # Note: this will change soon
+	export PATH=/c/Users/marcus/bin:.:/usr/local/bin:/mingw/bin:/bin:/c/ProgramData/Oracle/Java/javapath:/c/PF/Ruby193/bin:/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/c/Oracle/product/11.2.0/client_1:/c/Windows/system32:/c/Windows:/c/Windows/System32/Wbem:/c/Windows/System32/WindowsPowerShell/v1.0/:/c/Program Files (x86)/Microsoft SQL Server/100/Tools/Binn/:/c/Program Files/Microsoft SQL Server/100/Tools/Binn/:/c/Program Files/Microsoft SQL Server/100/DTS/Binn/:/c/Program Files (x86)/Microsoft Team Foundation Server 2010 Power Tools/:/c/Program Files (x86)/Microsoft Team Foundation Server 2010 Power Tools/Best Practices Analyzer/:/c/IBM/SQLLIB/BIN:/c/IBM/SQLLIB/FUNCTION:/c/Program Files/Microsoft/Web Platform Installer/:/c/Program Files (x86)/Microsoft ASP.NET/ASP.NET Web Pages/v1.0/:/c/Program Files (x86)/MiKTeX 2.9/miktex/bin/:/c/Program Files (x86)/Tesseract-OCR:/c/Program Files/nodejs/:/c/Python27:/c/Program Files (x86)/QuickTime/QTSystem/:/c/Users/marcus/AppData/Local/Pandoc/:/c/PF/GtiTools/phantomjs:/c/Users/marcus/AppData/Roaming/npm:/c/Users/marcus/AppData/Local/.meteor/:/c/dev/sts-workspace/denovius-bi/../init/xs:/c/dev/sts-workspace/denovius-bi/../init/proxy:/c/dev/sts-workspace/denovius-bi/../init/bash:/c/dev/sts-workspace/denovius-bi/../init/markdown:/c/dev/sts-workspace/denovius-bi/../init/git:/c/dev/sts-workspace/denovius-bi/../init/json:/c/dev/sts-workspace/denovius-bi/../init/xml:/c/dev/sts-workspace/denovius-bi/../init/misc:/c/dev/sts-workspace/denovius-bi/../init/http:/c/dev/sts-workspace/denovius-bi/../init/mvn:/c/dev/sts-workspace/denovius-bi/WKS/init/project:/c/dev/sts-workspace/denovius-bi/../init/project:/c/dev/sts-workspace/denovius-bi/../init/gko:/c/dev/sts-workspace/denovius-bi/../init/user_activity_monitor:/c/dev/sts-workspace/denovius-bi/WKS/init/tools:/c/dev/sts-workspace/denovius-bi/../init/node_modules/.bin:/c/dev/sts-workspace/anti-babel/src/dojo:/c/dev/sts-workspace/anti-babel/src/dojo # I'm doing dojo refactoring
+	export PATH=/c/Users/marcus/bin:.:/usr/local/bin:/mingw/bin:/bin:/c/ProgramData/Oracle/Java/javapath:/c/PF/Ruby193/bin:/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/c/Oracle/product/11.2.0/client_1:/c/Windows/system32:/c/Windows:/c/Windows/System32/Wbem:/c/Windows/System32/WindowsPowerShell/v1.0/:/c/Program Files (x86)/Microsoft SQL Server/100/Tools/Binn/:/c/Program Files/Microsoft SQL Server/100/Tools/Binn/:/c/Program Files/Microsoft SQL Server/100/DTS/Binn/:/c/Program Files (x86)/Microsoft Team Foundation Server 2010 Power Tools/:/c/Program Files (x86)/Microsoft Team Foundation Server 2010 Power Tools/Best Practices Analyzer/:/c/IBM/SQLLIB/BIN:/c/IBM/SQLLIB/FUNCTION:/c/Program Files/Microsoft/Web Platform Installer/:/c/Program Files (x86)/Microsoft ASP.NET/ASP.NET Web Pages/v1.0/:/c/Program Files (x86)/MiKTeX 2.9/miktex/bin/:/c/Program Files (x86)/Tesseract-OCR:/c/Program Files/nodejs/:/c/Python27:/c/Program Files (x86)/QuickTime/QTSystem/:/c/Users/marcus/AppData/Local/Pandoc/:/c/PF/GtiTools/phantomjs:/c/Users/marcus/AppData/Roaming/npm:/c/Users/marcus/AppData/Local/.meteor/:/c/dev/sts-workspace/denovius-bi/../init/xs:/c/dev/sts-workspace/denovius-bi/../init/proxy:/c/dev/sts-workspace/denovius-bi/../init/bash:/c/dev/sts-workspace/denovius-bi/../init/markdown:/c/dev/sts-workspace/denovius-bi/../init/git:/c/dev/sts-workspace/denovius-bi/../init/json:/c/dev/sts-workspace/denovius-bi/../init/xml:/c/dev/sts-workspace/denovius-bi/../init/misc:/c/dev/sts-workspace/denovius-bi/../init/http:/c/dev/sts-workspace/denovius-bi/../init/mvn:/c/dev/sts-workspace/denovius-bi/WKS/init/project:/c/dev/sts-workspace/denovius-bi/../init/project:/c/dev/sts-workspace/denovius-bi/../init/gko:/c/dev/sts-workspace/denovius-bi/../init/user_activity_monitor:/c/dev/sts-workspace/denovius-bi/WKS/init/tools:/c/dev/sts-workspace/denovius-bi/../init/node_modules/.bin:/c/dev/sts-workspace/anti-babel/src/dojo:/c/dev/sts-workspace/anti-babel/src/js
+	# now
+
 	cd 
 	
+	# safer to do refactoring on separate branch
 	git checkout -b refactoring-anti-babel
 
 	# run (pick a refactoring script and run)

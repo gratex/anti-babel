@@ -3,6 +3,17 @@
 echo "
 # anti-babel
 
+## TL;DR;
+Refactorings from proptietary libraries code to ES5, ES6 constructions 
+
+Currently available refactoring scripts:
+
+$(
+	git ls-files src | sed "s;\.v[0-9]*$;;" | cut -d"/" -f2- \
+	| md-ul
+)
+
+## Details
 There are [plenty of projects](https://github.com/addyosmani/es6-tools) to translate es6 syntax to older syntaxes.
 This allows you to write modern syntax and run on 'old machines'.
 
@@ -78,8 +89,19 @@ Example:
 
 Idea:
 
+	# clone this repo somewhere
+
+	git clone https://github.com/gratex/anti-babel
+	cd anti-babel
+
+	# add scripts to path (easier usage) # Note: this will change soon
+	export PATH=$PATH:$PWD/src/dojo # I'm doing dojo refactoring
+	export PATH=$PATH:$PWD/src/js
+	# now
+
 	cd $YOUR_JS_PROJECT
 	
+	# safer to do refactoring on separate branch
 	git checkout -b refactoring-anti-babel
 
 	# run (pick a refactoring script and run)
