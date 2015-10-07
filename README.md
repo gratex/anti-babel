@@ -8,6 +8,7 @@ Currently available refactoring scripts:
 
 - all
 - dojo/array.map
+- dojo/df.keys
 - dojo/hitch2bind
 - dojo/trim
 - js/for2map
@@ -26,6 +27,7 @@ Run on your project:
 
 	$AB/src/dojo/array.map.v01 -i -r .
 	$AB/src/dojo/array.map.v02 -i -r .
+	$AB/src/dojo/df.keys.v01 -i -r .
 	$AB/src/dojo/hitch2bind.v01 -i -r .
 	$AB/src/dojo/hitch2bind.v02 -i -r .
 	$AB/src/dojo/hitch2bind.v03 -i -r .
