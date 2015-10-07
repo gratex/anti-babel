@@ -1,6 +1,4 @@
 // before
-for (i = 0; i < opts.length; i++) {
-    retVal.push(opts[i].value);
-}
+retVal=opts.map(function(item){return item.value;});
 
 

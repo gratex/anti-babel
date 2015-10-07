@@ -15,13 +15,38 @@
 <h1 id="anti-babel">anti-babel</h1>
 <h2 id="tldr">TL;DR;</h2>
 <p>Refactorings from proptietary libraries code to ES5, ES6 constructions</p>
-<p>Currently supported refactorings</p>
+<p>Currently available refactoring scripts:</p>
 <ul>
+<li>all</li>
 <li>dojo/array.map</li>
 <li>dojo/array.map</li>
+<li>dojo/hitch2bind</li>
+<li>dojo/hitch2bind</li>
+<li>dojo/hitch2bind</li>
 <li>dojo/trim</li>
 <li>js/for2map</li>
 </ul>
+<p>Apply refactoring (on sample files)</p>
+<pre><code>&lt; samples/hitch2bind/hitch2bind.before.js hitch2bind.v03</code></pre>
+<p>Run on your project:</p>
+<pre><code># set anti-babel root to path
+AB=$PWD
+
+# cd to your project/js folder
+# run all or one of
+
+$AB/src/dojo/array.map.v01 -i -r .
+$AB/src/dojo/array.map.v02 -i -r .
+$AB/src/dojo/hitch2bind.v01 -i -r .
+$AB/src/dojo/hitch2bind.v02 -i -r .
+$AB/src/dojo/hitch2bind.v03 -i -r .
+$AB/src/dojo/trim -i -r .
+$AB/src/js/for2map.v01 -i -r .
+# review
+git diff
+
+# test</code></pre>
+<p>Study <a href="http://www.graspjs.com/">grasp.js</a> for CLI parameters (we pass all to underlying grasp now)</p>
 <h2 id="details">Details</h2>
 <p>There are <a href="https://github.com/addyosmani/es6-tools">plenty of projects</a> to translate es6 syntax to older syntaxes. This allows you to write modern syntax and run on 'old machines'.</p>
 <p>This project is opposite.</p>
@@ -31,71 +56,10 @@
 <p>This could help to modernize them into something more readable today.</p>
 <p>Today we are developing in dojo, so many samples may involve 'old dojo' APIs and refactoring to ES5,6 APIs, but the idea can be taken to other codes as well.</p>
 <p>To see if you can/should refactor you can use <a href="https://kangax.github.io/compat-table/es6/">compat-tables as UI</a> or <a href="https://github.com/gratex/compat-table">out CLI</a></p>
-<h2 id="goal">Goal</h2>
-<p>Provide tools/procedures/guidelines for refactoring old syntaxes and patterns to something new.</p>
-<ul>
-<li>functional programing</li>
-<li>es5,6 APIs</li>
-<li>es6 syntax</li>
-<li>...</li>
-</ul>
-<h1 id="idea-explained">Idea explained</h1>
-<h2 id="refactoring-for-cycles">refactoring <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for">for</a> cycles</h2>
-<p>We do not like them, most of them can be map, filter, reduce or any reasonable <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">array method</a>.</p>
-<h3 id="for-cycles-with-single-push-map">for cycles with single push() = map</h3>
-<p>Detector (very general):</p>
-<pre><code>grasp -e 'for(__;__;__){ __.push(_$) }' -r .</code></pre>
-<p>Refactoring (one of, simple case):</p>
-<pre><code>// before
-for (i = 0; i &lt; opts.length; i++) {
-    retVal.push(opts[i].value);
-}
-
-grasp -e 'for(/etc/profile.d/*.sh=0;/etc/profile.d/*.sh&lt;.length;/etc/profile.d/*.sh++){ .push([/etc/profile.d/*.sh].) }'    -R '{{out}}={{arr}}.map(function(item){return item.{{prop}};});'    -r .
-
-// after (formated)
-retVal = opts.map(function(item) {
-    return item.value;
-});</code></pre>
 <h2 id="dojo">dojo</h2>
 <p>We are developing in dojo. Dojo contains a lot of good ideas, but a lot of APIs is not needed anymore.</p>
-<p>Example:</p>
+<p>For Example</p>
 <p><a href="https://dojotoolkit.org/reference-guide/1.7/dojo/string/trim.html">dojo/string/trim</a> vs. <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim">String.prototype.trim</a></p>
-<h1 id="using-on-your-project">Using on your project</h1>
-<p>Idea:</p>
-<pre><code># clone this repo somewhere
-
-git clone https://github.com/gratex/anti-babel
-cd anti-babel
-
-# add scripts to path (easier usage) # Note: this will change soon
-export PATH=/c/Users/marcus/bin:.:/usr/local/bin:/mingw/bin:/bin:/c/ProgramData/Oracle/Java/javapath:/c/PF/Ruby193/bin:/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/c/Oracle/product/11.2.0/client_1:/c/Windows/system32:/c/Windows:/c/Windows/System32/Wbem:/c/Windows/System32/WindowsPowerShell/v1.0/:/c/Program Files (x86)/Microsoft SQL Server/100/Tools/Binn/:/c/Program Files/Microsoft SQL Server/100/Tools/Binn/:/c/Program Files/Microsoft SQL Server/100/DTS/Binn/:/c/Program Files (x86)/Microsoft Team Foundation Server 2010 Power Tools/:/c/Program Files (x86)/Microsoft Team Foundation Server 2010 Power Tools/Best Practices Analyzer/:/c/IBM/SQLLIB/BIN:/c/IBM/SQLLIB/FUNCTION:/c/Program Files/Microsoft/Web Platform Installer/:/c/Program Files (x86)/Microsoft ASP.NET/ASP.NET Web Pages/v1.0/:/c/Program Files (x86)/MiKTeX 2.9/miktex/bin/:/c/Program Files (x86)/Tesseract-OCR:/c/Program Files/nodejs/:/c/Python27:/c/Program Files (x86)/QuickTime/QTSystem/:/c/Users/marcus/AppData/Local/Pandoc/:/c/PF/GtiTools/phantomjs:/c/Users/marcus/AppData/Roaming/npm:/c/Users/marcus/AppData/Local/.meteor/:/c/dev/sts-workspace/denovius-bi/../init/xs:/c/dev/sts-workspace/denovius-bi/../init/proxy:/c/dev/sts-workspace/denovius-bi/../init/bash:/c/dev/sts-workspace/denovius-bi/../init/markdown:/c/dev/sts-workspace/denovius-bi/../init/git:/c/dev/sts-workspace/denovius-bi/../init/json:/c/dev/sts-workspace/denovius-bi/../init/xml:/c/dev/sts-workspace/denovius-bi/../init/misc:/c/dev/sts-workspace/denovius-bi/../init/http:/c/dev/sts-workspace/denovius-bi/../init/mvn:/c/dev/sts-workspace/denovius-bi/WKS/init/project:/c/dev/sts-workspace/denovius-bi/../init/project:/c/dev/sts-workspace/denovius-bi/../init/gko:/c/dev/sts-workspace/denovius-bi/../init/user_activity_monitor:/c/dev/sts-workspace/denovius-bi/WKS/init/tools:/c/dev/sts-workspace/denovius-bi/../init/node_modules/.bin:/c/dev/sts-workspace/anti-babel/src/dojo:/c/dev/sts-workspace/anti-babel/src/dojo # I'm doing dojo refactoring
-export PATH=/c/Users/marcus/bin:.:/usr/local/bin:/mingw/bin:/bin:/c/ProgramData/Oracle/Java/javapath:/c/PF/Ruby193/bin:/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/c/Oracle/product/11.2.0/client_1:/c/Windows/system32:/c/Windows:/c/Windows/System32/Wbem:/c/Windows/System32/WindowsPowerShell/v1.0/:/c/Program Files (x86)/Microsoft SQL Server/100/Tools/Binn/:/c/Program Files/Microsoft SQL Server/100/Tools/Binn/:/c/Program Files/Microsoft SQL Server/100/DTS/Binn/:/c/Program Files (x86)/Microsoft Team Foundation Server 2010 Power Tools/:/c/Program Files (x86)/Microsoft Team Foundation Server 2010 Power Tools/Best Practices Analyzer/:/c/IBM/SQLLIB/BIN:/c/IBM/SQLLIB/FUNCTION:/c/Program Files/Microsoft/Web Platform Installer/:/c/Program Files (x86)/Microsoft ASP.NET/ASP.NET Web Pages/v1.0/:/c/Program Files (x86)/MiKTeX 2.9/miktex/bin/:/c/Program Files (x86)/Tesseract-OCR:/c/Program Files/nodejs/:/c/Python27:/c/Program Files (x86)/QuickTime/QTSystem/:/c/Users/marcus/AppData/Local/Pandoc/:/c/PF/GtiTools/phantomjs:/c/Users/marcus/AppData/Roaming/npm:/c/Users/marcus/AppData/Local/.meteor/:/c/dev/sts-workspace/denovius-bi/../init/xs:/c/dev/sts-workspace/denovius-bi/../init/proxy:/c/dev/sts-workspace/denovius-bi/../init/bash:/c/dev/sts-workspace/denovius-bi/../init/markdown:/c/dev/sts-workspace/denovius-bi/../init/git:/c/dev/sts-workspace/denovius-bi/../init/json:/c/dev/sts-workspace/denovius-bi/../init/xml:/c/dev/sts-workspace/denovius-bi/../init/misc:/c/dev/sts-workspace/denovius-bi/../init/http:/c/dev/sts-workspace/denovius-bi/../init/mvn:/c/dev/sts-workspace/denovius-bi/WKS/init/project:/c/dev/sts-workspace/denovius-bi/../init/project:/c/dev/sts-workspace/denovius-bi/../init/gko:/c/dev/sts-workspace/denovius-bi/../init/user_activity_monitor:/c/dev/sts-workspace/denovius-bi/WKS/init/tools:/c/dev/sts-workspace/denovius-bi/../init/node_modules/.bin:/c/dev/sts-workspace/anti-babel/src/dojo:/c/dev/sts-workspace/anti-babel/src/js
-# now
-
-cd 
-
-# safer to do refactoring on separate branch
-git checkout -b refactoring-anti-babel
-
-# run (pick a refactoring script and run)
-src/js/for2map.v01
-src/dojo/trim
-# ... see src folder and file names for available refactorings
-
-
-# review manually
-git diff
-
-# run your unit tests !!!!
-# run your unit tests !!!!
-# run your unit tests !!!!
-
-# format your re-actored code
-# ????
-
-# commit 
-git commit -am [REAFCTOR] ....</code></pre>
 <h1 id="unlearn-dojo-learn-es56">'Unlearn dojo', learn es5,6</h1>
 <p>es5 features mapped to dojo apis. This is only approx mapping and for caveats you must learn both APIs, to understand if you can(not) refactor:</p>
 <p>ES5 features mapped to dojo API, all of these except strict mode are supported in IE9.</p>

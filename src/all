@@ -1,0 +1,8 @@
+#!/bin/bash
+
+for code in src/*/*
+do
+	echo "Running: $code "$@""	
+	"$code" "$@"	
+done	
+

@@ -2,7 +2,9 @@
 
 # safe variant (3 params in map means dojo for sure)
 
-grasp -e 'array.map($a,$c,$this)' \
-	-i -R '({{a}} || [] ).map({{c}}, {{this}})' \
-	-r .
+grasp \
+	-e 'array.map($a,$c,$this)' \
+	-R '({{a}} || [] ).map({{c}}, {{this}})' \
+	"$@"
+	
 

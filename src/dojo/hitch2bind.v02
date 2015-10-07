@@ -1,0 +1,10 @@
+#!/bin/bash
+
+
+
+# more general variant with 2 params, and string
+grasp \
+	-e 'lang.hitch($ctx,$ctx.$f)' \
+	-R "{{ctx}}.{{f}}.bind({{ctx}})" \
+	"$@"
+

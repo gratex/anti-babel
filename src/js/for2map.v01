@@ -2,5 +2,5 @@
 
 ## simples variant #TODO: concat to $out
 grasp -e 'for($i=0;$i<$arr.length;$i++){ $out.push($arr[$i].$prop) }'\
- 	-i -R '{{out}}={{arr}}.map(function(item){return item.{{prop}};});' \
- 	-r .
+ 	-R '{{out}}={{arr}}.map(function(item){return item.{{prop}};});' \
+ 	"$@"

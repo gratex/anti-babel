@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# simplest variant N params and string (covers 2 params as well)
+grasp \
+	-e 'lang.hitch($ctx,_str,_$args)' \ 
+	-R '{{ctx}}.{{_str | str-slice 1,-1}}.bind({{ctx}}{{args | join "," | before "," }})' \
+	"$@"

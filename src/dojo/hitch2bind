@@ -1,7 +1,0 @@
-#!/bin/bash
-
-# simplest variant 2 params and this + string
-grasp -e 'lang.hitch($ctx,_str)' -i -R "{{ctx}}.{{_str | str-slice 1,-1}}.bind({{ctx}})" -r .
-
-# more general variant with 2 params, and string
-grasp -e 'lang.hitch($ctx,$ctx.$f)' -i -R "{{ctx}}.{{f}}.bind({{ctx}})" -r .
