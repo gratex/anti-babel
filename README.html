@@ -24,6 +24,8 @@
 <li>dojo/hitch2bind</li>
 <li>dojo/trim</li>
 <li>js/for2map</li>
+<li>js/substring.length.sh</li>
+<li>js/substring.tail.sh</li>
 <li>lodash/array.forEach</li>
 </ul>
 <p>Install external tools:</p>
@@ -33,7 +35,7 @@
 <p>Check what is changed and if behaves same (naive samples for now):</p>
 <pre><code># before: print source and results
 
-&lt; samples/lodash/array.forEach.js | tee /dev/fd/2 | node
+&lt; samples/lodash/array.forEach.js tee /dev/fd/2 | node
 
 # after: print source and results
 
@@ -53,6 +55,8 @@ $AB/src/dojo/hitch2bind.v02 -i -r .
 $AB/src/dojo/hitch2bind.v03 -i -r .
 $AB/src/dojo/trim -i -r .
 $AB/src/js/for2map.v01 -i -r .
+$AB/src/js/substring.length.sh -i -r .
+$AB/src/js/substring.tail.sh -i -r .
 $AB/src/lodash/array.forEach.v00 -i -r .
 $AB/src/lodash/array.forEach.v01 -i -r .
 $AB/src/lodash/array.forEach.v02 -i -r .

@@ -34,7 +34,7 @@ Check what is changed and if behaves same (naive samples for now):
 
 	# before: print source and results
 
-	< samples/lodash/array.forEach.js | tee /dev/fd/2 | node
+	< samples/lodash/array.forEach.js tee /dev/fd/2 | node
 	
 	# after: print source and results
 

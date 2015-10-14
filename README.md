@@ -18,6 +18,8 @@ Currently available refactoring scripts:
 - dojo/hitch2bind
 - dojo/trim
 - js/for2map
+- js/substring.length.sh
+- js/substring.tail.sh
 - lodash/array.forEach
 
 
@@ -34,7 +36,7 @@ Check what is changed and if behaves same (naive samples for now):
 
 	# before: print source and results
 
-	< samples/lodash/array.forEach.js | tee /dev/fd/2 | node
+	< samples/lodash/array.forEach.js tee /dev/fd/2 | node
 	
 	# after: print source and results
 
@@ -56,6 +58,8 @@ Run on your project:
 	$AB/src/dojo/hitch2bind.v03 -i -r .
 	$AB/src/dojo/trim -i -r .
 	$AB/src/js/for2map.v01 -i -r .
+	$AB/src/js/substring.length.sh -i -r .
+	$AB/src/js/substring.tail.sh -i -r .
 	$AB/src/lodash/array.forEach.v00 -i -r .
 	$AB/src/lodash/array.forEach.v01 -i -r .
 	$AB/src/lodash/array.forEach.v02 -i -r .
