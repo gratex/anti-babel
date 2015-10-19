@@ -1,0 +1,8 @@
+
+# Trivial sample
+# still producing another type of bullshit (a=[];a=a.concat(r)) but better the original
+
+grasp \
+	-e 'for(var $k in $o){$arr.push($k);}' \
+	-R '{{arr}}={{arr}}.concat(Object.keys({{o}}))' \
+	"$@"

@@ -18,6 +18,7 @@ Currently available refactoring scripts:
 - dojo/hitch2bind
 - dojo/trim
 - js/for2map
+- js/object.keys
 - js/substring.length.sh
 - js/substring.tail.sh
 - lodash/array.forEach
@@ -58,6 +59,7 @@ Run on your project:
 	$AB/src/dojo/hitch2bind.v03 -i -r .
 	$AB/src/dojo/trim -i -r .
 	$AB/src/js/for2map.v01 -i -r .
+	$AB/src/js/object.keys.v01 -i -r .
 	$AB/src/js/substring.length.sh -i -r .
 	$AB/src/js/substring.tail.sh -i -r .
 	$AB/src/lodash/array.forEach.v00 -i -r .
