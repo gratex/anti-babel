@@ -161,6 +161,7 @@ Note: es5,6 features derived from compat-tables
 
 	node ../compat-table/cli.js es6 tests | jsontool -a name > es5.txt
 	node ../compat-table/cli.js es6 tests | jsontool -a name > es6.txt
+	node ../compat-table/cli.js es7 tests | jsontool -a name > es7.txt
 
 
 ES6 features (TODO: mapping)
@@ -763,6 +764,100 @@ RegExp syntax extensions - incomplete patterns and quantifiers|-
 RegExp syntax extensions - octal escape sequences|-
 RegExp syntax extensions - invalid backreferences become octal escapes|-
 HTML-style comments|-
+
+
+ES7 features (TODO: mapping)
+
+es | dojo
+---|-----
+exponentiation (\*\*) operator - 0|-
+exponentiation (\*\*) operator - 1|-
+Array.prototype.includes|-
+async functions - 0|-
+async functions - 1|-
+async functions - 2|-
+SIMD (Single Instruction, Multiple Data) - 0|-
+SIMD (Single Instruction, Multiple Data) - 1|-
+SIMD (Single Instruction, Multiple Data) - 2|-
+SIMD (Single Instruction, Multiple Data) - 3|-
+SIMD (Single Instruction, Multiple Data) - 4|-
+SIMD (Single Instruction, Multiple Data) - 5|-
+SIMD (Single Instruction, Multiple Data) - 6|-
+SIMD (Single Instruction, Multiple Data) - 7|-
+SIMD (Single Instruction, Multiple Data) - 8|-
+SIMD (Single Instruction, Multiple Data) - 9|-
+SIMD (Single Instruction, Multiple Data) - 10|-
+SIMD (Single Instruction, Multiple Data) - 11|-
+SIMD (Single Instruction, Multiple Data) - 12|-
+SIMD (Single Instruction, Multiple Data) - 13|-
+SIMD (Single Instruction, Multiple Data) - 14|-
+SIMD (Single Instruction, Multiple Data) - 15|-
+SIMD (Single Instruction, Multiple Data) - 16|-
+SIMD (Single Instruction, Multiple Data) - 17|-
+SIMD (Single Instruction, Multiple Data) - 18|-
+SIMD (Single Instruction, Multiple Data) - 19|-
+SIMD (Single Instruction, Multiple Data) - 20|-
+SIMD (Single Instruction, Multiple Data) - 21|-
+SIMD (Single Instruction, Multiple Data) - 22|-
+SIMD (Single Instruction, Multiple Data) - 23|-
+SIMD (Single Instruction, Multiple Data) - 24|-
+SIMD (Single Instruction, Multiple Data) - 25|-
+SIMD (Single Instruction, Multiple Data) - 26|-
+SIMD (Single Instruction, Multiple Data) - 27|-
+SIMD (Single Instruction, Multiple Data) - 28|-
+SIMD (Single Instruction, Multiple Data) - 29|-
+SIMD (Single Instruction, Multiple Data) - 30|-
+SIMD (Single Instruction, Multiple Data) - 31|-
+SIMD (Single Instruction, Multiple Data) - 32|-
+SIMD (Single Instruction, Multiple Data) - 33|-
+SIMD (Single Instruction, Multiple Data) - 34|-
+SIMD (Single Instruction, Multiple Data) - 35|-
+SIMD (Single Instruction, Multiple Data) - 36|-
+SIMD (Single Instruction, Multiple Data) - 37|-
+SIMD (Single Instruction, Multiple Data) - 38|-
+SIMD (Single Instruction, Multiple Data) - 39|-
+SIMD (Single Instruction, Multiple Data) - 40|-
+SIMD (Single Instruction, Multiple Data) - 41|-
+SIMD (Single Instruction, Multiple Data) - 42|-
+SIMD (Single Instruction, Multiple Data) - 43|-
+SIMD (Single Instruction, Multiple Data) - 44|-
+SIMD (Single Instruction, Multiple Data) - 45|-
+SIMD (Single Instruction, Multiple Data) - 46|-
+SIMD (Single Instruction, Multiple Data) - 47|-
+SIMD (Single Instruction, Multiple Data) - 48|-
+SIMD (Single Instruction, Multiple Data) - 49|-
+String trimming - 0|-
+String trimming - 1|-
+function.sent|-
+Object.values|dojox/lang/functional/object.values|-
+Object.entries|-
+Object.observe|-
+trailing commas in function syntax - 0|-
+trailing commas in function syntax - 1|-
+object rest properties|-
+object spread properties|-
+typed objects|-
+ArrayBuffer.transfer|-
+class decorators|-
+class properties|-
+call constructor|-
+String padding - 0|-
+String padding - 1|-
+bind (::) operator - 0|-
+bind (::) operator - 1|-
+do expression|-
+Object.getOwnPropertyDescriptors|-
+Map.prototype.toJSON|-
+Set.prototype.toJSON|-
+String.prototype.at|-
+array comprehensions|-
+generator comprehensions|-
+destructuring in comprehensions|-
+Reflect.Realm|-
+RegExp.escape|-
+generator functions can't be used with "new"|-
+strict fn w/ non-strict non-simple params is error|-
+nested rest destructuring|-
 
 # Contributing
 

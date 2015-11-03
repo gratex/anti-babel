@@ -111,13 +111,21 @@ Note: es5,6 features derived from compat-tables
 cat <<<'
 	node ../compat-table/cli.js es6 tests | jsontool -a name > es5.txt
 	node ../compat-table/cli.js es6 tests | jsontool -a name > es6.txt
+	node ../compat-table/cli.js es7 tests | jsontool -a name > es7.txt
 '
 echo "
 ES6 features (TODO: mapping)
 
 es | dojo
 ---|-----
-$(<es6.txt grep "." | md-escape-emphasis | tr "\t" "|" | sed "s;$;|-;" )
+$(< es6.txt grep "." | md-escape-emphasis | tr "\t" "|" | sed "s;$;|-;" )
+
+
+ES7 features (TODO: mapping)
+
+es | dojo
+---|-----
+$(< es7.txt grep "." | md-escape-emphasis | tr "\t" "|" | sed "s;$;|-;" )
 
 # Contributing
 
