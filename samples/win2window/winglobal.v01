@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# variant win.global
+
+grasp \
+        -e 'win.global' \
+        -R 'window.global' \
+        "$@"
+
