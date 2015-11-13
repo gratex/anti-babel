@@ -17,6 +17,9 @@ Currently available refactoring scripts:
 - dojo/df.keys
 - dojo/hitch2bind
 - dojo/trim
+- dojo/winbody
+- dojo/windoc
+- dojo/winglobal
 - js/for2map
 - js/object.keys
 - js/substring.length.sh
@@ -58,6 +61,9 @@ Run on your project:
 	$AB/src/dojo/hitch2bind.v02 -i -r .
 	$AB/src/dojo/hitch2bind.v03 -i -r .
 	$AB/src/dojo/trim -i -r .
+	$AB/src/dojo/winbody.v01 -i -r .
+	$AB/src/dojo/windoc.v01 -i -r .
+	$AB/src/dojo/winglobal.v01 -i -r .
 	$AB/src/js/for2map.v01 -i -r .
 	$AB/src/js/object.keys.v01 -i -r .
 	$AB/src/js/substring.length.sh -i -r .
