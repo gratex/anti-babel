@@ -1,9 +1,0 @@
-#!/bin/bash
-
-# variant win.doc
-
-grasp \
-        -e 'win.doc' \
-        -R 'window.doc' \
-        "$@"
-

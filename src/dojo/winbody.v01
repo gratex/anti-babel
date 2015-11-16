@@ -1,9 +1,0 @@
-#!/bin/bash
-
-# variant win.body()
-
-grasp \
-	-e 'win.body()' \
-	-R 'window.body()' \
-	"$@"
-
