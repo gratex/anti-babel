@@ -4,6 +4,6 @@
 
 grasp \
 	-e 'win.body()' \
-	-R 'window.body()' \
+	-R 'document.body' \
 	"$@"
 

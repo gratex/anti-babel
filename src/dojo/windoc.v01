@@ -4,6 +4,6 @@
 
 grasp \
         -e 'win.doc' \
-        -R 'window.doc' \
+        -R 'document' \
         "$@"
 
