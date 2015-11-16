@@ -1,2 +1,2 @@
 //after
-var iframes = window.doc.getElementsByTagName('iframe');
+var iframes = document.getElementsByTagName('iframe');
