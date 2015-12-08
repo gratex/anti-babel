@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# simples variant matching only single identifier
+# if v01 not run it will produce ugly (x).trim
+# this is intended for patterns line dstring.trim(x || "")
+grasp \
+	-e 'dstring.trim($expr)' \
+	-R '({{expr}}).trim()' \
+	"$@"
+

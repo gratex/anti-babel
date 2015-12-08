@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# simples variant matching only single identifier
+# TODO: how to do this with equery ? -d "dstring.trim(_ident)"
+# 
+grasp \
+	-s '*!>call[callee=(obj, [obj=#dstring][prop=#trim])].args:nth(0):matches(ident)' \
+	-R '{{call[callee=(obj, [obj=#dstring][prop=#trim])].args:nth(0)}}.trim()' \
+	"$@"
+

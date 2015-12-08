@@ -40,6 +40,10 @@ Check what is changed and if behaves same (naive samples for now):
 
 	< samples/lodash/array.forEach.js ./src/lodash/array.forEach.v02 | tee /dev/fd/2 | node
 
+	# for dojo samples use dnode
+
+	< samples/dojo/dstring.trim.js src/dojo/dstring.trim.v01  | tee x.js; dnode x.js; rm x.js
+
 Run on your project:
 	
 	# set anti-babel root to path
