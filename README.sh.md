@@ -6,6 +6,8 @@ echo "
 ## TL;DR;
 Refactorings from proptietary libraries code to ES5, ES6 constructions.
 
+See also more general project called [lebab](https://github.com/mohebifar/lebab>)
+
 NOTE: The code of scripts DOES NOT cover all possible scenarios,
 some usages of api may not me matched, or we just do not want
 to automate their usage (working on safest possible scenarios, but sometimes it is better to convert border cases by humans).

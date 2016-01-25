@@ -4,6 +4,8 @@
 ## TL;DR;
 Refactorings from proptietary libraries code to ES5, ES6 constructions.
 
+See also more general project called [lebab](https://github.com/mohebifar/lebab>)
+
 NOTE: The code of scripts DOES NOT cover all possible scenarios,
 some usages of api may not me matched, or we just do not want
 to automate their usage (working on safest possible scenarios, but sometimes it is better to convert border cases by humans).
@@ -15,8 +17,8 @@ Currently available refactoring scripts:
 - all
 - dojo/array.map
 - dojo/df.keys
+- dojo/dstring.trim
 - dojo/hitch2bind
-- dojo/trim
 - js/for2map
 - js/object.keys
 - js/substring.length.sh
@@ -43,6 +45,10 @@ Check what is changed and if behaves same (naive samples for now):
 
 	< samples/lodash/array.forEach.js ./src/lodash/array.forEach.v02 | tee /dev/fd/2 | node
 
+	# for dojo samples use dnode
+
+	< samples/dojo/dstring.trim.js src/dojo/dstring.trim.v01  | tee x.js; dnode x.js; rm x.js
+
 Run on your project:
 	
 	# set anti-babel root to path
@@ -54,10 +60,11 @@ Run on your project:
 	$AB/src/dojo/array.map.v01 -i -r .
 	$AB/src/dojo/array.map.v02 -i -r .
 	$AB/src/dojo/df.keys.v01 -i -r .
+	$AB/src/dojo/dstring.trim.v01 -i -r .
+	$AB/src/dojo/dstring.trim.v02 -i -r .
 	$AB/src/dojo/hitch2bind.v01 -i -r .
 	$AB/src/dojo/hitch2bind.v02 -i -r .
 	$AB/src/dojo/hitch2bind.v03 -i -r .
-	$AB/src/dojo/trim -i -r .
 	$AB/src/js/for2map.v01 -i -r .
 	$AB/src/js/object.keys.v01 -i -r .
 	$AB/src/js/substring.length.sh -i -r .
