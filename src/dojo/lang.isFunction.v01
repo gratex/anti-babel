@@ -1,0 +1,12 @@
+#!/bin/bash
+
+grasp \
+	-e '!lang.isFunction($x)' \
+	-R 'typeof {{x}} != "function"' \
+	"$@"
+
+grasp \
+	-e 'lang.isFunction($x)' \
+	-R 'typeof {{x}} == "function"' \
+	"$@"
+
