@@ -1,0 +1,12 @@
+#!/bin/bash
+
+grasp \
+	-e '!lang.isArray($arr)' \
+	-R '!({{arr}} instanceof Array)' \
+	"$@"
+
+grasp \
+	-e 'lang.isArray($arr)' \
+	-R '{{arr}} instanceof Array' \
+	"$@"
+
