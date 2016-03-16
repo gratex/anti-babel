@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# replace deprecated dojo/_base/lang.isArray()
+# https://dojotoolkit.org/reference-guide/1.10/dojo/isArray.html
+
+# see samples/dojo/deprecated.js
+
 grasp \
 	-e '!lang.isArray($arr)' \
 	-R '!({{arr}} instanceof Array)' \

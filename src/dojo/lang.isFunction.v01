@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# replace deprecated dojo/_base/lang.isFunction()
+# https://dojotoolkit.org/reference-guide/1.10/dojo/isFunction.html
+
+# see samples/dojo/deprecated.js
+
 grasp \
 	-e '!lang.isFunction($x)' \
 	-R 'typeof {{x}} != "function"' \
