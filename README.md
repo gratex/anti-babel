@@ -19,6 +19,8 @@ Currently available refactoring scripts:
 - dojo/df.keys
 - dojo/dstring.trim
 - dojo/hitch2bind
+- dojo/lang.isArray
+- dojo/lang.isFunction
 - js/for2map
 - js/object.keys
 - js/substring.length.sh
@@ -65,6 +67,8 @@ Run on your project:
 	$AB/src/dojo/hitch2bind.v01 -i -r .
 	$AB/src/dojo/hitch2bind.v02 -i -r .
 	$AB/src/dojo/hitch2bind.v03 -i -r .
+	$AB/src/dojo/lang.isArray.v01 -i -r .
+	$AB/src/dojo/lang.isFunction.v01 -i -r .
 	$AB/src/js/for2map.v01 -i -r .
 	$AB/src/js/object.keys.v01 -i -r .
 	$AB/src/js/substring.length.sh -i -r .
