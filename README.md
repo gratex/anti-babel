@@ -15,6 +15,7 @@ You are always welcomed to CONTRIBUTE another variants.
 Currently available refactoring scripts:
 
 - all
+- dojo/array.indexOf
 - dojo/array.map
 - dojo/df.keys
 - dojo/dstring.trim
@@ -59,6 +60,7 @@ Run on your project:
 	# cd to your project/js folder
 	# run all or one of
 
+	$AB/src/dojo/array.indexOf.v01 -i -r .
 	$AB/src/dojo/array.map.v01 -i -r .
 	$AB/src/dojo/array.map.v02 -i -r .
 	$AB/src/dojo/df.keys.v01 -i -r .

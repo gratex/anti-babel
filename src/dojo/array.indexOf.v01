@@ -1,0 +1,10 @@
+#!/bin/bash
+
+#TODO: how to write replacement with s-query?
+#	grasp -s 'call[callee=member[obj=(#array,#darray)][prop=#indexOf]]' -R ''
+#see: https://github.com/gkz/grasp/issues/93
+
+grasp \
+	-e 'array.indexOf($arr,$item)' \
+	-R '({{arr}} || []).indexOf({{item}})' \
+	"$@"
