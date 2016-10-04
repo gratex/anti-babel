@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# from 'lang.partial(functionReference, "param1")'
+# to 'functionReference.bind(null,"param1")'
+
+grasp \
+	-e 'lang.partial($a, $b)' \
+	-R '{{a}}.bind(null,{{b}})'
+	"$@"
