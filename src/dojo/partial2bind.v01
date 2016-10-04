@@ -3,6 +3,9 @@
 # from 'lang.partial(functionReference, "param1")'
 # to 'functionReference.bind(null,"param1")'
 
+# TODO: beware of partial("string") (it is equivalent of calling dojo["string"]())
+# but we do not use it
+# TODO: rewrite to squery ?
 grasp \
 	-e 'lang.partial($a, _$params)' \
 	-R '{{a}}.bind(null, {{params | join ","}})' \
