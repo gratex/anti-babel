@@ -27,6 +27,7 @@
 <li>dojo/hitch2bind</li>
 <li>dojo/lang.isArray</li>
 <li>dojo/lang.isFunction</li>
+<li>dojo/partial2bind</li>
 <li>js/for2map</li>
 <li>js/object.keys</li>
 <li>js/substring.length.sh</li>
@@ -36,7 +37,7 @@
 <p>Install external tools:</p>
 <pre><code>npm install -g grasp    #yes for now as global, sorry</code></pre>
 <p>Apply refactoring (on sample files)</p>
-<pre><code>&lt; samples/hitch2bind/hitch2bind.before.js hitch2bind.v03</code></pre>
+<pre><code>&lt; samples/hitch2bind/hitch2bind.before.js src/dojo/hitch2bind.v01 # NOTE: should apply all versions step by step</code></pre>
 <p>Check what is changed and if behaves same (naive samples for now):</p>
 <pre><code># before: print source and results
 
@@ -65,8 +66,10 @@ $AB/src/dojo/dstring.trim.v02 -i -r .
 $AB/src/dojo/hitch2bind.v01 -i -r .
 $AB/src/dojo/hitch2bind.v02 -i -r .
 $AB/src/dojo/hitch2bind.v03 -i -r .
+$AB/src/dojo/hitch2bind.v04 -i -r .
 $AB/src/dojo/lang.isArray.v01 -i -r .
 $AB/src/dojo/lang.isFunction.v01 -i -r .
+$AB/src/dojo/partial2bind.v01 -i -r .
 $AB/src/js/for2map.v01 -i -r .
 $AB/src/js/object.keys.v01 -i -r .
 $AB/src/js/substring.length.sh -i -r .
