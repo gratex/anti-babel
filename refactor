@@ -9,7 +9,7 @@
 ##	
 ## Samples:
 ##   
-##     refactor dojo/hitch2bind
+##     refactor dojo/hitch2bind ../MyProjectFolder/UI/
 
 if [ "$1" == "-h" -o  "$1" == "--help" -o "$#" -lt 2 ]
 then 
@@ -38,12 +38,16 @@ do
 	while : ; do
 		echo 1>&2 -e "Running $s: ... "
 		# run script with , replace and count and folders 
-		replaced_count=$($s -i -c --no-color --no-bold -r "$@" | clmn-sum 2 ':')	
+		replaced_count=$($s -i -c --no-color --no-bold -r "$@" | awk -F "[:]" '{s+=$2};END{print s}')	
 		echo 1>&2 -e "\treplaced: $replaced_count"
  		[ "$replaced_count" == "0" -o -z "$replaced_count" ] && break;		
 	done	
 done
-echo 1>&2 "done"	
+echo 1>&2 "Checking for broken files:"
+# check
+grasp -s "program" --silent -r "$@"
+
+echo 1>&2 "done"
 
 
 
