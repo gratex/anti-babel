@@ -1,0 +1,49 @@
+#!/bin/bash
+
+## Runs refactoring script in loops and in order
+## Version: 0.0
+## 
+## Usage: 
+## 
+##    refactor <what> <where> [<where>]
+##	
+## Samples:
+##   
+##     refactor dojo/hitch2bind
+
+if [ "$1" == "-h" -o  "$1" == "--help" -o "$#" -lt 2 ]
+then 
+	sed -n "s;^## \?;;p" "${BASH_SOURCE[0]}"
+	cd ${0%/*}
+
+	exit 1
+fi
+
+script="$1"
+shift 
+
+steps=$(ls -1 ${0%/*}/src/$script*) # v01, v02 etc...
+! [ "$steps" ] && echo 1>&2 "[ERROR] unknown script name $1, check first param" && exit 1
+
+echo 1>&2 "Steps found:"
+echo 1>&2 "$steps"
+
+# execute all steps
+for s in $steps
+do
+	# repeat the same script while it returns some replacements
+	# some scripts need to be run multiple times 
+	# because of how their grasp is coded
+	# this is by design to simplify grasp scripts	
+	while : ; do
+		echo 1>&2 -e "Running $s: ... "
+		# run script with , replace and count and folders 
+		replaced_count=$($s -i -c --no-color --no-bold -r "$@" | clmn-sum 2 ':')	
+		echo 1>&2 -e "\treplaced: $replaced_count"
+ 		[ "$replaced_count" == "0" -o -z "$replaced_count" ] && break;		
+	done	
+done
+echo 1>&2 "done"	
+
+
+
