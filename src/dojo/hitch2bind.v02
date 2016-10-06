@@ -1,8 +1,6 @@
 #!/bin/bash
 
-
-
-# more general variant with 2 params, and string
+# more general variant with 2 params, and scoped function
 grasp \
 	-e 'lang.hitch($ctx,$ctx.$f)' \
 	-R "{{ctx}}.{{f}}.bind({{ctx}})" \

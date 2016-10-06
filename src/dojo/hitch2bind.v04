@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# match all remaining hitch calls, expects second parameter is function (anonymous or named)
+# variant with N params and function (covers 2 params as well)
+grasp \
+	-e 'lang.hitch($ctx,$f,_$args)' \
+	-R '{{f}}.bind({{ctx}}{{args | join ", " | before ", " }})' \
+	"$@"

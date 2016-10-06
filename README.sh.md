@@ -30,7 +30,7 @@ Install external tools:
 
 Apply refactoring (on sample files)
 
-	< samples/hitch2bind/hitch2bind.before.js hitch2bind.v03
+	< samples/hitch2bind/hitch2bind.before.js src/dojo/hitch2bind.v01 # NOTE: should apply all versions step by step
 
 Check what is changed and if behaves same (naive samples for now):
 
