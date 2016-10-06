@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# FIXME: still buggy, produces unparseable JS files
 # match all remaining hitch calls, expects second parameter is function (anonymous or named)
 # variant with N params and function (covers 2 params as well)
 grasp \
