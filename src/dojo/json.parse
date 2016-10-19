@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# from 'JSON.parse('{"hello":"world"}', true)'
+# to 'JSON.parse('{"hello":"world"}')'
+
+grasp \
+	-e 'JSON.parse($a, _$param)' \
+	-R 'JSON.parse({{a}})' \
+	"$@"
