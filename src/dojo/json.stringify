@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# from 'JSON.stringify({"hello":"world"});'
+# to 'JSON.parse({"hello":"world"})'
+
+grasp \
+	-e 'JSON.stringify($a)' \
+	-R 'JSON.stringify({{a}})' \
+	"$@"
