@@ -1,8 +1,5 @@
 // before
-var retVal=[];
-for(i=0;i<item.length;i++){
-	retVal.push(item[i].value);
+var retVal = [];
+for (i = 0; i < arr.length; i++) {
+  retVal.push(arr[i].value);
 }
-
-
-
