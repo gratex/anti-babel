@@ -25,8 +25,8 @@ Currently available refactoring scripts:
 - dojo/partial2bind
 - js/for2map
 - js/object.keys
-- js/substring.length.sh
-- js/substring.tail.sh
+- js/substring.length
+- js/substring.tail
 - lodash/array.forEach
 
 
@@ -75,9 +75,11 @@ Run on your project:
 	$AB/src/dojo/lang.isFunction.v01 -i -r .
 	$AB/src/dojo/partial2bind.v01 -i -r .
 	$AB/src/js/for2map.v01 -i -r .
+	$AB/src/js/for2map.v02 -i -r .
+	$AB/src/js/for2map.v03 -i -r .
 	$AB/src/js/object.keys.v01 -i -r .
-	$AB/src/js/substring.length.sh -i -r .
-	$AB/src/js/substring.tail.sh -i -r .
+	$AB/src/js/substring.length -i -r .
+	$AB/src/js/substring.tail -i -r .
 	$AB/src/lodash/array.forEach.v00 -i -r .
 	$AB/src/lodash/array.forEach.v01 -i -r .
 	$AB/src/lodash/array.forEach.v02 -i -r .

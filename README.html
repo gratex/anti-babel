@@ -1,17 +1,236 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
 <head>
-  <meta charset="utf-8">
-  <meta name="generator" content="pandoc">
-  <title></title>
-  <style type="text/css">code{white-space: pre;}</style>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>-</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <style type="text/css">
+
+
+
+
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video
+{
+margin: 0;
+padding: 0;
+border: 0;
+}
+
+body {
+font-family: Helvetica, arial, freesans, clean, sans-serif;
+font-size: 14px;
+line-height: 1.6;
+color: #333;
+background-color: #fff;
+padding: 20px;
+max-width: 960px;
+margin: 0 auto;
+}
+body>*:first-child {
+margin-top: 0 !important;
+}
+body>*:last-child {
+margin-bottom: 0 !important;
+}
+
+p,blockquote,ul,ol,dl,table,pre {
+margin: 15px 0;
+}
+
+h1,h2,h3,h4,h5,h6 {
+margin: 20px 0 10px;
+padding: 0;
+font-weight: bold;
+-webkit-font-smoothing: antialiased;
+}
+h1 tt,h1 code,h2 tt,h2 code,h3 tt,h3 code,h4 tt,h4 code,h5 tt,h5 code,h6 tt,h6 code
+{
+font-size: inherit;
+}
+h1 {
+font-size: 28px;
+color: #000;
+}
+h2 {
+font-size: 24px;
+border-bottom: 1px solid #ccc;
+color: #000;
+}
+h3 {
+font-size: 18px;
+}
+h4 {
+font-size: 16px;
+}
+h5 {
+font-size: 14px;
+}
+h6 {
+color: #777;
+font-size: 14px;
+}
+body>h2:first-child,body>h1:first-child,body>h1:first-child+h2,body>h3:first-child,body>h4:first-child,body>h5:first-child,body>h6:first-child
+{
+margin-top: 0;
+padding-top: 0;
+}
+a:first-child h1,a:first-child h2,a:first-child h3,a:first-child h4,a:first-child h5,a:first-child h6
+{
+margin-top: 0;
+padding-top: 0;
+}
+h1+p,h2+p,h3+p,h4+p,h5+p,h6+p {
+margin-top: 10px;
+}
+
+a {
+color: #4183C4;
+text-decoration: none;
+}
+a:hover {
+text-decoration: underline;
+}
+
+ul,ol {
+padding-left: 30px;
+}
+ul li>:first-child,ol li>:first-child,ul li ul:first-of-type,ol li ol:first-of-type,ul li ol:first-of-type,ol li ul:first-of-type
+{
+margin-top: 0px;
+}
+ul ul,ul ol,ol ol,ol ul {
+margin-bottom: 0;
+}
+dl {
+padding: 0;
+}
+dl dt {
+font-size: 14px;
+font-weight: bold;
+font-style: italic;
+padding: 0;
+margin: 15px 0 5px;
+}
+dl dt:first-child {
+padding: 0;
+}
+dl dt>:first-child {
+margin-top: 0px;
+}
+dl dt>:last-child {
+margin-bottom: 0px;
+}
+dl dd {
+margin: 0 0 15px;
+padding: 0 15px;
+}
+dl dd>:first-child {
+margin-top: 0px;
+}
+dl dd>:last-child {
+margin-bottom: 0px;
+}
+
+pre,code,tt {
+font-size: 12px;
+font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+code,tt {
+margin: 0 0px;
+padding: 0px 0px;
+white-space: nowrap;
+border: 1px solid #eaeaea;
+background-color: #f8f8f8;
+border-radius: 3px;
+}
+pre>code {
+margin: 0;
+padding: 0;
+white-space: pre;
+border: none;
+background: transparent;
+}
+pre {
+background-color: #f8f8f8;
+border: 1px solid #ccc;
+font-size: 13px;
+line-height: 19px;
+overflow: auto;
+padding: 6px 10px;
+border-radius: 3px;
+}
+pre code,pre tt {
+background-color: transparent;
+border: none;
+}
+
+blockquote {
+border-left: 4px solid #DDD;
+padding: 0 15px;
+color: #777;
+}
+blockquote>:first-child {
+margin-top: 0px;
+}
+blockquote>:last-child {
+margin-bottom: 0px;
+}
+
+hr {
+clear: both;
+margin: 15px 0;
+height: 0px;
+overflow: hidden;
+border: none;
+background: transparent;
+border-bottom: 4px solid #ddd;
+padding: 0;
+}
+
+table th {
+font-weight: bold;
+}
+table th,table td {
+border: 1px solid #ccc;
+padding: 6px 13px;
+}
+table tr {
+border-top: 1px solid #ccc;
+background-color: #fff;
+}
+table tr:nth-child(2n) {
+background-color: #f8f8f8;
+}
+
+img {
+max-width: 100%;
+}
+
+img {
+display: block;
+margin: 10px;
+}
+td.lineNumbers {
+width: 5px;
+}
+td.sourceCode {
+padding-left: 2px;
+}</style>
   <!--[if lt IE 9]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
-  <link href="data:text/css,%2F%2A%20GitHub%20stylesheet%20for%20MarkdownPad%20%28http%3A%2F%2Fmarkdownpad%2Ecom%29%20%2A%2F%0A%2F%2A%20Author%3A%20Nicolas%20Hery%20%2D%20http%3A%2F%2Fnicolashery%2Ecom%20%2A%2F%0A%2F%2A%20Version%3A%2029d1c5bc36da364ad5aa86946d420b7bbc54a253%20%2A%2F%0A%2F%2A%20Source%3A%20https%3A%2F%2Fgithub%2Ecom%2Fnicolahery%2Fmarkdownpad%2Dgithub%20%2A%2F%0A%0A%2F%2A%20RESET%0A%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%2A%2F%0Ahtml%2Cbody%2Cdiv%2Cspan%2Capplet%2Cobject%2Ciframe%2Ch1%2Ch2%2Ch3%2Ch4%2Ch5%2Ch6%2Cp%2Cblockquote%2Cpre%2Ca%2Cabbr%2Cacronym%2Caddress%2Cbig%2Ccite%2Ccode%2Cdel%2Cdfn%2Cem%2Cimg%2Cins%2Ckbd%2Cq%2Cs%2Csamp%2Csmall%2Cstrike%2Cstrong%2Csub%2Csup%2Ctt%2Cvar%2Cb%2Cu%2Ci%2Ccenter%2Cdl%2Cdt%2Cdd%2Col%2Cul%2Cli%2Cfieldset%2Cform%2Clabel%2Clegend%2Ctable%2Ccaption%2Ctbody%2Ctfoot%2Cthead%2Ctr%2Cth%2Ctd%2Carticle%2Caside%2Ccanvas%2Cdetails%2Cembed%2Cfigure%2Cfigcaption%2Cfooter%2Cheader%2Chgroup%2Cmenu%2Cnav%2Coutput%2Cruby%2Csection%2Csummary%2Ctime%2Cmark%2Caudio%2Cvideo%0A%09%7B%0A%09margin%3A%200%3B%0A%09padding%3A%200%3B%0A%09border%3A%200%3B%0A%7D%0A%0A%2F%2A%20BODY%0A%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%2A%2F%0Abody%20%7B%0A%09font%2Dfamily%3A%20Helvetica%2C%20arial%2C%20freesans%2C%20clean%2C%20sans%2Dserif%3B%0A%09font%2Dsize%3A%2014px%3B%0A%09line%2Dheight%3A%201%2E6%3B%0A%09color%3A%20%23333%3B%0A%09background%2Dcolor%3A%20%23fff%3B%0A%09padding%3A%2020px%3B%0A%09max%2Dwidth%3A%20960px%3B%0A%09margin%3A%200%20auto%3B%0A%7D%0A%0Abody%3E%2A%3Afirst%2Dchild%20%7B%0A%09margin%2Dtop%3A%200%20%21important%3B%0A%7D%0A%0Abody%3E%2A%3Alast%2Dchild%20%7B%0A%09margin%2Dbottom%3A%200%20%21important%3B%0A%7D%0A%0A%2F%2A%20BLOCKS%0A%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%2A%2F%0Ap%2Cblockquote%2Cul%2Col%2Cdl%2Ctable%2Cpre%20%7B%0A%09margin%3A%2015px%200%3B%0A%7D%0A%0A%2F%2A%20HEADERS%0A%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%2A%2F%0Ah1%2Ch2%2Ch3%2Ch4%2Ch5%2Ch6%20%7B%0A%09margin%3A%2020px%200%2010px%3B%0A%09padding%3A%200%3B%0A%09font%2Dweight%3A%20bold%3B%0A%09%2Dwebkit%2Dfont%2Dsmoothing%3A%20antialiased%3B%0A%7D%0A%0Ah1%20tt%2Ch1%20code%2Ch2%20tt%2Ch2%20code%2Ch3%20tt%2Ch3%20code%2Ch4%20tt%2Ch4%20code%2Ch5%20tt%2Ch5%20code%2Ch6%20tt%2Ch6%20code%0A%09%7B%0A%09font%2Dsize%3A%20inherit%3B%0A%7D%0A%0Ah1%20%7B%0A%09font%2Dsize%3A%2028px%3B%0A%09color%3A%20%23000%3B%0A%7D%0A%0Ah2%20%7B%0A%09font%2Dsize%3A%2024px%3B%0A%09border%2Dbottom%3A%201px%20solid%20%23ccc%3B%0A%09color%3A%20%23000%3B%0A%7D%0A%0Ah3%20%7B%0A%09font%2Dsize%3A%2018px%3B%0A%7D%0A%0Ah4%20%7B%0A%09font%2Dsize%3A%2016px%3B%0A%7D%0A%0Ah5%20%7B%0A%09font%2Dsize%3A%2014px%3B%0A%7D%0A%0Ah6%20%7B%0A%09color%3A%20%23777%3B%0A%09font%2Dsize%3A%2014px%3B%0A%7D%0A%0Abody%3Eh2%3Afirst%2Dchild%2Cbody%3Eh1%3Afirst%2Dchild%2Cbody%3Eh1%3Afirst%2Dchild%2Bh2%2Cbody%3Eh3%3Afirst%2Dchild%2Cbody%3Eh4%3Afirst%2Dchild%2Cbody%3Eh5%3Afirst%2Dchild%2Cbody%3Eh6%3Afirst%2Dchild%0A%09%7B%0A%09margin%2Dtop%3A%200%3B%0A%09padding%2Dtop%3A%200%3B%0A%7D%0A%0Aa%3Afirst%2Dchild%20h1%2Ca%3Afirst%2Dchild%20h2%2Ca%3Afirst%2Dchild%20h3%2Ca%3Afirst%2Dchild%20h4%2Ca%3Afirst%2Dchild%20h5%2Ca%3Afirst%2Dchild%20h6%0A%09%7B%0A%09margin%2Dtop%3A%200%3B%0A%09padding%2Dtop%3A%200%3B%0A%7D%0A%0Ah1%2Bp%2Ch2%2Bp%2Ch3%2Bp%2Ch4%2Bp%2Ch5%2Bp%2Ch6%2Bp%20%7B%0A%09margin%2Dtop%3A%2010px%3B%0A%7D%0A%0A%2F%2A%20LINKS%0A%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%2A%2F%0Aa%20%7B%0A%09color%3A%20%234183C4%3B%0A%09text%2Ddecoration%3A%20none%3B%0A%7D%0A%0Aa%3Ahover%20%7B%0A%09text%2Ddecoration%3A%20underline%3B%0A%7D%0A%0A%2F%2A%20LISTS%0A%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%2A%2F%0Aul%2Col%20%7B%0A%09padding%2Dleft%3A%2030px%3B%0A%7D%0A%0Aul%20li%3E%3Afirst%2Dchild%2Col%20li%3E%3Afirst%2Dchild%2Cul%20li%20ul%3Afirst%2Dof%2Dtype%2Col%20li%20ol%3Afirst%2Dof%2Dtype%2Cul%20li%20ol%3Afirst%2Dof%2Dtype%2Col%20li%20ul%3Afirst%2Dof%2Dtype%0A%09%7B%0A%09margin%2Dtop%3A%200px%3B%0A%7D%0A%0Aul%20ul%2Cul%20ol%2Col%20ol%2Col%20ul%20%7B%0A%09margin%2Dbottom%3A%200%3B%0A%7D%0A%0Adl%20%7B%0A%09padding%3A%200%3B%0A%7D%0A%0Adl%20dt%20%7B%0A%09font%2Dsize%3A%2014px%3B%0A%09font%2Dweight%3A%20bold%3B%0A%09font%2Dstyle%3A%20italic%3B%0A%09padding%3A%200%3B%0A%09margin%3A%2015px%200%205px%3B%0A%7D%0A%0Adl%20dt%3Afirst%2Dchild%20%7B%0A%09padding%3A%200%3B%0A%7D%0A%0Adl%20dt%3E%3Afirst%2Dchild%20%7B%0A%09margin%2Dtop%3A%200px%3B%0A%7D%0A%0Adl%20dt%3E%3Alast%2Dchild%20%7B%0A%09margin%2Dbottom%3A%200px%3B%0A%7D%0A%0Adl%20dd%20%7B%0A%09margin%3A%200%200%2015px%3B%0A%09padding%3A%200%2015px%3B%0A%7D%0A%0Adl%20dd%3E%3Afirst%2Dchild%20%7B%0A%09margin%2Dtop%3A%200px%3B%0A%7D%0A%0Adl%20dd%3E%3Alast%2Dchild%20%7B%0A%09margin%2Dbottom%3A%200px%3B%0A%7D%0A%0A%2F%2A%20CODE%0A%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%2A%2F%0Apre%2Ccode%2Ctt%20%7B%0A%09font%2Dsize%3A%2012px%3B%0A%09font%2Dfamily%3A%20Consolas%2C%20%22Liberation%20Mono%22%2C%20Courier%2C%20monospace%3B%0A%7D%0A%0Acode%2Ctt%20%7B%0A%09margin%3A%200%200px%3B%0A%09padding%3A%200px%200px%3B%0A%09white%2Dspace%3A%20nowrap%3B%0A%09border%3A%201px%20solid%20%23eaeaea%3B%0A%09background%2Dcolor%3A%20%23f8f8f8%3B%0A%09border%2Dradius%3A%203px%3B%0A%7D%0A%0Apre%3Ecode%20%7B%0A%09margin%3A%200%3B%0A%09padding%3A%200%3B%0A%09white%2Dspace%3A%20pre%3B%0A%09border%3A%20none%3B%0A%09background%3A%20transparent%3B%0A%7D%0A%0Apre%20%7B%0A%09background%2Dcolor%3A%20%23f8f8f8%3B%0A%09border%3A%201px%20solid%20%23ccc%3B%0A%09font%2Dsize%3A%2013px%3B%0A%09line%2Dheight%3A%2019px%3B%0A%09overflow%3A%20auto%3B%0A%09padding%3A%206px%2010px%3B%0A%09border%2Dradius%3A%203px%3B%0A%7D%0A%0Apre%20code%2Cpre%20tt%20%7B%0A%09background%2Dcolor%3A%20transparent%3B%0A%09border%3A%20none%3B%0A%7D%0A%0A%2F%2A%20QUOTES%0A%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%2A%2F%0Ablockquote%20%7B%0A%09border%2Dleft%3A%204px%20solid%20%23DDD%3B%0A%09padding%3A%200%2015px%3B%0A%09color%3A%20%23777%3B%0A%7D%0A%0Ablockquote%3E%3Afirst%2Dchild%20%7B%0A%09margin%2Dtop%3A%200px%3B%0A%7D%0A%0Ablockquote%3E%3Alast%2Dchild%20%7B%0A%09margin%2Dbottom%3A%200px%3B%0A%7D%0A%0A%2F%2A%20HORIZONTAL%20RULES%0A%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%2A%2F%0Ahr%20%7B%0A%09clear%3A%20both%3B%0A%09margin%3A%2015px%200%3B%0A%09height%3A%200px%3B%0A%09overflow%3A%20hidden%3B%0A%09border%3A%20none%3B%0A%09background%3A%20transparent%3B%0A%09border%2Dbottom%3A%204px%20solid%20%23ddd%3B%0A%09padding%3A%200%3B%0A%7D%0A%0A%2F%2A%20TABLES%0A%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%2A%2F%0Atable%20th%20%7B%0A%09font%2Dweight%3A%20bold%3B%0A%7D%0A%0Atable%20th%2Ctable%20td%20%7B%0A%09border%3A%201px%20solid%20%23ccc%3B%0A%09padding%3A%206px%2013px%3B%0A%7D%0A%0Atable%20tr%20%7B%0A%09border%2Dtop%3A%201px%20solid%20%23ccc%3B%0A%09background%2Dcolor%3A%20%23fff%3B%0A%7D%0A%0Atable%20tr%3Anth%2Dchild%282n%29%20%7B%0A%09background%2Dcolor%3A%20%23f8f8f8%3B%0A%7D%0A%0A%2F%2A%20IMAGES%0A%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%2A%2F%0Aimg%20%7B%0A%09max%2Dwidth%3A%20100%25%3B%0A%7D%0A%0A%2F%2A%20CUSTOM%20by%20gti%2C%20maybe%20to%20separate%20file%0A%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%0A%2A%2F%0Aimg%20%7B%0A%09display%3A%20block%3B%0A%09margin%3A%2010px%3B%0A%7D%0A%0Atd%2ElineNumbers%20%7B%0A%09width%3A%205px%3B%0A%7D%0A%0Atd%2EsourceCode%20%7B%0A%09padding%2Dleft%3A%202px%3B%0A%7D" rel="stylesheet">
 </head>
 <body>
-<p># anti-babel</p>
+<h1 id="anti-babel">anti-babel</h1>
 <h2 id="tldr">TL;DR;</h2>
 <p>Refactorings from proptietary libraries code to ES5, ES6 constructions.</p>
 <p>See also more general project called <a href="https://github.com/mohebifar/lebab">lebab</a></p>
@@ -29,8 +248,8 @@
 <li>dojo/partial2bind</li>
 <li>js/for2map</li>
 <li>js/object.keys</li>
-<li>js/substring.length.sh</li>
-<li>js/substring.tail.sh</li>
+<li>js/substring.length</li>
+<li>js/substring.tail</li>
 <li>lodash/array.forEach</li>
 </ul>
 <p>Install external tools:</p>
@@ -70,9 +289,11 @@ $AB/src/dojo/lang.isArray.v01 -i -r .
 $AB/src/dojo/lang.isFunction.v01 -i -r .
 $AB/src/dojo/partial2bind.v01 -i -r .
 $AB/src/js/for2map.v01 -i -r .
+$AB/src/js/for2map.v02 -i -r .
+$AB/src/js/for2map.v03 -i -r .
 $AB/src/js/object.keys.v01 -i -r .
-$AB/src/js/substring.length.sh -i -r .
-$AB/src/js/substring.tail.sh -i -r .
+$AB/src/js/substring.length -i -r .
+$AB/src/js/substring.tail -i -r .
 $AB/src/lodash/array.forEach.v00 -i -r .
 $AB/src/lodash/array.forEach.v01 -i -r .
 $AB/src/lodash/array.forEach.v02 -i -r .
@@ -83,172 +304,172 @@ git diff
 # test</code></pre>
 <p>Study <a href="http://www.graspjs.com/">grasp.js</a> for CLI parameters (we pass all to underlying grasp now)</p>
 <h2 id="details">Details</h2>
-<p>There are <a href="https://github.com/addyosmani/es6-tools">plenty of projects</a> to translate es6 syntax to older syntaxes. This allows you to write modern syntax and run on 'old machines'.</p>
+<p>There are <a href="https://github.com/addyosmani/es6-tools">plenty of projects</a> to translate es6 syntax to older syntaxes. This allows you to write modern syntax and run on ‘old machines’.</p>
 <p>This project is opposite.</p>
-<p>Helping you to CONVERT OLD CODE BASE TO NEW API AND SYNTAX. (hence anti- in the name and <a href="https://babeljs.io">babel</a> as one of 'them'.)</p>
+<p>Helping you to CONVERT OLD CODE BASE TO NEW API AND SYNTAX. (hence anti- in the name and <a href="https://babeljs.io">babel</a> as one of ‘them’.)</p>
 <h2 id="background">Background</h2>
-<p>We are writing JavaScript from 'dark ages' (somewhere 19XX), and we are running big projects, this means we have to maintain them, for ages sometimes.</p>
+<p>We are writing JavaScript from ‘dark ages’ (somewhere 19XX), and we are running big projects, this means we have to maintain them, for ages sometimes.</p>
 <p>This could help to modernize them into something more readable today.</p>
-<p>Today we are developing in dojo, so many samples may involve 'old dojo' APIs and refactoring to ES5,6 APIs, but the idea can be taken to other codes as well.</p>
+<p>Today we are developing in dojo, so many samples may involve ‘old dojo’ APIs and refactoring to ES5,6 APIs, but the idea can be taken to other codes as well.</p>
 <p>To see if you can/should refactor you can use <a href="https://kangax.github.io/compat-table/es6/">compat-tables as UI</a> or <a href="https://github.com/gratex/compat-table">out CLI</a></p>
 <h2 id="dojo">dojo</h2>
 <p>We are developing in dojo. Dojo contains a lot of good ideas, but a lot of APIs is not needed anymore.</p>
 <p>For Example</p>
 <p><a href="https://dojotoolkit.org/reference-guide/1.7/dojo/string/trim.html">dojo/string/trim</a> vs. <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim">String.prototype.trim</a></p>
-<h1 id="unlearn-dojo-learn-es56">'Unlearn dojo', learn es5,6</h1>
+<h1 id="unlearn-dojo-learn-es56">‘Unlearn dojo’, learn es5,6</h1>
 <p>es5 features mapped to dojo apis. This is only approx mapping and for caveats you must learn both APIs, to understand if you can(not) refactor:</p>
 <p>ES5 features mapped to dojo API, all of these except strict mode are supported in IE9.</p>
 <table>
 <thead>
 <tr class="header">
-<th style="text-align: left;">es</th>
-<th style="text-align: left;">dojo</th>
+<th>es</th>
+<th>dojo</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">Object.create</td>
-<td style="text-align: left;">-</td>
+<td>Object.create</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Object.defineProperty</td>
-<td style="text-align: left;">-</td>
+<td>Object.defineProperty</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Object.defineProperties</td>
-<td style="text-align: left;">-</td>
+<td>Object.defineProperties</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Object.getPrototypeOf</td>
-<td style="text-align: left;">-</td>
+<td>Object.getPrototypeOf</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Object.keys</td>
-<td style="text-align: left;">df.keys</td>
+<td>Object.keys</td>
+<td>df.keys</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Object.seal</td>
-<td style="text-align: left;">-</td>
+<td>Object.seal</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Object.freeze</td>
-<td style="text-align: left;">-</td>
+<td>Object.freeze</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Object.preventExtensions</td>
-<td style="text-align: left;">-</td>
+<td>Object.preventExtensions</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Object.isSealed</td>
-<td style="text-align: left;">-</td>
+<td>Object.isSealed</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Object.isFrozen</td>
-<td style="text-align: left;">-</td>
+<td>Object.isFrozen</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Object.isExtensible</td>
-<td style="text-align: left;">-</td>
+<td>Object.isExtensible</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Object.getOwnPropertyDescriptor</td>
-<td style="text-align: left;">-</td>
+<td>Object.getOwnPropertyDescriptor</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Object.getOwnPropertyNames</td>
-<td style="text-align: left;">-</td>
+<td>Object.getOwnPropertyNames</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Date.prototype.toISOString</td>
-<td style="text-align: left;">date/stamp.toISOString</td>
+<td>Date.prototype.toISOString</td>
+<td>date/stamp.toISOString</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Date.now</td>
-<td style="text-align: left;">-</td>
+<td>Date.now</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Array.isArray</td>
-<td style="text-align: left;">_base/lang.isArray</td>
+<td>Array.isArray</td>
+<td>_base/lang.isArray</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">JSON</td>
-<td style="text-align: left;">json</td>
+<td>JSON</td>
+<td>json</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Function.prototype.bind</td>
-<td style="text-align: left;">_base/lang.hitch, _base/lang.partial</td>
+<td>Function.prototype.bind</td>
+<td>_base/lang.hitch, _base/lang.partial</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">String.prototype.trim</td>
-<td style="text-align: left;">_base/lang.trim</td>
+<td>String.prototype.trim</td>
+<td>_base/lang.trim</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Array.prototype.indexOf</td>
-<td style="text-align: left;">_base/array.indexOf</td>
+<td>Array.prototype.indexOf</td>
+<td>_base/array.indexOf</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Array.prototype.lastIndexOf</td>
-<td style="text-align: left;">_base/array.lastIndexOf</td>
+<td>Array.prototype.lastIndexOf</td>
+<td>_base/array.lastIndexOf</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Array.prototype.every</td>
-<td style="text-align: left;">_base/array.every</td>
+<td>Array.prototype.every</td>
+<td>_base/array.every</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Array.prototype.some</td>
-<td style="text-align: left;">_base/array.some</td>
+<td>Array.prototype.some</td>
+<td>_base/array.some</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Array.prototype.forEach</td>
-<td style="text-align: left;">_base/array.forEach</td>
+<td>Array.prototype.forEach</td>
+<td>_base/array.forEach</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Array.prototype.map</td>
-<td style="text-align: left;">_base/array.map</td>
+<td>Array.prototype.map</td>
+<td>_base/array.map</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Array.prototype.filter</td>
-<td style="text-align: left;">_base/array.filter</td>
+<td>Array.prototype.filter</td>
+<td>_base/array.filter</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Array.prototype.reduce</td>
-<td style="text-align: left;">lang/functional/reduce</td>
+<td>Array.prototype.reduce</td>
+<td>lang/functional/reduce</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Array.prototype.reduceRight</td>
-<td style="text-align: left;">lang/functional/reduceRight</td>
+<td>Array.prototype.reduceRight</td>
+<td>lang/functional/reduceRight</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Getter in property initializer</td>
-<td style="text-align: left;">-</td>
+<td>Getter in property initializer</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Setter in property initializer</td>
-<td style="text-align: left;">-</td>
+<td>Setter in property initializer</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Property access on strings</td>
-<td style="text-align: left;">-</td>
+<td>Property access on strings</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Reserved words as property names</td>
-<td style="text-align: left;">-</td>
+<td>Reserved words as property names</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Zero-width chars in identifiers</td>
-<td style="text-align: left;">-</td>
+<td>Zero-width chars in identifiers</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">parseInt() ignores leading zeros</td>
-<td style="text-align: left;">-</td>
+<td>parseInt() ignores leading zeros</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Immutable undefined</td>
-<td style="text-align: left;">-</td>
+<td>Immutable undefined</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Strict mode</td>
-<td style="text-align: left;">-</td>
+<td>Strict mode</td>
+<td>-</td>
 </tr>
 </tbody>
 </table>
@@ -258,2396 +479,2400 @@ node ../compat-table/cli.js es6 tests | jsontool -a name &gt; es6.txt
 node ../compat-table/cli.js es7 tests | jsontool -a name &gt; es7.txt</code></pre>
 <p>ES6 features (TODO: mapping)</p>
 <table>
+<colgroup>
+<col style="width: 37%"></col>
+<col style="width: 62%"></col>
+</colgroup>
 <thead>
 <tr class="header">
-<th style="text-align: left;">es</th>
-<th style="text-align: left;">dojo</th>
+<th>es</th>
+<th>dojo</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">proper tail calls (tail call optimisation) - direct recursion</td>
-<td style="text-align: left;">-</td>
+<td>proper tail calls (tail call optimisation) - direct recursion</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">proper tail calls (tail call optimisation) - mutual recursion</td>
-<td style="text-align: left;">-</td>
+<td>proper tail calls (tail call optimisation) - mutual recursion</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">default function parameters - basic functionality</td>
-<td style="text-align: left;">-</td>
+<td>default function parameters - basic functionality</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">default function parameters - explicit undefined defers to the default</td>
-<td style="text-align: left;">-</td>
+<td>default function parameters - explicit undefined defers to the default</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">default function parameters - defaults can refer to previous params</td>
-<td style="text-align: left;">-</td>
+<td>default function parameters - defaults can refer to previous params</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">default function parameters - arguments object interaction</td>
-<td style="text-align: left;">-</td>
+<td>default function parameters - arguments object interaction</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">default function parameters - temporal dead zone</td>
-<td style="text-align: left;">-</td>
+<td>default function parameters - temporal dead zone</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">default function parameters - separate scope</td>
-<td style="text-align: left;">-</td>
+<td>default function parameters - separate scope</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">default function parameters - new Function() support</td>
-<td style="text-align: left;">-</td>
+<td>default function parameters - new Function() support</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">rest parameters - basic functionality</td>
-<td style="text-align: left;">-</td>
+<td>rest parameters - basic functionality</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">rest parameters - function 'length' property</td>
-<td style="text-align: left;">-</td>
+<td>rest parameters - function ‘length’ property</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">rest parameters - arguments object interaction</td>
-<td style="text-align: left;">-</td>
+<td>rest parameters - arguments object interaction</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">rest parameters - can't be used in setters</td>
-<td style="text-align: left;">-</td>
+<td>rest parameters - can’t be used in setters</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">rest parameters - new Function() support</td>
-<td style="text-align: left;">-</td>
+<td>rest parameters - new Function() support</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">spread (...) operator - with arrays, in function calls</td>
-<td style="text-align: left;">-</td>
+<td>spread (…) operator - with arrays, in function calls</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">spread (...) operator - with arrays, in array literals</td>
-<td style="text-align: left;">-</td>
+<td>spread (…) operator - with arrays, in array literals</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">spread (...) operator - with sparse arrays, in function calls</td>
-<td style="text-align: left;">-</td>
+<td>spread (…) operator - with sparse arrays, in function calls</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">spread (...) operator - with sparse arrays, in array literals</td>
-<td style="text-align: left;">-</td>
+<td>spread (…) operator - with sparse arrays, in array literals</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">spread (...) operator - with strings, in function calls</td>
-<td style="text-align: left;">-</td>
+<td>spread (…) operator - with strings, in function calls</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">spread (...) operator - with strings, in array literals</td>
-<td style="text-align: left;">-</td>
+<td>spread (…) operator - with strings, in array literals</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">spread (...) operator - with astral plane strings, in function calls</td>
-<td style="text-align: left;">-</td>
+<td>spread (…) operator - with astral plane strings, in function calls</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">spread (...) operator - with astral plane strings, in array literals</td>
-<td style="text-align: left;">-</td>
+<td>spread (…) operator - with astral plane strings, in array literals</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">spread (...) operator - with generator instances, in calls</td>
-<td style="text-align: left;">-</td>
+<td>spread (…) operator - with generator instances, in calls</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">spread (...) operator - with generator instances, in arrays</td>
-<td style="text-align: left;">-</td>
+<td>spread (…) operator - with generator instances, in arrays</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">spread (...) operator - with generic iterables, in calls</td>
-<td style="text-align: left;">-</td>
+<td>spread (…) operator - with generic iterables, in calls</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">spread (...) operator - with generic iterables, in arrays</td>
-<td style="text-align: left;">-</td>
+<td>spread (…) operator - with generic iterables, in arrays</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">spread (...) operator - with instances of iterables, in calls</td>
-<td style="text-align: left;">-</td>
+<td>spread (…) operator - with instances of iterables, in calls</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">spread (...) operator - with instances of iterables, in arrays</td>
-<td style="text-align: left;">-</td>
+<td>spread (…) operator - with instances of iterables, in arrays</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">spread (...) operator - spreading non-iterables is a runtime error</td>
-<td style="text-align: left;">-</td>
+<td>spread (…) operator - spreading non-iterables is a runtime error</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">object literal extensions - computed properties</td>
-<td style="text-align: left;">-</td>
+<td>object literal extensions - computed properties</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">object literal extensions - shorthand properties</td>
-<td style="text-align: left;">-</td>
+<td>object literal extensions - shorthand properties</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">object literal extensions - shorthand methods</td>
-<td style="text-align: left;">-</td>
+<td>object literal extensions - shorthand methods</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">object literal extensions - string-keyed shorthand methods</td>
-<td style="text-align: left;">-</td>
+<td>object literal extensions - string-keyed shorthand methods</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">object literal extensions - computed shorthand methods</td>
-<td style="text-align: left;">-</td>
+<td>object literal extensions - computed shorthand methods</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">object literal extensions - computed accessors</td>
-<td style="text-align: left;">-</td>
+<td>object literal extensions - computed accessors</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">for..of loops - with arrays</td>
-<td style="text-align: left;">-</td>
+<td>for..of loops - with arrays</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">for..of loops - with sparse arrays</td>
-<td style="text-align: left;">-</td>
+<td>for..of loops - with sparse arrays</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">for..of loops - with strings</td>
-<td style="text-align: left;">-</td>
+<td>for..of loops - with strings</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">for..of loops - with astral plane strings</td>
-<td style="text-align: left;">-</td>
+<td>for..of loops - with astral plane strings</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">for..of loops - with generator instances</td>
-<td style="text-align: left;">-</td>
+<td>for..of loops - with generator instances</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">for..of loops - with generic iterables</td>
-<td style="text-align: left;">-</td>
+<td>for..of loops - with generic iterables</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">for..of loops - with instances of generic iterables</td>
-<td style="text-align: left;">-</td>
+<td>for..of loops - with instances of generic iterables</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">for..of loops - iterator closing, break</td>
-<td style="text-align: left;">-</td>
+<td>for..of loops - iterator closing, break</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">for..of loops - iterator closing, throw</td>
-<td style="text-align: left;">-</td>
+<td>for..of loops - iterator closing, throw</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">octal and binary literals - octal literals</td>
-<td style="text-align: left;">-</td>
+<td>octal and binary literals - octal literals</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">octal and binary literals - binary literals</td>
-<td style="text-align: left;">-</td>
+<td>octal and binary literals - binary literals</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">octal and binary literals - octal supported by Number()</td>
-<td style="text-align: left;">-</td>
+<td>octal and binary literals - octal supported by Number()</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">octal and binary literals - binary supported by Number()</td>
-<td style="text-align: left;">-</td>
+<td>octal and binary literals - binary supported by Number()</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">template strings - basic functionality</td>
-<td style="text-align: left;">-</td>
+<td>template strings - basic functionality</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">template strings - toString conversion</td>
-<td style="text-align: left;">-</td>
+<td>template strings - toString conversion</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">template strings - tagged template strings</td>
-<td style="text-align: left;">-</td>
+<td>template strings - tagged template strings</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">template strings - passed array is frozen</td>
-<td style="text-align: left;">-</td>
+<td>template strings - passed array is frozen</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">template strings - line break normalisation</td>
-<td style="text-align: left;">-</td>
+<td>template strings - line break normalisation</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">RegExp &quot;y&quot; and &quot;u&quot; flags - &quot;y&quot; flag</td>
-<td style="text-align: left;">-</td>
+<td>RegExp “y” and “u” flags - “y” flag</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">RegExp &quot;y&quot; and &quot;u&quot; flags - &quot;y&quot; flag, lastIndex</td>
-<td style="text-align: left;">-</td>
+<td>RegExp “y” and “u” flags - “y” flag, lastIndex</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">RegExp &quot;y&quot; and &quot;u&quot; flags - &quot;u&quot; flag</td>
-<td style="text-align: left;">-</td>
+<td>RegExp “y” and “u” flags - “u” flag</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">RegExp &quot;y&quot; and &quot;u&quot; flags - &quot;u&quot; flag, Unicode code point escapes</td>
-<td style="text-align: left;">-</td>
+<td>RegExp “y” and “u” flags - “u” flag, Unicode code point escapes</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">destructuring - with arrays</td>
-<td style="text-align: left;">-</td>
+<td>destructuring - with arrays</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">destructuring - with sparse arrays</td>
-<td style="text-align: left;">-</td>
+<td>destructuring - with sparse arrays</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">destructuring - with strings</td>
-<td style="text-align: left;">-</td>
+<td>destructuring - with strings</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">destructuring - with astral plane strings</td>
-<td style="text-align: left;">-</td>
+<td>destructuring - with astral plane strings</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">destructuring - with generator instances</td>
-<td style="text-align: left;">-</td>
+<td>destructuring - with generator instances</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">destructuring - with generic iterables</td>
-<td style="text-align: left;">-</td>
+<td>destructuring - with generic iterables</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">destructuring - with instances of generic iterables</td>
-<td style="text-align: left;">-</td>
+<td>destructuring - with instances of generic iterables</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">destructuring - iterator closing</td>
-<td style="text-align: left;">-</td>
+<td>destructuring - iterator closing</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">destructuring - iterable destructuring expression</td>
-<td style="text-align: left;">-</td>
+<td>destructuring - iterable destructuring expression</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">destructuring - chained iterable destructuring</td>
-<td style="text-align: left;">-</td>
+<td>destructuring - chained iterable destructuring</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">destructuring - trailing commas in iterable patterns</td>
-<td style="text-align: left;">-</td>
+<td>destructuring - trailing commas in iterable patterns</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">destructuring - with objects</td>
-<td style="text-align: left;">-</td>
+<td>destructuring - with objects</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">destructuring - object destructuring with primitives</td>
-<td style="text-align: left;">-</td>
+<td>destructuring - object destructuring with primitives</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">destructuring - trailing commas in object patterns</td>
-<td style="text-align: left;">-</td>
+<td>destructuring - trailing commas in object patterns</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">destructuring - object destructuring expression</td>
-<td style="text-align: left;">-</td>
+<td>destructuring - object destructuring expression</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">destructuring - parenthesised left-hand-side is a syntax error</td>
-<td style="text-align: left;">-</td>
+<td>destructuring - parenthesised left-hand-side is a syntax error</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">destructuring - chained object destructuring</td>
-<td style="text-align: left;">-</td>
+<td>destructuring - chained object destructuring</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">destructuring - throws on null and undefined</td>
-<td style="text-align: left;">-</td>
+<td>destructuring - throws on null and undefined</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">destructuring - computed properties</td>
-<td style="text-align: left;">-</td>
+<td>destructuring - computed properties</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">destructuring - multiples in a single var statement</td>
-<td style="text-align: left;">-</td>
+<td>destructuring - multiples in a single var statement</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">destructuring - nested</td>
-<td style="text-align: left;">-</td>
+<td>destructuring - nested</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">destructuring - in parameters</td>
-<td style="text-align: left;">-</td>
+<td>destructuring - in parameters</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">destructuring - in parameters, 'arguments' interaction</td>
-<td style="text-align: left;">-</td>
+<td>destructuring - in parameters, ‘arguments’ interaction</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">destructuring - in parameters, new Function() support</td>
-<td style="text-align: left;">-</td>
+<td>destructuring - in parameters, new Function() support</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">destructuring - in parameters, function 'length' property</td>
-<td style="text-align: left;">-</td>
+<td>destructuring - in parameters, function ‘length’ property</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">destructuring - in for-in loop heads</td>
-<td style="text-align: left;">-</td>
+<td>destructuring - in for-in loop heads</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">destructuring - in for-of loop heads</td>
-<td style="text-align: left;">-</td>
+<td>destructuring - in for-of loop heads</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">destructuring - rest</td>
-<td style="text-align: left;">-</td>
+<td>destructuring - rest</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">destructuring - nested rest</td>
-<td style="text-align: left;">-</td>
+<td>destructuring - nested rest</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">destructuring - empty patterns</td>
-<td style="text-align: left;">-</td>
+<td>destructuring - empty patterns</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">destructuring - empty patterns in parameters</td>
-<td style="text-align: left;">-</td>
+<td>destructuring - empty patterns in parameters</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">destructuring - defaults</td>
-<td style="text-align: left;">-</td>
+<td>destructuring - defaults</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">destructuring - defaults in parameters</td>
-<td style="text-align: left;">-</td>
+<td>destructuring - defaults in parameters</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">destructuring - defaults, let temporal dead zone</td>
-<td style="text-align: left;">-</td>
+<td>destructuring - defaults, let temporal dead zone</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">destructuring - defaults in parameters, separate scope</td>
-<td style="text-align: left;">-</td>
+<td>destructuring - defaults in parameters, separate scope</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">destructuring - defaults in parameters, new Function() support</td>
-<td style="text-align: left;">-</td>
+<td>destructuring - defaults in parameters, new Function() support</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Unicode code point escapes - in strings</td>
-<td style="text-align: left;">-</td>
+<td>Unicode code point escapes - in strings</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Unicode code point escapes - in identifiers</td>
-<td style="text-align: left;">-</td>
+<td>Unicode code point escapes - in identifiers</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">new.target - in constructors</td>
-<td style="text-align: left;">-</td>
+<td>new.target - in constructors</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">new.target - assignment is an early error</td>
-<td style="text-align: left;">-</td>
+<td>new.target - assignment is an early error</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">const - basic support</td>
-<td style="text-align: left;">-</td>
+<td>const - basic support</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">const - is block-scoped</td>
-<td style="text-align: left;">-</td>
+<td>const - is block-scoped</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">const - redefining a const is an error</td>
-<td style="text-align: left;">-</td>
+<td>const - redefining a const is an error</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">const - temporal dead zone</td>
-<td style="text-align: left;">-</td>
+<td>const - temporal dead zone</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">const - basic support (strict mode)</td>
-<td style="text-align: left;">-</td>
+<td>const - basic support (strict mode)</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">const - is block-scoped (strict mode)</td>
-<td style="text-align: left;">-</td>
+<td>const - is block-scoped (strict mode)</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">const - redefining a const (strict mode)</td>
-<td style="text-align: left;">-</td>
+<td>const - redefining a const (strict mode)</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">const - temporal dead zone (strict mode)</td>
-<td style="text-align: left;">-</td>
+<td>const - temporal dead zone (strict mode)</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">let - basic support</td>
-<td style="text-align: left;">-</td>
+<td>let - basic support</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">let - is block-scoped</td>
-<td style="text-align: left;">-</td>
+<td>let - is block-scoped</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">let - for-loop statement scope</td>
-<td style="text-align: left;">-</td>
+<td>let - for-loop statement scope</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">let - temporal dead zone</td>
-<td style="text-align: left;">-</td>
+<td>let - temporal dead zone</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">let - for-loop iteration scope</td>
-<td style="text-align: left;">-</td>
+<td>let - for-loop iteration scope</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">let - basic support (strict mode)</td>
-<td style="text-align: left;">-</td>
+<td>let - basic support (strict mode)</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">let - is block-scoped (strict mode)</td>
-<td style="text-align: left;">-</td>
+<td>let - is block-scoped (strict mode)</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">let - for-loop statement scope (strict mode)</td>
-<td style="text-align: left;">-</td>
+<td>let - for-loop statement scope (strict mode)</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">let - temporal dead zone (strict mode)</td>
-<td style="text-align: left;">-</td>
+<td>let - temporal dead zone (strict mode)</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">let - for-loop iteration scope (strict mode)</td>
-<td style="text-align: left;">-</td>
+<td>let - for-loop iteration scope (strict mode)</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">block-level function declaration</td>
-<td style="text-align: left;">-</td>
+<td>block-level function declaration</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">arrow functions - 0 parameters</td>
-<td style="text-align: left;">-</td>
+<td>arrow functions - 0 parameters</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">arrow functions - 1 parameter, no brackets</td>
-<td style="text-align: left;">-</td>
+<td>arrow functions - 1 parameter, no brackets</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">arrow functions - multiple parameters</td>
-<td style="text-align: left;">-</td>
+<td>arrow functions - multiple parameters</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">arrow functions - lexical &quot;this&quot; binding</td>
-<td style="text-align: left;">-</td>
+<td>arrow functions - lexical “this” binding</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">arrow functions - &quot;this&quot; unchanged by call or apply</td>
-<td style="text-align: left;">-</td>
+<td>arrow functions - “this” unchanged by call or apply</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">arrow functions - can't be bound, can be curried</td>
-<td style="text-align: left;">-</td>
+<td>arrow functions - can’t be bound, can be curried</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">arrow functions - lexical &quot;arguments&quot; binding</td>
-<td style="text-align: left;">-</td>
+<td>arrow functions - lexical “arguments” binding</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">arrow functions - no line break between params and <code>=&gt;</code></td>
-<td style="text-align: left;">-</td>
+<td>arrow functions - no line break between params and <code>=&gt;</code></td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">arrow functions - correct precedence</td>
-<td style="text-align: left;">-</td>
+<td>arrow functions - correct precedence</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">arrow functions - no &quot;prototype&quot; property</td>
-<td style="text-align: left;">-</td>
+<td>arrow functions - no “prototype” property</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">arrow functions - lexical &quot;super&quot; binding</td>
-<td style="text-align: left;">-</td>
+<td>arrow functions - lexical “super” binding</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">arrow functions - lexical &quot;new.target&quot; binding</td>
-<td style="text-align: left;">-</td>
+<td>arrow functions - lexical “new.target” binding</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">class - class statement</td>
-<td style="text-align: left;">-</td>
+<td>class - class statement</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">class - is block-scoped</td>
-<td style="text-align: left;">-</td>
+<td>class - is block-scoped</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">class - class expression</td>
-<td style="text-align: left;">-</td>
+<td>class - class expression</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">class - anonymous class</td>
-<td style="text-align: left;">-</td>
+<td>class - anonymous class</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">class - constructor</td>
-<td style="text-align: left;">-</td>
+<td>class - constructor</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">class - prototype methods</td>
-<td style="text-align: left;">-</td>
+<td>class - prototype methods</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">class - string-keyed methods</td>
-<td style="text-align: left;">-</td>
+<td>class - string-keyed methods</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">class - computed prototype methods</td>
-<td style="text-align: left;">-</td>
+<td>class - computed prototype methods</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">class - static methods</td>
-<td style="text-align: left;">-</td>
+<td>class - static methods</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">class - computed static methods</td>
-<td style="text-align: left;">-</td>
+<td>class - computed static methods</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">class - accessor properties</td>
-<td style="text-align: left;">-</td>
+<td>class - accessor properties</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">class - computed accessor properties</td>
-<td style="text-align: left;">-</td>
+<td>class - computed accessor properties</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">class - static accessor properties</td>
-<td style="text-align: left;">-</td>
+<td>class - static accessor properties</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">class - computed static accessor properties</td>
-<td style="text-align: left;">-</td>
+<td>class - computed static accessor properties</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">class - class name is lexically scoped</td>
-<td style="text-align: left;">-</td>
+<td>class - class name is lexically scoped</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">class - computed names, temporal dead zone</td>
-<td style="text-align: left;">-</td>
+<td>class - computed names, temporal dead zone</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">class - methods aren't enumerable</td>
-<td style="text-align: left;">-</td>
+<td>class - methods aren’t enumerable</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">class - implicit strict mode</td>
-<td style="text-align: left;">-</td>
+<td>class - implicit strict mode</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">class - constructor requires new</td>
-<td style="text-align: left;">-</td>
+<td>class - constructor requires new</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">class - extends</td>
-<td style="text-align: left;">-</td>
+<td>class - extends</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">class - extends expressions</td>
-<td style="text-align: left;">-</td>
+<td>class - extends expressions</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">class - extends null</td>
-<td style="text-align: left;">-</td>
+<td>class - extends null</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">class - new.target</td>
-<td style="text-align: left;">-</td>
+<td>class - new.target</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">super - statement in constructors</td>
-<td style="text-align: left;">-</td>
+<td>super - statement in constructors</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">super - expression in constructors</td>
-<td style="text-align: left;">-</td>
+<td>super - expression in constructors</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">super - in methods, property access</td>
-<td style="text-align: left;">-</td>
+<td>super - in methods, property access</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">super - in methods, method calls</td>
-<td style="text-align: left;">-</td>
+<td>super - in methods, method calls</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">super - method calls use correct &quot;this&quot; binding</td>
-<td style="text-align: left;">-</td>
+<td>super - method calls use correct “this” binding</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">super - constructor calls use correct &quot;new.target&quot; binding</td>
-<td style="text-align: left;">-</td>
+<td>super - constructor calls use correct “new.target” binding</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">super - is statically bound</td>
-<td style="text-align: left;">-</td>
+<td>super - is statically bound</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">super - super() invokes the correct constructor</td>
-<td style="text-align: left;">-</td>
+<td>super - super() invokes the correct constructor</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">generators - basic functionality</td>
-<td style="text-align: left;">-</td>
+<td>generators - basic functionality</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">generators - generator function expressions</td>
-<td style="text-align: left;">-</td>
+<td>generators - generator function expressions</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">generators - correct &quot;this&quot; binding</td>
-<td style="text-align: left;">-</td>
+<td>generators - correct “this” binding</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">generators - can't use &quot;this&quot; with new</td>
-<td style="text-align: left;">-</td>
+<td>generators - can’t use “this” with new</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">generators - sending</td>
-<td style="text-align: left;">-</td>
+<td>generators - sending</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">generators - %GeneratorPrototype%</td>
-<td style="text-align: left;">-</td>
+<td>generators - %GeneratorPrototype%</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">generators - %GeneratorPrototype%.constructor</td>
-<td style="text-align: left;">-</td>
+<td>generators - %GeneratorPrototype%.constructor</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">generators - %GeneratorPrototype%.throw</td>
-<td style="text-align: left;">-</td>
+<td>generators - %GeneratorPrototype%.throw</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">generators - %GeneratorPrototype%.return</td>
-<td style="text-align: left;">-</td>
+<td>generators - %GeneratorPrototype%.return</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">generators - yield operator precedence</td>
-<td style="text-align: left;">-</td>
+<td>generators - yield operator precedence</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">generators - yield *, arrays</td>
-<td style="text-align: left;">-</td>
+<td>generators - yield *, arrays</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">generators - yield *, sparse arrays</td>
-<td style="text-align: left;">-</td>
+<td>generators - yield *, sparse arrays</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">generators - yield *, strings</td>
-<td style="text-align: left;">-</td>
+<td>generators - yield *, strings</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">generators - yield *, astral plane strings</td>
-<td style="text-align: left;">-</td>
+<td>generators - yield *, astral plane strings</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">generators - yield *, generator instances</td>
-<td style="text-align: left;">-</td>
+<td>generators - yield *, generator instances</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">generators - yield *, generic iterables</td>
-<td style="text-align: left;">-</td>
+<td>generators - yield *, generic iterables</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">generators - yield *, instances of iterables</td>
-<td style="text-align: left;">-</td>
+<td>generators - yield *, instances of iterables</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">generators - yield * on non-iterables is a runtime error</td>
-<td style="text-align: left;">-</td>
+<td>generators - yield * on non-iterables is a runtime error</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">generators - yield *, iterator closing</td>
-<td style="text-align: left;">-</td>
+<td>generators - yield *, iterator closing</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">generators - yield *, iterator closing via throw()</td>
-<td style="text-align: left;">-</td>
+<td>generators - yield *, iterator closing via throw()</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">generators - shorthand generator methods</td>
-<td style="text-align: left;">-</td>
+<td>generators - shorthand generator methods</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">generators - string-keyed shorthand generator methods</td>
-<td style="text-align: left;">-</td>
+<td>generators - string-keyed shorthand generator methods</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">generators - computed shorthand generators</td>
-<td style="text-align: left;">-</td>
+<td>generators - computed shorthand generators</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">generators - shorthand generator methods, classes</td>
-<td style="text-align: left;">-</td>
+<td>generators - shorthand generator methods, classes</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">generators - computed shorthand generators, classes</td>
-<td style="text-align: left;">-</td>
+<td>generators - computed shorthand generators, classes</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">typed arrays - Int8Array</td>
-<td style="text-align: left;">-</td>
+<td>typed arrays - Int8Array</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">typed arrays - Uint8Array</td>
-<td style="text-align: left;">-</td>
+<td>typed arrays - Uint8Array</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">typed arrays - Uint8ClampedArray</td>
-<td style="text-align: left;">-</td>
+<td>typed arrays - Uint8ClampedArray</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">typed arrays - Int16Array</td>
-<td style="text-align: left;">-</td>
+<td>typed arrays - Int16Array</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">typed arrays - Uint16Array</td>
-<td style="text-align: left;">-</td>
+<td>typed arrays - Uint16Array</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">typed arrays - Int32Array</td>
-<td style="text-align: left;">-</td>
+<td>typed arrays - Int32Array</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">typed arrays - Uint32Array</td>
-<td style="text-align: left;">-</td>
+<td>typed arrays - Uint32Array</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">typed arrays - Float32Array</td>
-<td style="text-align: left;">-</td>
+<td>typed arrays - Float32Array</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">typed arrays - Float64Array</td>
-<td style="text-align: left;">-</td>
+<td>typed arrays - Float64Array</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">typed arrays - DataView (Int8)</td>
-<td style="text-align: left;">-</td>
+<td>typed arrays - DataView (Int8)</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">typed arrays - DataView (Uint8)</td>
-<td style="text-align: left;">-</td>
+<td>typed arrays - DataView (Uint8)</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">typed arrays - DataView (Int16)</td>
-<td style="text-align: left;">-</td>
+<td>typed arrays - DataView (Int16)</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">typed arrays - DataView (Uint16)</td>
-<td style="text-align: left;">-</td>
+<td>typed arrays - DataView (Uint16)</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">typed arrays - DataView (Int32)</td>
-<td style="text-align: left;">-</td>
+<td>typed arrays - DataView (Int32)</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">typed arrays - DataView (Uint32)</td>
-<td style="text-align: left;">-</td>
+<td>typed arrays - DataView (Uint32)</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">typed arrays - DataView (Float32)</td>
-<td style="text-align: left;">-</td>
+<td>typed arrays - DataView (Float32)</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">typed arrays - DataView (Float64)</td>
-<td style="text-align: left;">-</td>
+<td>typed arrays - DataView (Float64)</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">typed arrays - ArrayBuffer[Symbol.species]</td>
-<td style="text-align: left;">-</td>
+<td>typed arrays - ArrayBuffer[Symbol.species]</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">typed arrays - constructors require new</td>
-<td style="text-align: left;">-</td>
+<td>typed arrays - constructors require new</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">typed arrays - constructors accepts generic iterables</td>
-<td style="text-align: left;">-</td>
+<td>typed arrays - constructors accepts generic iterables</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">typed arrays - correct prototype chains</td>
-<td style="text-align: left;">-</td>
+<td>typed arrays - correct prototype chains</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">typed arrays - %TypedArray%.from</td>
-<td style="text-align: left;">-</td>
+<td>typed arrays - %TypedArray%.from</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">typed arrays - %TypedArray%.of</td>
-<td style="text-align: left;">-</td>
+<td>typed arrays - %TypedArray%.of</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">typed arrays - %TypedArray%.prototype.subarray</td>
-<td style="text-align: left;">-</td>
+<td>typed arrays - %TypedArray%.prototype.subarray</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">typed arrays - %TypedArray%.prototype.join</td>
-<td style="text-align: left;">-</td>
+<td>typed arrays - %TypedArray%.prototype.join</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">typed arrays - %TypedArray%.prototype.indexOf</td>
-<td style="text-align: left;">-</td>
+<td>typed arrays - %TypedArray%.prototype.indexOf</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">typed arrays - %TypedArray%.prototype.lastIndexOf</td>
-<td style="text-align: left;">-</td>
+<td>typed arrays - %TypedArray%.prototype.lastIndexOf</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">typed arrays - %TypedArray%.prototype.slice</td>
-<td style="text-align: left;">-</td>
+<td>typed arrays - %TypedArray%.prototype.slice</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">typed arrays - %TypedArray%.prototype.every</td>
-<td style="text-align: left;">-</td>
+<td>typed arrays - %TypedArray%.prototype.every</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">typed arrays - %TypedArray%.prototype.filter</td>
-<td style="text-align: left;">-</td>
+<td>typed arrays - %TypedArray%.prototype.filter</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">typed arrays - %TypedArray%.prototype.forEach</td>
-<td style="text-align: left;">-</td>
+<td>typed arrays - %TypedArray%.prototype.forEach</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">typed arrays - %TypedArray%.prototype.map</td>
-<td style="text-align: left;">-</td>
+<td>typed arrays - %TypedArray%.prototype.map</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">typed arrays - %TypedArray%.prototype.reduce</td>
-<td style="text-align: left;">-</td>
+<td>typed arrays - %TypedArray%.prototype.reduce</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">typed arrays - %TypedArray%.prototype.reduceRight</td>
-<td style="text-align: left;">-</td>
+<td>typed arrays - %TypedArray%.prototype.reduceRight</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">typed arrays - %TypedArray%.prototype.reverse</td>
-<td style="text-align: left;">-</td>
+<td>typed arrays - %TypedArray%.prototype.reverse</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">typed arrays - %TypedArray%.prototype.some</td>
-<td style="text-align: left;">-</td>
+<td>typed arrays - %TypedArray%.prototype.some</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">typed arrays - %TypedArray%.prototype.sort</td>
-<td style="text-align: left;">-</td>
+<td>typed arrays - %TypedArray%.prototype.sort</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">typed arrays - %TypedArray%.prototype.copyWithin</td>
-<td style="text-align: left;">-</td>
+<td>typed arrays - %TypedArray%.prototype.copyWithin</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">typed arrays - %TypedArray%.prototype.find</td>
-<td style="text-align: left;">-</td>
+<td>typed arrays - %TypedArray%.prototype.find</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">typed arrays - %TypedArray%.prototype.findIndex</td>
-<td style="text-align: left;">-</td>
+<td>typed arrays - %TypedArray%.prototype.findIndex</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">typed arrays - %TypedArray%.prototype.fill</td>
-<td style="text-align: left;">-</td>
+<td>typed arrays - %TypedArray%.prototype.fill</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">typed arrays - %TypedArray%.prototype.keys</td>
-<td style="text-align: left;">-</td>
+<td>typed arrays - %TypedArray%.prototype.keys</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">typed arrays - %TypedArray%.prototype.values</td>
-<td style="text-align: left;">-</td>
+<td>typed arrays - %TypedArray%.prototype.values</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">typed arrays - %TypedArray%.prototype.entries</td>
-<td style="text-align: left;">-</td>
+<td>typed arrays - %TypedArray%.prototype.entries</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">typed arrays - %TypedArray%.prototype[Symbol.iterator]</td>
-<td style="text-align: left;">-</td>
+<td>typed arrays - %TypedArray%.prototype[Symbol.iterator]</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">typed arrays - %TypedArray%[Symbol.species]</td>
-<td style="text-align: left;">-</td>
+<td>typed arrays - %TypedArray%[Symbol.species]</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Map - basic functionality</td>
-<td style="text-align: left;">-</td>
+<td>Map - basic functionality</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Map - constructor arguments</td>
-<td style="text-align: left;">-</td>
+<td>Map - constructor arguments</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Map - constructor requires new</td>
-<td style="text-align: left;">-</td>
+<td>Map - constructor requires new</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Map - constructor accepts null</td>
-<td style="text-align: left;">-</td>
+<td>Map - constructor accepts null</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Map - constructor invokes set</td>
-<td style="text-align: left;">-</td>
+<td>Map - constructor invokes set</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Map - iterator closing</td>
-<td style="text-align: left;">-</td>
+<td>Map - iterator closing</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Map - Map.prototype.set returns this</td>
-<td style="text-align: left;">-</td>
+<td>Map - Map.prototype.set returns this</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Map - -0 key converts to +0</td>
-<td style="text-align: left;">-</td>
+<td>Map - -0 key converts to +0</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Map - Map.prototype.size</td>
-<td style="text-align: left;">-</td>
+<td>Map - Map.prototype.size</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Map - Map.prototype.delete</td>
-<td style="text-align: left;">-</td>
+<td>Map - Map.prototype.delete</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Map - Map.prototype.clear</td>
-<td style="text-align: left;">-</td>
+<td>Map - Map.prototype.clear</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Map - Map.prototype.forEach</td>
-<td style="text-align: left;">-</td>
+<td>Map - Map.prototype.forEach</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Map - Map.prototype.keys</td>
-<td style="text-align: left;">-</td>
+<td>Map - Map.prototype.keys</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Map - Map.prototype.values</td>
-<td style="text-align: left;">-</td>
+<td>Map - Map.prototype.values</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Map - Map.prototype.entries</td>
-<td style="text-align: left;">-</td>
+<td>Map - Map.prototype.entries</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Map - Map.prototype[Symbol.iterator]</td>
-<td style="text-align: left;">-</td>
+<td>Map - Map.prototype[Symbol.iterator]</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Map - Map iterator prototype chain</td>
-<td style="text-align: left;">-</td>
+<td>Map - Map iterator prototype chain</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Map - Map[Symbol.species]</td>
-<td style="text-align: left;">-</td>
+<td>Map - Map[Symbol.species]</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Set - basic functionality</td>
-<td style="text-align: left;">-</td>
+<td>Set - basic functionality</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Set - constructor arguments</td>
-<td style="text-align: left;">-</td>
+<td>Set - constructor arguments</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Set - constructor requires new</td>
-<td style="text-align: left;">-</td>
+<td>Set - constructor requires new</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Set - constructor accepts null</td>
-<td style="text-align: left;">-</td>
+<td>Set - constructor accepts null</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Set - constructor invokes add</td>
-<td style="text-align: left;">-</td>
+<td>Set - constructor invokes add</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Set - iterator closing</td>
-<td style="text-align: left;">-</td>
+<td>Set - iterator closing</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Set - Set.prototype.add returns this</td>
-<td style="text-align: left;">-</td>
+<td>Set - Set.prototype.add returns this</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Set - -0 key converts to +0</td>
-<td style="text-align: left;">-</td>
+<td>Set - -0 key converts to +0</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Set - Set.prototype.size</td>
-<td style="text-align: left;">-</td>
+<td>Set - Set.prototype.size</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Set - Set.prototype.delete</td>
-<td style="text-align: left;">-</td>
+<td>Set - Set.prototype.delete</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Set - Set.prototype.clear</td>
-<td style="text-align: left;">-</td>
+<td>Set - Set.prototype.clear</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Set - Set.prototype.forEach</td>
-<td style="text-align: left;">-</td>
+<td>Set - Set.prototype.forEach</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Set - Set.prototype.keys</td>
-<td style="text-align: left;">-</td>
+<td>Set - Set.prototype.keys</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Set - Set.prototype.values</td>
-<td style="text-align: left;">-</td>
+<td>Set - Set.prototype.values</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Set - Set.prototype.entries</td>
-<td style="text-align: left;">-</td>
+<td>Set - Set.prototype.entries</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Set - Set.prototype[Symbol.iterator]</td>
-<td style="text-align: left;">-</td>
+<td>Set - Set.prototype[Symbol.iterator]</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Set - Set iterator prototype chain</td>
-<td style="text-align: left;">-</td>
+<td>Set - Set iterator prototype chain</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Set - Set[Symbol.species]</td>
-<td style="text-align: left;">-</td>
+<td>Set - Set[Symbol.species]</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">WeakMap - basic functionality</td>
-<td style="text-align: left;">-</td>
+<td>WeakMap - basic functionality</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">WeakMap - constructor arguments</td>
-<td style="text-align: left;">-</td>
+<td>WeakMap - constructor arguments</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">WeakMap - constructor requires new</td>
-<td style="text-align: left;">-</td>
+<td>WeakMap - constructor requires new</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">WeakMap - constructor accepts null</td>
-<td style="text-align: left;">-</td>
+<td>WeakMap - constructor accepts null</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">WeakMap - constructor invokes set</td>
-<td style="text-align: left;">-</td>
+<td>WeakMap - constructor invokes set</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">WeakMap - frozen objects as keys</td>
-<td style="text-align: left;">-</td>
+<td>WeakMap - frozen objects as keys</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">WeakMap - iterator closing</td>
-<td style="text-align: left;">-</td>
+<td>WeakMap - iterator closing</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">WeakMap - WeakMap.prototype.set returns this</td>
-<td style="text-align: left;">-</td>
+<td>WeakMap - WeakMap.prototype.set returns this</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">WeakMap - WeakMap.prototype.delete</td>
-<td style="text-align: left;">-</td>
+<td>WeakMap - WeakMap.prototype.delete</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">WeakMap - no WeakMap.prototype.clear method</td>
-<td style="text-align: left;">-</td>
+<td>WeakMap - no WeakMap.prototype.clear method</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">WeakSet - basic functionality</td>
-<td style="text-align: left;">-</td>
+<td>WeakSet - basic functionality</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">WeakSet - constructor arguments</td>
-<td style="text-align: left;">-</td>
+<td>WeakSet - constructor arguments</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">WeakSet - constructor requires new</td>
-<td style="text-align: left;">-</td>
+<td>WeakSet - constructor requires new</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">WeakSet - constructor accepts null</td>
-<td style="text-align: left;">-</td>
+<td>WeakSet - constructor accepts null</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">WeakSet - constructor invokes add</td>
-<td style="text-align: left;">-</td>
+<td>WeakSet - constructor invokes add</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">WeakSet - iterator closing</td>
-<td style="text-align: left;">-</td>
+<td>WeakSet - iterator closing</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">WeakSet - WeakSet.prototype.add returns this</td>
-<td style="text-align: left;">-</td>
+<td>WeakSet - WeakSet.prototype.add returns this</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">WeakSet - WeakSet.prototype.delete</td>
-<td style="text-align: left;">-</td>
+<td>WeakSet - WeakSet.prototype.delete</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">WeakSet - no WeakSet.prototype.clear method</td>
-<td style="text-align: left;">-</td>
+<td>WeakSet - no WeakSet.prototype.clear method</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Proxy - constructor requires new</td>
-<td style="text-align: left;">-</td>
+<td>Proxy - constructor requires new</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Proxy - &quot;get&quot; handler</td>
-<td style="text-align: left;">-</td>
+<td>Proxy - “get” handler</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Proxy - &quot;get&quot; handler, instances of proxies</td>
-<td style="text-align: left;">-</td>
+<td>Proxy - “get” handler, instances of proxies</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Proxy - &quot;set&quot; handler</td>
-<td style="text-align: left;">-</td>
+<td>Proxy - “set” handler</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Proxy - &quot;set&quot; handler, instances of proxies</td>
-<td style="text-align: left;">-</td>
+<td>Proxy - “set” handler, instances of proxies</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Proxy - &quot;has&quot; handler</td>
-<td style="text-align: left;">-</td>
+<td>Proxy - “has” handler</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Proxy - &quot;has&quot; handler, instances of proxies</td>
-<td style="text-align: left;">-</td>
+<td>Proxy - “has” handler, instances of proxies</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Proxy - &quot;deleteProperty&quot; handler</td>
-<td style="text-align: left;">-</td>
+<td>Proxy - “deleteProperty” handler</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Proxy - &quot;getOwnPropertyDescriptor&quot; handler</td>
-<td style="text-align: left;">-</td>
+<td>Proxy - “getOwnPropertyDescriptor” handler</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Proxy - &quot;defineProperty&quot; handler</td>
-<td style="text-align: left;">-</td>
+<td>Proxy - “defineProperty” handler</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Proxy - &quot;getPrototypeOf&quot; handler</td>
-<td style="text-align: left;">-</td>
+<td>Proxy - “getPrototypeOf” handler</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Proxy - &quot;setPrototypeOf&quot; handler</td>
-<td style="text-align: left;">-</td>
+<td>Proxy - “setPrototypeOf” handler</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Proxy - &quot;isExtensible&quot; handler</td>
-<td style="text-align: left;">-</td>
+<td>Proxy - “isExtensible” handler</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Proxy - &quot;preventExtensions&quot; handler</td>
-<td style="text-align: left;">-</td>
+<td>Proxy - “preventExtensions” handler</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Proxy - &quot;enumerate&quot; handler</td>
-<td style="text-align: left;">-</td>
+<td>Proxy - “enumerate” handler</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Proxy - &quot;ownKeys&quot; handler</td>
-<td style="text-align: left;">-</td>
+<td>Proxy - “ownKeys” handler</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Proxy - &quot;apply&quot; handler</td>
-<td style="text-align: left;">-</td>
+<td>Proxy - “apply” handler</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Proxy - &quot;construct&quot; handler</td>
-<td style="text-align: left;">-</td>
+<td>Proxy - “construct” handler</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Proxy - Proxy.revocable</td>
-<td style="text-align: left;">-</td>
+<td>Proxy - Proxy.revocable</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Proxy - Array.isArray support</td>
-<td style="text-align: left;">-</td>
+<td>Proxy - Array.isArray support</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Proxy - JSON.stringify support</td>
-<td style="text-align: left;">-</td>
+<td>Proxy - JSON.stringify support</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Reflect - Reflect.get</td>
-<td style="text-align: left;">-</td>
+<td>Reflect - Reflect.get</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Reflect - Reflect.set</td>
-<td style="text-align: left;">-</td>
+<td>Reflect - Reflect.set</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Reflect - Reflect.has</td>
-<td style="text-align: left;">-</td>
+<td>Reflect - Reflect.has</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Reflect - Reflect.deleteProperty</td>
-<td style="text-align: left;">-</td>
+<td>Reflect - Reflect.deleteProperty</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Reflect - Reflect.getOwnPropertyDescriptor</td>
-<td style="text-align: left;">-</td>
+<td>Reflect - Reflect.getOwnPropertyDescriptor</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Reflect - Reflect.defineProperty</td>
-<td style="text-align: left;">-</td>
+<td>Reflect - Reflect.defineProperty</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Reflect - Reflect.getPrototypeOf</td>
-<td style="text-align: left;">-</td>
+<td>Reflect - Reflect.getPrototypeOf</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Reflect - Reflect.setPrototypeOf</td>
-<td style="text-align: left;">-</td>
+<td>Reflect - Reflect.setPrototypeOf</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Reflect - Reflect.isExtensible</td>
-<td style="text-align: left;">-</td>
+<td>Reflect - Reflect.isExtensible</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Reflect - Reflect.preventExtensions</td>
-<td style="text-align: left;">-</td>
+<td>Reflect - Reflect.preventExtensions</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Reflect - Reflect.enumerate</td>
-<td style="text-align: left;">-</td>
+<td>Reflect - Reflect.enumerate</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Reflect - Reflect.ownKeys, string keys</td>
-<td style="text-align: left;">-</td>
+<td>Reflect - Reflect.ownKeys, string keys</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Reflect - Reflect.ownKeys, symbol keys</td>
-<td style="text-align: left;">-</td>
+<td>Reflect - Reflect.ownKeys, symbol keys</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Reflect - Reflect.apply</td>
-<td style="text-align: left;">-</td>
+<td>Reflect - Reflect.apply</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Reflect - Reflect.construct</td>
-<td style="text-align: left;">-</td>
+<td>Reflect - Reflect.construct</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Reflect - Reflect.construct sets new.target meta property</td>
-<td style="text-align: left;">-</td>
+<td>Reflect - Reflect.construct sets new.target meta property</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Reflect - Reflect.construct creates instance from newTarget argument</td>
-<td style="text-align: left;">-</td>
+<td>Reflect - Reflect.construct creates instance from newTarget argument</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Promise - basic functionality</td>
-<td style="text-align: left;">-</td>
+<td>Promise - basic functionality</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Promise - constructor requires new</td>
-<td style="text-align: left;">-</td>
+<td>Promise - constructor requires new</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Promise - Promise.all</td>
-<td style="text-align: left;">promise/all</td>
+<td>Promise - Promise.all</td>
+<td>promise/all</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Promise - Promise.all, generic iterables</td>
-<td style="text-align: left;">-</td>
+<td>Promise - Promise.all, generic iterables</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Promise - Promise.race</td>
-<td style="text-align: left;">-</td>
+<td>Promise - Promise.race</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Promise - Promise.race, generic iterables</td>
-<td style="text-align: left;">-</td>
+<td>Promise - Promise.race, generic iterables</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Promise - Promise[Symbol.species]</td>
-<td style="text-align: left;">-</td>
+<td>Promise - Promise[Symbol.species]</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Symbol - basic functionality</td>
-<td style="text-align: left;">-</td>
+<td>Symbol - basic functionality</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Symbol - typeof support</td>
-<td style="text-align: left;">-</td>
+<td>Symbol - typeof support</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Symbol - symbol keys are hidden to pre-ES6 code</td>
-<td style="text-align: left;">-</td>
+<td>Symbol - symbol keys are hidden to pre-ES6 code</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Symbol - Object.defineProperty support</td>
-<td style="text-align: left;">-</td>
+<td>Symbol - Object.defineProperty support</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Symbol - cannot coerce to string or number</td>
-<td style="text-align: left;">-</td>
+<td>Symbol - cannot coerce to string or number</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Symbol - can convert with String()</td>
-<td style="text-align: left;">-</td>
+<td>Symbol - can convert with String()</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Symbol - new Symbol() throws</td>
-<td style="text-align: left;">-</td>
+<td>Symbol - new Symbol() throws</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Symbol - Object(symbol)</td>
-<td style="text-align: left;">-</td>
+<td>Symbol - Object(symbol)</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Symbol - JSON.stringify ignores symbols</td>
-<td style="text-align: left;">-</td>
+<td>Symbol - JSON.stringify ignores symbols</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Symbol - global symbol registry</td>
-<td style="text-align: left;">-</td>
+<td>Symbol - global symbol registry</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">well-known symbols - Symbol.hasInstance</td>
-<td style="text-align: left;">-</td>
+<td>well-known symbols - Symbol.hasInstance</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">well-known symbols - Symbol.isConcatSpreadable</td>
-<td style="text-align: left;">-</td>
+<td>well-known symbols - Symbol.isConcatSpreadable</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">well-known symbols - Symbol.iterator, existence</td>
-<td style="text-align: left;">-</td>
+<td>well-known symbols - Symbol.iterator, existence</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">well-known symbols - Symbol.iterator, arguments object</td>
-<td style="text-align: left;">-</td>
+<td>well-known symbols - Symbol.iterator, arguments object</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">well-known symbols - Symbol.species, existence</td>
-<td style="text-align: left;">-</td>
+<td>well-known symbols - Symbol.species, existence</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">well-known symbols - Symbol.species, Array.prototype.concat</td>
-<td style="text-align: left;">-</td>
+<td>well-known symbols - Symbol.species, Array.prototype.concat</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">well-known symbols - Symbol.species, Array.prototype.filter</td>
-<td style="text-align: left;">-</td>
+<td>well-known symbols - Symbol.species, Array.prototype.filter</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">well-known symbols - Symbol.species, Array.prototype.map</td>
-<td style="text-align: left;">-</td>
+<td>well-known symbols - Symbol.species, Array.prototype.map</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">well-known symbols - Symbol.species, Array.prototype.slice</td>
-<td style="text-align: left;">-</td>
+<td>well-known symbols - Symbol.species, Array.prototype.slice</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">well-known symbols - Symbol.species, Array.prototype.splice</td>
-<td style="text-align: left;">-</td>
+<td>well-known symbols - Symbol.species, Array.prototype.splice</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">well-known symbols - Symbol.species, RegExp.prototype[Symbol.split]</td>
-<td style="text-align: left;">-</td>
+<td>well-known symbols - Symbol.species, RegExp.prototype[Symbol.split]</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">well-known symbols - Symbol.replace</td>
-<td style="text-align: left;">-</td>
+<td>well-known symbols - Symbol.replace</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">well-known symbols - Symbol.search</td>
-<td style="text-align: left;">-</td>
+<td>well-known symbols - Symbol.search</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">well-known symbols - Symbol.split</td>
-<td style="text-align: left;">-</td>
+<td>well-known symbols - Symbol.split</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">well-known symbols - Symbol.match</td>
-<td style="text-align: left;">-</td>
+<td>well-known symbols - Symbol.match</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">well-known symbols - Symbol.match, RegExp constructor</td>
-<td style="text-align: left;">-</td>
+<td>well-known symbols - Symbol.match, RegExp constructor</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">well-known symbols - Symbol.match, String.prototype.startsWith</td>
-<td style="text-align: left;">-</td>
+<td>well-known symbols - Symbol.match, String.prototype.startsWith</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">well-known symbols - Symbol.match, String.prototype.endsWith</td>
-<td style="text-align: left;">-</td>
+<td>well-known symbols - Symbol.match, String.prototype.endsWith</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">well-known symbols - Symbol.match, String.prototype.includes</td>
-<td style="text-align: left;">-</td>
+<td>well-known symbols - Symbol.match, String.prototype.includes</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">well-known symbols - Symbol.toPrimitive</td>
-<td style="text-align: left;">-</td>
+<td>well-known symbols - Symbol.toPrimitive</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">well-known symbols - Symbol.toStringTag</td>
-<td style="text-align: left;">-</td>
+<td>well-known symbols - Symbol.toStringTag</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">well-known symbols - Symbol.toStringTag, misc. built-ins</td>
-<td style="text-align: left;">-</td>
+<td>well-known symbols - Symbol.toStringTag, misc. built-ins</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">well-known symbols - Symbol.unscopables</td>
-<td style="text-align: left;">-</td>
+<td>well-known symbols - Symbol.unscopables</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Object static methods - Object.assign</td>
-<td style="text-align: left;">lang.mixin</td>
+<td>Object static methods - Object.assign</td>
+<td>lang.mixin</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Object static methods - Object.is</td>
-<td style="text-align: left;">-</td>
+<td>Object static methods - Object.is</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Object static methods - Object.getOwnPropertySymbols</td>
-<td style="text-align: left;">-</td>
+<td>Object static methods - Object.getOwnPropertySymbols</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Object static methods - Object.setPrototypeOf</td>
-<td style="text-align: left;">-</td>
+<td>Object static methods - Object.setPrototypeOf</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">function &quot;name&quot; property - function statements</td>
-<td style="text-align: left;">-</td>
+<td>function “name” property - function statements</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">function &quot;name&quot; property - function expressions</td>
-<td style="text-align: left;">-</td>
+<td>function “name” property - function expressions</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">function &quot;name&quot; property - new Function</td>
-<td style="text-align: left;">-</td>
+<td>function “name” property - new Function</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">function &quot;name&quot; property - bound functions</td>
-<td style="text-align: left;">-</td>
+<td>function “name” property - bound functions</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">function &quot;name&quot; property - variables (function)</td>
-<td style="text-align: left;">-</td>
+<td>function “name” property - variables (function)</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">function &quot;name&quot; property - object methods (function)</td>
-<td style="text-align: left;">-</td>
+<td>function “name” property - object methods (function)</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">function &quot;name&quot; property - accessor properties</td>
-<td style="text-align: left;">-</td>
+<td>function “name” property - accessor properties</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">function &quot;name&quot; property - shorthand methods</td>
-<td style="text-align: left;">-</td>
+<td>function “name” property - shorthand methods</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">function &quot;name&quot; property - shorthand methods (no lexical binding)</td>
-<td style="text-align: left;">-</td>
+<td>function “name” property - shorthand methods (no lexical binding)</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">function &quot;name&quot; property - symbol-keyed methods</td>
-<td style="text-align: left;">-</td>
+<td>function “name” property - symbol-keyed methods</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">function &quot;name&quot; property - class statements</td>
-<td style="text-align: left;">-</td>
+<td>function “name” property - class statements</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">function &quot;name&quot; property - class expressions</td>
-<td style="text-align: left;">-</td>
+<td>function “name” property - class expressions</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">function &quot;name&quot; property - variables (class)</td>
-<td style="text-align: left;">-</td>
+<td>function “name” property - variables (class)</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">function &quot;name&quot; property - object methods (class)</td>
-<td style="text-align: left;">-</td>
+<td>function “name” property - object methods (class)</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">function &quot;name&quot; property - class prototype methods</td>
-<td style="text-align: left;">-</td>
+<td>function “name” property - class prototype methods</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">function &quot;name&quot; property - class static methods</td>
-<td style="text-align: left;">-</td>
+<td>function “name” property - class static methods</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">function &quot;name&quot; property - isn't writable, is configurable</td>
-<td style="text-align: left;">-</td>
+<td>function “name” property - isn’t writable, is configurable</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">String static methods - String.raw</td>
-<td style="text-align: left;">-</td>
+<td>String static methods - String.raw</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">String static methods - String.fromCodePoint</td>
-<td style="text-align: left;">-</td>
+<td>String static methods - String.fromCodePoint</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">String.prototype methods - String.prototype.codePointAt</td>
-<td style="text-align: left;">-</td>
+<td>String.prototype methods - String.prototype.codePointAt</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">String.prototype methods - String.prototype.normalize</td>
-<td style="text-align: left;">-</td>
+<td>String.prototype methods - String.prototype.normalize</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">String.prototype methods - String.prototype.repeat</td>
-<td style="text-align: left;">-</td>
+<td>String.prototype methods - String.prototype.repeat</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">String.prototype methods - String.prototype.startsWith</td>
-<td style="text-align: left;">-</td>
+<td>String.prototype methods - String.prototype.startsWith</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">String.prototype methods - String.prototype.endsWith</td>
-<td style="text-align: left;">-</td>
+<td>String.prototype methods - String.prototype.endsWith</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">String.prototype methods - String.prototype.includes</td>
-<td style="text-align: left;">-</td>
+<td>String.prototype methods - String.prototype.includes</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">String.prototype methods - String.prototype[Symbol.iterator]</td>
-<td style="text-align: left;">-</td>
+<td>String.prototype methods - String.prototype[Symbol.iterator]</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">String.prototype methods - String iterator prototype chain</td>
-<td style="text-align: left;">-</td>
+<td>String.prototype methods - String iterator prototype chain</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">RegExp.prototype properties - RegExp.prototype.flags</td>
-<td style="text-align: left;">-</td>
+<td>RegExp.prototype properties - RegExp.prototype.flags</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">RegExp.prototype properties - RegExp.prototype[Symbol.match]</td>
-<td style="text-align: left;">-</td>
+<td>RegExp.prototype properties - RegExp.prototype[Symbol.match]</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">RegExp.prototype properties - RegExp.prototype[Symbol.replace]</td>
-<td style="text-align: left;">-</td>
+<td>RegExp.prototype properties - RegExp.prototype[Symbol.replace]</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">RegExp.prototype properties - RegExp.prototype[Symbol.split]</td>
-<td style="text-align: left;">-</td>
+<td>RegExp.prototype properties - RegExp.prototype[Symbol.split]</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">RegExp.prototype properties - RegExp.prototype[Symbol.search]</td>
-<td style="text-align: left;">-</td>
+<td>RegExp.prototype properties - RegExp.prototype[Symbol.search]</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">RegExp.prototype properties - RegExp[Symbol.species]</td>
-<td style="text-align: left;">-</td>
+<td>RegExp.prototype properties - RegExp[Symbol.species]</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Array static methods - Array.from, array-like objects</td>
-<td style="text-align: left;">-</td>
+<td>Array static methods - Array.from, array-like objects</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Array static methods - Array.from, generator instances</td>
-<td style="text-align: left;">-</td>
+<td>Array static methods - Array.from, generator instances</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Array static methods - Array.from, generic iterables</td>
-<td style="text-align: left;">-</td>
+<td>Array static methods - Array.from, generic iterables</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Array static methods - Array.from, instances of generic iterables</td>
-<td style="text-align: left;">-</td>
+<td>Array static methods - Array.from, instances of generic iterables</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Array static methods - Array.from map function, array-like objects</td>
-<td style="text-align: left;">-</td>
+<td>Array static methods - Array.from map function, array-like objects</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Array static methods - Array.from map function, generator instances</td>
-<td style="text-align: left;">-</td>
+<td>Array static methods - Array.from map function, generator instances</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Array static methods - Array.from map function, generic iterables</td>
-<td style="text-align: left;">-</td>
+<td>Array static methods - Array.from map function, generic iterables</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Array static methods - Array.from map function, instances of iterables</td>
-<td style="text-align: left;">-</td>
+<td>Array static methods - Array.from map function, instances of iterables</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Array static methods - Array.from, iterator closing</td>
-<td style="text-align: left;">-</td>
+<td>Array static methods - Array.from, iterator closing</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Array static methods - Array.of</td>
-<td style="text-align: left;">-</td>
+<td>Array static methods - Array.of</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Array static methods - Array[Symbol.species]</td>
-<td style="text-align: left;">-</td>
+<td>Array static methods - Array[Symbol.species]</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Array.prototype methods - Array.prototype.copyWithin</td>
-<td style="text-align: left;">-</td>
+<td>Array.prototype methods - Array.prototype.copyWithin</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Array.prototype methods - Array.prototype.find</td>
-<td style="text-align: left;">-</td>
+<td>Array.prototype methods - Array.prototype.find</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Array.prototype methods - Array.prototype.findIndex</td>
-<td style="text-align: left;">-</td>
+<td>Array.prototype methods - Array.prototype.findIndex</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Array.prototype methods - Array.prototype.fill</td>
-<td style="text-align: left;">-</td>
+<td>Array.prototype methods - Array.prototype.fill</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Array.prototype methods - Array.prototype.keys</td>
-<td style="text-align: left;">-</td>
+<td>Array.prototype methods - Array.prototype.keys</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Array.prototype methods - Array.prototype.values</td>
-<td style="text-align: left;">-</td>
+<td>Array.prototype methods - Array.prototype.values</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Array.prototype methods - Array.prototype.entries</td>
-<td style="text-align: left;">-</td>
+<td>Array.prototype methods - Array.prototype.entries</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Array.prototype methods - Array.prototype[Symbol.iterator]</td>
-<td style="text-align: left;">-</td>
+<td>Array.prototype methods - Array.prototype[Symbol.iterator]</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Array.prototype methods - Array iterator prototype chain</td>
-<td style="text-align: left;">-</td>
+<td>Array.prototype methods - Array iterator prototype chain</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Array.prototype methods - Array.prototype[Symbol.unscopables]</td>
-<td style="text-align: left;">-</td>
+<td>Array.prototype methods - Array.prototype[Symbol.unscopables]</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Number properties - Number.isFinite</td>
-<td style="text-align: left;">-</td>
+<td>Number properties - Number.isFinite</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Number properties - Number.isInteger</td>
-<td style="text-align: left;">-</td>
+<td>Number properties - Number.isInteger</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Number properties - Number.isSafeInteger</td>
-<td style="text-align: left;">-</td>
+<td>Number properties - Number.isSafeInteger</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Number properties - Number.isNaN</td>
-<td style="text-align: left;">-</td>
+<td>Number properties - Number.isNaN</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Number properties - Number.EPSILON</td>
-<td style="text-align: left;">-</td>
+<td>Number properties - Number.EPSILON</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Number properties - Number.MIN_SAFE_INTEGER</td>
-<td style="text-align: left;">-</td>
+<td>Number properties - Number.MIN_SAFE_INTEGER</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Number properties - Number.MAX_SAFE_INTEGER</td>
-<td style="text-align: left;">-</td>
+<td>Number properties - Number.MAX_SAFE_INTEGER</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Math methods - Math.clz32</td>
-<td style="text-align: left;">-</td>
+<td>Math methods - Math.clz32</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Math methods - Math.imul</td>
-<td style="text-align: left;">-</td>
+<td>Math methods - Math.imul</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Math methods - Math.sign</td>
-<td style="text-align: left;">-</td>
+<td>Math methods - Math.sign</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Math methods - Math.log10</td>
-<td style="text-align: left;">-</td>
+<td>Math methods - Math.log10</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Math methods - Math.log2</td>
-<td style="text-align: left;">-</td>
+<td>Math methods - Math.log2</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Math methods - Math.log1p</td>
-<td style="text-align: left;">-</td>
+<td>Math methods - Math.log1p</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Math methods - Math.expm1</td>
-<td style="text-align: left;">-</td>
+<td>Math methods - Math.expm1</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Math methods - Math.cosh</td>
-<td style="text-align: left;">-</td>
+<td>Math methods - Math.cosh</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Math methods - Math.sinh</td>
-<td style="text-align: left;">-</td>
+<td>Math methods - Math.sinh</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Math methods - Math.tanh</td>
-<td style="text-align: left;">-</td>
+<td>Math methods - Math.tanh</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Math methods - Math.acosh</td>
-<td style="text-align: left;">-</td>
+<td>Math methods - Math.acosh</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Math methods - Math.asinh</td>
-<td style="text-align: left;">-</td>
+<td>Math methods - Math.asinh</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Math methods - Math.atanh</td>
-<td style="text-align: left;">-</td>
+<td>Math methods - Math.atanh</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Math methods - Math.trunc</td>
-<td style="text-align: left;">-</td>
+<td>Math methods - Math.trunc</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Math methods - Math.fround</td>
-<td style="text-align: left;">-</td>
+<td>Math methods - Math.fround</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Math methods - Math.cbrt</td>
-<td style="text-align: left;">-</td>
+<td>Math methods - Math.cbrt</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Math methods - Math.hypot</td>
-<td style="text-align: left;">-</td>
+<td>Math methods - Math.hypot</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Array is subclassable - length property (accessing)</td>
-<td style="text-align: left;">-</td>
+<td>Array is subclassable - length property (accessing)</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Array is subclassable - length property (setting)</td>
-<td style="text-align: left;">-</td>
+<td>Array is subclassable - length property (setting)</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Array is subclassable - correct prototype chain</td>
-<td style="text-align: left;">-</td>
+<td>Array is subclassable - correct prototype chain</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Array is subclassable - Array.isArray support</td>
-<td style="text-align: left;">-</td>
+<td>Array is subclassable - Array.isArray support</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Array is subclassable - Array.prototype.concat</td>
-<td style="text-align: left;">-</td>
+<td>Array is subclassable - Array.prototype.concat</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Array is subclassable - Array.prototype.filter</td>
-<td style="text-align: left;">-</td>
+<td>Array is subclassable - Array.prototype.filter</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Array is subclassable - Array.prototype.map</td>
-<td style="text-align: left;">-</td>
+<td>Array is subclassable - Array.prototype.map</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Array is subclassable - Array.prototype.slice</td>
-<td style="text-align: left;">-</td>
+<td>Array is subclassable - Array.prototype.slice</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Array is subclassable - Array.prototype.splice</td>
-<td style="text-align: left;">-</td>
+<td>Array is subclassable - Array.prototype.splice</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Array is subclassable - Array.from</td>
-<td style="text-align: left;">-</td>
+<td>Array is subclassable - Array.from</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Array is subclassable - Array.of</td>
-<td style="text-align: left;">-</td>
+<td>Array is subclassable - Array.of</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">RegExp is subclassable - basic functionality</td>
-<td style="text-align: left;">-</td>
+<td>RegExp is subclassable - basic functionality</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">RegExp is subclassable - correct prototype chain</td>
-<td style="text-align: left;">-</td>
+<td>RegExp is subclassable - correct prototype chain</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">RegExp is subclassable - RegExp.prototype.exec</td>
-<td style="text-align: left;">-</td>
+<td>RegExp is subclassable - RegExp.prototype.exec</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">RegExp is subclassable - RegExp.prototype.test</td>
-<td style="text-align: left;">-</td>
+<td>RegExp is subclassable - RegExp.prototype.test</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Function is subclassable - can be called</td>
-<td style="text-align: left;">-</td>
+<td>Function is subclassable - can be called</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Function is subclassable - correct prototype chain</td>
-<td style="text-align: left;">-</td>
+<td>Function is subclassable - correct prototype chain</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Function is subclassable - can be used with &quot;new&quot;</td>
-<td style="text-align: left;">-</td>
+<td>Function is subclassable - can be used with “new”</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Function is subclassable - Function.prototype.call</td>
-<td style="text-align: left;">-</td>
+<td>Function is subclassable - Function.prototype.call</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Function is subclassable - Function.prototype.apply</td>
-<td style="text-align: left;">-</td>
+<td>Function is subclassable - Function.prototype.apply</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Function is subclassable - Function.prototype.bind</td>
-<td style="text-align: left;">-</td>
+<td>Function is subclassable - Function.prototype.bind</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Promise is subclassable - basic functionality</td>
-<td style="text-align: left;">-</td>
+<td>Promise is subclassable - basic functionality</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Promise is subclassable - correct prototype chain</td>
-<td style="text-align: left;">-</td>
+<td>Promise is subclassable - correct prototype chain</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Promise is subclassable - Promise.all</td>
-<td style="text-align: left;">-</td>
+<td>Promise is subclassable - Promise.all</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Promise is subclassable - Promise.race</td>
-<td style="text-align: left;">-</td>
+<td>Promise is subclassable - Promise.race</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">miscellaneous subclassables - Boolean is subclassable</td>
-<td style="text-align: left;">-</td>
+<td>miscellaneous subclassables - Boolean is subclassable</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">miscellaneous subclassables - Number is subclassable</td>
-<td style="text-align: left;">-</td>
+<td>miscellaneous subclassables - Number is subclassable</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">miscellaneous subclassables - String is subclassable</td>
-<td style="text-align: left;">-</td>
+<td>miscellaneous subclassables - String is subclassable</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">miscellaneous subclassables - Map is subclassable</td>
-<td style="text-align: left;">-</td>
+<td>miscellaneous subclassables - Map is subclassable</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">miscellaneous subclassables - Set is subclassable</td>
-<td style="text-align: left;">-</td>
+<td>miscellaneous subclassables - Set is subclassable</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">prototype of bound functions - basic functions</td>
-<td style="text-align: left;">-</td>
+<td>prototype of bound functions - basic functions</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">prototype of bound functions - generator functions</td>
-<td style="text-align: left;">-</td>
+<td>prototype of bound functions - generator functions</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">prototype of bound functions - arrow functions</td>
-<td style="text-align: left;">-</td>
+<td>prototype of bound functions - arrow functions</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">prototype of bound functions - classes</td>
-<td style="text-align: left;">-</td>
+<td>prototype of bound functions - classes</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">prototype of bound functions - subclasses</td>
-<td style="text-align: left;">-</td>
+<td>prototype of bound functions - subclasses</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Proxy, internal 'get' calls - ToPrimitive</td>
-<td style="text-align: left;">-</td>
+<td>Proxy, internal ‘get’ calls - ToPrimitive</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Proxy, internal 'get' calls - CreateListFromArrayLike</td>
-<td style="text-align: left;">-</td>
+<td>Proxy, internal ‘get’ calls - CreateListFromArrayLike</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Proxy, internal 'get' calls - instanceof operator</td>
-<td style="text-align: left;">-</td>
+<td>Proxy, internal ‘get’ calls - instanceof operator</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Proxy, internal 'get' calls - HasBinding</td>
-<td style="text-align: left;">-</td>
+<td>Proxy, internal ‘get’ calls - HasBinding</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Proxy, internal 'get' calls - CreateDynamicFunction</td>
-<td style="text-align: left;">-</td>
+<td>Proxy, internal ‘get’ calls - CreateDynamicFunction</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Proxy, internal 'get' calls - ClassDefinitionEvaluation</td>
-<td style="text-align: left;">-</td>
+<td>Proxy, internal ‘get’ calls - ClassDefinitionEvaluation</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Proxy, internal 'get' calls - IteratorComplete, IteratorValue</td>
-<td style="text-align: left;">-</td>
+<td>Proxy, internal ‘get’ calls - IteratorComplete, IteratorValue</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Proxy, internal 'get' calls - ToPropertyDescriptor</td>
-<td style="text-align: left;">-</td>
+<td>Proxy, internal ‘get’ calls - ToPropertyDescriptor</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Proxy, internal 'get' calls - Object.assign</td>
-<td style="text-align: left;">-</td>
+<td>Proxy, internal ‘get’ calls - Object.assign</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Proxy, internal 'get' calls - Object.defineProperties</td>
-<td style="text-align: left;">-</td>
+<td>Proxy, internal ‘get’ calls - Object.defineProperties</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Proxy, internal 'get' calls - Function.prototype.bind</td>
-<td style="text-align: left;">-</td>
+<td>Proxy, internal ‘get’ calls - Function.prototype.bind</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Proxy, internal 'get' calls - Error.prototype.toString</td>
-<td style="text-align: left;">-</td>
+<td>Proxy, internal ‘get’ calls - Error.prototype.toString</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Proxy, internal 'get' calls - String.raw</td>
-<td style="text-align: left;">-</td>
+<td>Proxy, internal ‘get’ calls - String.raw</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Proxy, internal 'get' calls - RegExp constructor</td>
-<td style="text-align: left;">-</td>
+<td>Proxy, internal ‘get’ calls - RegExp constructor</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Proxy, internal 'get' calls - RegExp.prototype.flags</td>
-<td style="text-align: left;">-</td>
+<td>Proxy, internal ‘get’ calls - RegExp.prototype.flags</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Proxy, internal 'get' calls - RegExp.prototype.test</td>
-<td style="text-align: left;">-</td>
+<td>Proxy, internal ‘get’ calls - RegExp.prototype.test</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Proxy, internal 'get' calls - RegExp.prototype[Symbol.match]</td>
-<td style="text-align: left;">-</td>
+<td>Proxy, internal ‘get’ calls - RegExp.prototype[Symbol.match]</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Proxy, internal 'get' calls - RegExp.prototype[Symbol.replace]</td>
-<td style="text-align: left;">-</td>
+<td>Proxy, internal ‘get’ calls - RegExp.prototype[Symbol.replace]</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Proxy, internal 'get' calls - RegExp.prototype[Symbol.search]</td>
-<td style="text-align: left;">-</td>
+<td>Proxy, internal ‘get’ calls - RegExp.prototype[Symbol.search]</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Proxy, internal 'get' calls - RegExp.prototype[Symbol.split]</td>
-<td style="text-align: left;">-</td>
+<td>Proxy, internal ‘get’ calls - RegExp.prototype[Symbol.split]</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Proxy, internal 'get' calls - Array.from</td>
-<td style="text-align: left;">-</td>
+<td>Proxy, internal ‘get’ calls - Array.from</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Proxy, internal 'get' calls - Array.prototype.concat</td>
-<td style="text-align: left;">-</td>
+<td>Proxy, internal ‘get’ calls - Array.prototype.concat</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Proxy, internal 'get' calls - Array.prototype iteration methods</td>
-<td style="text-align: left;">-</td>
+<td>Proxy, internal ‘get’ calls - Array.prototype iteration methods</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Proxy, internal 'get' calls - Array.prototype.pop</td>
-<td style="text-align: left;">-</td>
+<td>Proxy, internal ‘get’ calls - Array.prototype.pop</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Proxy, internal 'get' calls - Array.prototype.reverse</td>
-<td style="text-align: left;">-</td>
+<td>Proxy, internal ‘get’ calls - Array.prototype.reverse</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Proxy, internal 'get' calls - Array.prototype.shift</td>
-<td style="text-align: left;">-</td>
+<td>Proxy, internal ‘get’ calls - Array.prototype.shift</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Proxy, internal 'get' calls - Array.prototype.splice</td>
-<td style="text-align: left;">-</td>
+<td>Proxy, internal ‘get’ calls - Array.prototype.splice</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Proxy, internal 'get' calls - Array.prototype.toString</td>
-<td style="text-align: left;">-</td>
+<td>Proxy, internal ‘get’ calls - Array.prototype.toString</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Proxy, internal 'get' calls - JSON.stringify</td>
-<td style="text-align: left;">-</td>
+<td>Proxy, internal ‘get’ calls - JSON.stringify</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Proxy, internal 'get' calls - Promise resolve functions</td>
-<td style="text-align: left;">-</td>
+<td>Proxy, internal ‘get’ calls - Promise resolve functions</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Proxy, internal 'get' calls - String.prototype.match</td>
-<td style="text-align: left;">-</td>
+<td>Proxy, internal ‘get’ calls - String.prototype.match</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Proxy, internal 'get' calls - String.prototype.replace</td>
-<td style="text-align: left;">-</td>
+<td>Proxy, internal ‘get’ calls - String.prototype.replace</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Proxy, internal 'get' calls - String.prototype.search</td>
-<td style="text-align: left;">-</td>
+<td>Proxy, internal ‘get’ calls - String.prototype.search</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Proxy, internal 'get' calls - String.prototype.split</td>
-<td style="text-align: left;">-</td>
+<td>Proxy, internal ‘get’ calls - String.prototype.split</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Proxy, internal 'get' calls - Date.prototype.toJSON</td>
-<td style="text-align: left;">-</td>
+<td>Proxy, internal ‘get’ calls - Date.prototype.toJSON</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Proxy, internal 'set' calls - Object.assign</td>
-<td style="text-align: left;">-</td>
+<td>Proxy, internal ‘set’ calls - Object.assign</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Proxy, internal 'set' calls - Array.from</td>
-<td style="text-align: left;">-</td>
+<td>Proxy, internal ‘set’ calls - Array.from</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Proxy, internal 'set' calls - Array.of</td>
-<td style="text-align: left;">-</td>
+<td>Proxy, internal ‘set’ calls - Array.of</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Proxy, internal 'set' calls - Array.prototype.copyWithin</td>
-<td style="text-align: left;">-</td>
+<td>Proxy, internal ‘set’ calls - Array.prototype.copyWithin</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Proxy, internal 'set' calls - Array.prototype.fill</td>
-<td style="text-align: left;">-</td>
+<td>Proxy, internal ‘set’ calls - Array.prototype.fill</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Proxy, internal 'set' calls - Array.prototype.pop</td>
-<td style="text-align: left;">-</td>
+<td>Proxy, internal ‘set’ calls - Array.prototype.pop</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Proxy, internal 'set' calls - Array.prototype.push</td>
-<td style="text-align: left;">-</td>
+<td>Proxy, internal ‘set’ calls - Array.prototype.push</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Proxy, internal 'set' calls - Array.prototype.reverse</td>
-<td style="text-align: left;">-</td>
+<td>Proxy, internal ‘set’ calls - Array.prototype.reverse</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Proxy, internal 'set' calls - Array.prototype.shift</td>
-<td style="text-align: left;">-</td>
+<td>Proxy, internal ‘set’ calls - Array.prototype.shift</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Proxy, internal 'set' calls - Array.prototype.splice</td>
-<td style="text-align: left;">-</td>
+<td>Proxy, internal ‘set’ calls - Array.prototype.splice</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Proxy, internal 'set' calls - Array.prototype.unshift</td>
-<td style="text-align: left;">-</td>
+<td>Proxy, internal ‘set’ calls - Array.prototype.unshift</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Proxy, internal 'defineProperty' calls - [[Set]]</td>
-<td style="text-align: left;">-</td>
+<td>Proxy, internal ‘defineProperty’ calls - [[Set]]</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Proxy, internal 'defineProperty' calls - SetIntegrityLevel</td>
-<td style="text-align: left;">-</td>
+<td>Proxy, internal ‘defineProperty’ calls - SetIntegrityLevel</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Proxy, internal 'deleteProperty' calls - Array.prototype.copyWithin</td>
-<td style="text-align: left;">-</td>
+<td>Proxy, internal ‘deleteProperty’ calls - Array.prototype.copyWithin</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Proxy, internal 'deleteProperty' calls - Array.prototype.pop</td>
-<td style="text-align: left;">-</td>
+<td>Proxy, internal ‘deleteProperty’ calls - Array.prototype.pop</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Proxy, internal 'deleteProperty' calls - Array.prototype.reverse</td>
-<td style="text-align: left;">-</td>
+<td>Proxy, internal ‘deleteProperty’ calls - Array.prototype.reverse</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Proxy, internal 'deleteProperty' calls - Array.prototype.shift</td>
-<td style="text-align: left;">-</td>
+<td>Proxy, internal ‘deleteProperty’ calls - Array.prototype.shift</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Proxy, internal 'deleteProperty' calls - Array.prototype.splice</td>
-<td style="text-align: left;">-</td>
+<td>Proxy, internal ‘deleteProperty’ calls - Array.prototype.splice</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Proxy, internal 'deleteProperty' calls - Array.prototype.unshift</td>
-<td style="text-align: left;">-</td>
+<td>Proxy, internal ‘deleteProperty’ calls - Array.prototype.unshift</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Proxy, internal 'getOwnPropertyDescriptor' calls - [[Set]]</td>
-<td style="text-align: left;">-</td>
+<td>Proxy, internal ‘getOwnPropertyDescriptor’ calls - [[Set]]</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Proxy, internal 'getOwnPropertyDescriptor' calls - Object.assign</td>
-<td style="text-align: left;">-</td>
+<td>Proxy, internal ‘getOwnPropertyDescriptor’ calls - Object.assign</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Proxy, internal 'getOwnPropertyDescriptor' calls - Object.prototype.hasOwnProperty</td>
-<td style="text-align: left;">-</td>
+<td>Proxy, internal ‘getOwnPropertyDescriptor’ calls - Object.prototype.hasOwnProperty</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Proxy, internal 'getOwnPropertyDescriptor' calls - Function.prototype.bind</td>
-<td style="text-align: left;">-</td>
+<td>Proxy, internal ‘getOwnPropertyDescriptor’ calls - Function.prototype.bind</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Proxy, internal 'ownKeys' calls - SetIntegrityLevel</td>
-<td style="text-align: left;">-</td>
+<td>Proxy, internal ‘ownKeys’ calls - SetIntegrityLevel</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Proxy, internal 'ownKeys' calls - TestIntegrityLevel</td>
-<td style="text-align: left;">-</td>
+<td>Proxy, internal ‘ownKeys’ calls - TestIntegrityLevel</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Proxy, internal 'ownKeys' calls - SerializeJSONObject</td>
-<td style="text-align: left;">-</td>
+<td>Proxy, internal ‘ownKeys’ calls - SerializeJSONObject</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Object static methods accept primitives - Object.getPrototypeOf</td>
-<td style="text-align: left;">-</td>
+<td>Object static methods accept primitives - Object.getPrototypeOf</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Object static methods accept primitives - Object.getOwnPropertyDescriptor</td>
-<td style="text-align: left;">-</td>
+<td>Object static methods accept primitives - Object.getOwnPropertyDescriptor</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Object static methods accept primitives - Object.getOwnPropertyNames</td>
-<td style="text-align: left;">-</td>
+<td>Object static methods accept primitives - Object.getOwnPropertyNames</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Object static methods accept primitives - Object.seal</td>
-<td style="text-align: left;">-</td>
+<td>Object static methods accept primitives - Object.seal</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Object static methods accept primitives - Object.freeze</td>
-<td style="text-align: left;">-</td>
+<td>Object static methods accept primitives - Object.freeze</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Object static methods accept primitives - Object.preventExtensions</td>
-<td style="text-align: left;">-</td>
+<td>Object static methods accept primitives - Object.preventExtensions</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Object static methods accept primitives - Object.isSealed</td>
-<td style="text-align: left;">-</td>
+<td>Object static methods accept primitives - Object.isSealed</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Object static methods accept primitives - Object.isFrozen</td>
-<td style="text-align: left;">-</td>
+<td>Object static methods accept primitives - Object.isFrozen</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Object static methods accept primitives - Object.isExtensible</td>
-<td style="text-align: left;">-</td>
+<td>Object static methods accept primitives - Object.isExtensible</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Object static methods accept primitives - Object.keys</td>
-<td style="text-align: left;">-</td>
+<td>Object static methods accept primitives - Object.keys</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">own property order - for..in</td>
-<td style="text-align: left;">-</td>
+<td>own property order - for..in</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">own property order - Object.keys</td>
-<td style="text-align: left;">-</td>
+<td>own property order - Object.keys</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">own property order - Object.getOwnPropertyNames</td>
-<td style="text-align: left;">-</td>
+<td>own property order - Object.getOwnPropertyNames</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">own property order - Object.assign</td>
-<td style="text-align: left;">-</td>
+<td>own property order - Object.assign</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">own property order - JSON.stringify</td>
-<td style="text-align: left;">-</td>
+<td>own property order - JSON.stringify</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">own property order - JSON.parse</td>
-<td style="text-align: left;">-</td>
+<td>own property order - JSON.parse</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">own property order - Reflect.ownKeys, string key order</td>
-<td style="text-align: left;">-</td>
+<td>own property order - Reflect.ownKeys, string key order</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">own property order - Reflect.ownKeys, symbol key order</td>
-<td style="text-align: left;">-</td>
+<td>own property order - Reflect.ownKeys, symbol key order</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">miscellaneous - no escaped reserved words as identifiers</td>
-<td style="text-align: left;">-</td>
+<td>miscellaneous - no escaped reserved words as identifiers</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">miscellaneous - duplicate property names in strict mode</td>
-<td style="text-align: left;">-</td>
+<td>miscellaneous - duplicate property names in strict mode</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">miscellaneous - no semicolon needed after do-while</td>
-<td style="text-align: left;">-</td>
+<td>miscellaneous - no semicolon needed after do-while</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">miscellaneous - no assignments allowed in for-in head</td>
-<td style="text-align: left;">-</td>
+<td>miscellaneous - no assignments allowed in for-in head</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">miscellaneous - accessors aren't constructors</td>
-<td style="text-align: left;">-</td>
+<td>miscellaneous - accessors aren’t constructors</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">miscellaneous - Invalid Date</td>
-<td style="text-align: left;">-</td>
+<td>miscellaneous - Invalid Date</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">miscellaneous - RegExp constructor can alter flags</td>
-<td style="text-align: left;">-</td>
+<td>miscellaneous - RegExp constructor can alter flags</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">miscellaneous - built-in prototypes are not instances</td>
-<td style="text-align: left;">-</td>
+<td>miscellaneous - built-in prototypes are not instances</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">miscellaneous - function 'length' is configurable</td>
-<td style="text-align: left;">-</td>
+<td>miscellaneous - function ‘length’ is configurable</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">miscellaneous - String.prototype case methods, Unicode support</td>
-<td style="text-align: left;">-</td>
+<td>miscellaneous - String.prototype case methods, Unicode support</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">non-strict function semantics - hoisted block-level function declaration</td>
-<td style="text-align: left;">-</td>
+<td>non-strict function semantics - hoisted block-level function declaration</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">non-strict function semantics - labeled function statements</td>
-<td style="text-align: left;">-</td>
+<td>non-strict function semantics - labeled function statements</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">non-strict function semantics - function statements in if-statement clauses</td>
-<td style="text-align: left;">-</td>
+<td>non-strict function semantics - function statements in if-statement clauses</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">__proto__ in object literals - basic support</td>
-<td style="text-align: left;">-</td>
+<td>__proto__ in object literals - basic support</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">__proto__ in object literals - multiple __proto__ is an error</td>
-<td style="text-align: left;">-</td>
+<td>__proto__ in object literals - multiple __proto__ is an error</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">__proto__ in object literals - not a computed property</td>
-<td style="text-align: left;">-</td>
+<td>__proto__ in object literals - not a computed property</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">__proto__ in object literals - not a shorthand property</td>
-<td style="text-align: left;">-</td>
+<td>__proto__ in object literals - not a shorthand property</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">__proto__ in object literals - not a shorthand method</td>
-<td style="text-align: left;">-</td>
+<td>__proto__ in object literals - not a shorthand method</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Object.prototype.__proto__ - get prototype</td>
-<td style="text-align: left;">-</td>
+<td>Object.prototype.__proto__ - get prototype</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Object.prototype.__proto__ - set prototype</td>
-<td style="text-align: left;">-</td>
+<td>Object.prototype.__proto__ - set prototype</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Object.prototype.__proto__ - absent from Object.create(null)</td>
-<td style="text-align: left;">-</td>
+<td>Object.prototype.__proto__ - absent from Object.create(null)</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Object.prototype.__proto__ - present in hasOwnProperty()</td>
-<td style="text-align: left;">-</td>
+<td>Object.prototype.__proto__ - present in hasOwnProperty()</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Object.prototype.__proto__ - correct property descriptor</td>
-<td style="text-align: left;">-</td>
+<td>Object.prototype.__proto__ - correct property descriptor</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Object.prototype.__proto__ - present in Object.getOwnPropertyNames()</td>
-<td style="text-align: left;">-</td>
+<td>Object.prototype.__proto__ - present in Object.getOwnPropertyNames()</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">String.prototype HTML methods - existence</td>
-<td style="text-align: left;">-</td>
+<td>String.prototype HTML methods - existence</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">String.prototype HTML methods - tags' names are lowercase</td>
-<td style="text-align: left;">-</td>
+<td>String.prototype HTML methods - tags’ names are lowercase</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">String.prototype HTML methods - quotes in arguments are escaped</td>
-<td style="text-align: left;">-</td>
+<td>String.prototype HTML methods - quotes in arguments are escaped</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">RegExp.prototype.compile</td>
-<td style="text-align: left;">-</td>
+<td>RegExp.prototype.compile</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">RegExp syntax extensions - hyphens in character sets</td>
-<td style="text-align: left;">-</td>
+<td>RegExp syntax extensions - hyphens in character sets</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">RegExp syntax extensions - invalid character escapes</td>
-<td style="text-align: left;">-</td>
+<td>RegExp syntax extensions - invalid character escapes</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">RegExp syntax extensions - invalid control-character escapes</td>
-<td style="text-align: left;">-</td>
+<td>RegExp syntax extensions - invalid control-character escapes</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">RegExp syntax extensions - invalid Unicode escapes</td>
-<td style="text-align: left;">-</td>
+<td>RegExp syntax extensions - invalid Unicode escapes</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">RegExp syntax extensions - invalid hexadecimal escapes</td>
-<td style="text-align: left;">-</td>
+<td>RegExp syntax extensions - invalid hexadecimal escapes</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">RegExp syntax extensions - incomplete patterns and quantifiers</td>
-<td style="text-align: left;">-</td>
+<td>RegExp syntax extensions - incomplete patterns and quantifiers</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">RegExp syntax extensions - octal escape sequences</td>
-<td style="text-align: left;">-</td>
+<td>RegExp syntax extensions - octal escape sequences</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">RegExp syntax extensions - invalid backreferences become octal escapes</td>
-<td style="text-align: left;">-</td>
+<td>RegExp syntax extensions - invalid backreferences become octal escapes</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">HTML-style comments</td>
-<td style="text-align: left;">-</td>
+<td>HTML-style comments</td>
+<td>-</td>
 </tr>
 </tbody>
 </table>
@@ -2655,362 +2880,362 @@ node ../compat-table/cli.js es7 tests | jsontool -a name &gt; es7.txt</code></pr
 <table>
 <thead>
 <tr class="header">
-<th style="text-align: left;">es</th>
-<th style="text-align: left;">dojo</th>
+<th>es</th>
+<th>dojo</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">exponentiation (**) operator - 0</td>
-<td style="text-align: left;">-</td>
+<td>exponentiation (**) operator - 0</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">exponentiation (**) operator - 1</td>
-<td style="text-align: left;">-</td>
+<td>exponentiation (**) operator - 1</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Array.prototype.includes</td>
-<td style="text-align: left;">-</td>
+<td>Array.prototype.includes</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">async functions - 0</td>
-<td style="text-align: left;">-</td>
+<td>async functions - 0</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">async functions - 1</td>
-<td style="text-align: left;">-</td>
+<td>async functions - 1</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">async functions - 2</td>
-<td style="text-align: left;">-</td>
+<td>async functions - 2</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">SIMD (Single Instruction, Multiple Data) - 0</td>
-<td style="text-align: left;">-</td>
+<td>SIMD (Single Instruction, Multiple Data) - 0</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">SIMD (Single Instruction, Multiple Data) - 1</td>
-<td style="text-align: left;">-</td>
+<td>SIMD (Single Instruction, Multiple Data) - 1</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">SIMD (Single Instruction, Multiple Data) - 2</td>
-<td style="text-align: left;">-</td>
+<td>SIMD (Single Instruction, Multiple Data) - 2</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">SIMD (Single Instruction, Multiple Data) - 3</td>
-<td style="text-align: left;">-</td>
+<td>SIMD (Single Instruction, Multiple Data) - 3</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">SIMD (Single Instruction, Multiple Data) - 4</td>
-<td style="text-align: left;">-</td>
+<td>SIMD (Single Instruction, Multiple Data) - 4</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">SIMD (Single Instruction, Multiple Data) - 5</td>
-<td style="text-align: left;">-</td>
+<td>SIMD (Single Instruction, Multiple Data) - 5</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">SIMD (Single Instruction, Multiple Data) - 6</td>
-<td style="text-align: left;">-</td>
+<td>SIMD (Single Instruction, Multiple Data) - 6</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">SIMD (Single Instruction, Multiple Data) - 7</td>
-<td style="text-align: left;">-</td>
+<td>SIMD (Single Instruction, Multiple Data) - 7</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">SIMD (Single Instruction, Multiple Data) - 8</td>
-<td style="text-align: left;">-</td>
+<td>SIMD (Single Instruction, Multiple Data) - 8</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">SIMD (Single Instruction, Multiple Data) - 9</td>
-<td style="text-align: left;">-</td>
+<td>SIMD (Single Instruction, Multiple Data) - 9</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">SIMD (Single Instruction, Multiple Data) - 10</td>
-<td style="text-align: left;">-</td>
+<td>SIMD (Single Instruction, Multiple Data) - 10</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">SIMD (Single Instruction, Multiple Data) - 11</td>
-<td style="text-align: left;">-</td>
+<td>SIMD (Single Instruction, Multiple Data) - 11</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">SIMD (Single Instruction, Multiple Data) - 12</td>
-<td style="text-align: left;">-</td>
+<td>SIMD (Single Instruction, Multiple Data) - 12</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">SIMD (Single Instruction, Multiple Data) - 13</td>
-<td style="text-align: left;">-</td>
+<td>SIMD (Single Instruction, Multiple Data) - 13</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">SIMD (Single Instruction, Multiple Data) - 14</td>
-<td style="text-align: left;">-</td>
+<td>SIMD (Single Instruction, Multiple Data) - 14</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">SIMD (Single Instruction, Multiple Data) - 15</td>
-<td style="text-align: left;">-</td>
+<td>SIMD (Single Instruction, Multiple Data) - 15</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">SIMD (Single Instruction, Multiple Data) - 16</td>
-<td style="text-align: left;">-</td>
+<td>SIMD (Single Instruction, Multiple Data) - 16</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">SIMD (Single Instruction, Multiple Data) - 17</td>
-<td style="text-align: left;">-</td>
+<td>SIMD (Single Instruction, Multiple Data) - 17</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">SIMD (Single Instruction, Multiple Data) - 18</td>
-<td style="text-align: left;">-</td>
+<td>SIMD (Single Instruction, Multiple Data) - 18</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">SIMD (Single Instruction, Multiple Data) - 19</td>
-<td style="text-align: left;">-</td>
+<td>SIMD (Single Instruction, Multiple Data) - 19</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">SIMD (Single Instruction, Multiple Data) - 20</td>
-<td style="text-align: left;">-</td>
+<td>SIMD (Single Instruction, Multiple Data) - 20</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">SIMD (Single Instruction, Multiple Data) - 21</td>
-<td style="text-align: left;">-</td>
+<td>SIMD (Single Instruction, Multiple Data) - 21</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">SIMD (Single Instruction, Multiple Data) - 22</td>
-<td style="text-align: left;">-</td>
+<td>SIMD (Single Instruction, Multiple Data) - 22</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">SIMD (Single Instruction, Multiple Data) - 23</td>
-<td style="text-align: left;">-</td>
+<td>SIMD (Single Instruction, Multiple Data) - 23</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">SIMD (Single Instruction, Multiple Data) - 24</td>
-<td style="text-align: left;">-</td>
+<td>SIMD (Single Instruction, Multiple Data) - 24</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">SIMD (Single Instruction, Multiple Data) - 25</td>
-<td style="text-align: left;">-</td>
+<td>SIMD (Single Instruction, Multiple Data) - 25</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">SIMD (Single Instruction, Multiple Data) - 26</td>
-<td style="text-align: left;">-</td>
+<td>SIMD (Single Instruction, Multiple Data) - 26</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">SIMD (Single Instruction, Multiple Data) - 27</td>
-<td style="text-align: left;">-</td>
+<td>SIMD (Single Instruction, Multiple Data) - 27</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">SIMD (Single Instruction, Multiple Data) - 28</td>
-<td style="text-align: left;">-</td>
+<td>SIMD (Single Instruction, Multiple Data) - 28</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">SIMD (Single Instruction, Multiple Data) - 29</td>
-<td style="text-align: left;">-</td>
+<td>SIMD (Single Instruction, Multiple Data) - 29</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">SIMD (Single Instruction, Multiple Data) - 30</td>
-<td style="text-align: left;">-</td>
+<td>SIMD (Single Instruction, Multiple Data) - 30</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">SIMD (Single Instruction, Multiple Data) - 31</td>
-<td style="text-align: left;">-</td>
+<td>SIMD (Single Instruction, Multiple Data) - 31</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">SIMD (Single Instruction, Multiple Data) - 32</td>
-<td style="text-align: left;">-</td>
+<td>SIMD (Single Instruction, Multiple Data) - 32</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">SIMD (Single Instruction, Multiple Data) - 33</td>
-<td style="text-align: left;">-</td>
+<td>SIMD (Single Instruction, Multiple Data) - 33</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">SIMD (Single Instruction, Multiple Data) - 34</td>
-<td style="text-align: left;">-</td>
+<td>SIMD (Single Instruction, Multiple Data) - 34</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">SIMD (Single Instruction, Multiple Data) - 35</td>
-<td style="text-align: left;">-</td>
+<td>SIMD (Single Instruction, Multiple Data) - 35</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">SIMD (Single Instruction, Multiple Data) - 36</td>
-<td style="text-align: left;">-</td>
+<td>SIMD (Single Instruction, Multiple Data) - 36</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">SIMD (Single Instruction, Multiple Data) - 37</td>
-<td style="text-align: left;">-</td>
+<td>SIMD (Single Instruction, Multiple Data) - 37</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">SIMD (Single Instruction, Multiple Data) - 38</td>
-<td style="text-align: left;">-</td>
+<td>SIMD (Single Instruction, Multiple Data) - 38</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">SIMD (Single Instruction, Multiple Data) - 39</td>
-<td style="text-align: left;">-</td>
+<td>SIMD (Single Instruction, Multiple Data) - 39</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">SIMD (Single Instruction, Multiple Data) - 40</td>
-<td style="text-align: left;">-</td>
+<td>SIMD (Single Instruction, Multiple Data) - 40</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">SIMD (Single Instruction, Multiple Data) - 41</td>
-<td style="text-align: left;">-</td>
+<td>SIMD (Single Instruction, Multiple Data) - 41</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">SIMD (Single Instruction, Multiple Data) - 42</td>
-<td style="text-align: left;">-</td>
+<td>SIMD (Single Instruction, Multiple Data) - 42</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">SIMD (Single Instruction, Multiple Data) - 43</td>
-<td style="text-align: left;">-</td>
+<td>SIMD (Single Instruction, Multiple Data) - 43</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">SIMD (Single Instruction, Multiple Data) - 44</td>
-<td style="text-align: left;">-</td>
+<td>SIMD (Single Instruction, Multiple Data) - 44</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">SIMD (Single Instruction, Multiple Data) - 45</td>
-<td style="text-align: left;">-</td>
+<td>SIMD (Single Instruction, Multiple Data) - 45</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">SIMD (Single Instruction, Multiple Data) - 46</td>
-<td style="text-align: left;">-</td>
+<td>SIMD (Single Instruction, Multiple Data) - 46</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">SIMD (Single Instruction, Multiple Data) - 47</td>
-<td style="text-align: left;">-</td>
+<td>SIMD (Single Instruction, Multiple Data) - 47</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">SIMD (Single Instruction, Multiple Data) - 48</td>
-<td style="text-align: left;">-</td>
+<td>SIMD (Single Instruction, Multiple Data) - 48</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">SIMD (Single Instruction, Multiple Data) - 49</td>
-<td style="text-align: left;">-</td>
+<td>SIMD (Single Instruction, Multiple Data) - 49</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">String trimming - 0</td>
-<td style="text-align: left;">-</td>
+<td>String trimming - 0</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">String trimming - 1</td>
-<td style="text-align: left;">-</td>
+<td>String trimming - 1</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">function.sent</td>
-<td style="text-align: left;">-</td>
+<td>function.sent</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Object.values</td>
-<td style="text-align: left;">dojox/lang/functional/object.values</td>
+<td>Object.values</td>
+<td>dojox/lang/functional/object.values</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Object.entries</td>
-<td style="text-align: left;">-</td>
+<td>Object.entries</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Object.observe</td>
-<td style="text-align: left;">-</td>
+<td>Object.observe</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">trailing commas in function syntax - 0</td>
-<td style="text-align: left;">-</td>
+<td>trailing commas in function syntax - 0</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">trailing commas in function syntax - 1</td>
-<td style="text-align: left;">-</td>
+<td>trailing commas in function syntax - 1</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">object rest properties</td>
-<td style="text-align: left;">-</td>
+<td>object rest properties</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">object spread properties</td>
-<td style="text-align: left;">-</td>
+<td>object spread properties</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">typed objects</td>
-<td style="text-align: left;">-</td>
+<td>typed objects</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">ArrayBuffer.transfer</td>
-<td style="text-align: left;">-</td>
+<td>ArrayBuffer.transfer</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">class decorators</td>
-<td style="text-align: left;">-</td>
+<td>class decorators</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">class properties</td>
-<td style="text-align: left;">-</td>
+<td>class properties</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">call constructor</td>
-<td style="text-align: left;">-</td>
+<td>call constructor</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">String padding - 0</td>
-<td style="text-align: left;">-</td>
+<td>String padding - 0</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">String padding - 1</td>
-<td style="text-align: left;">-</td>
+<td>String padding - 1</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">bind (::) operator - 0</td>
-<td style="text-align: left;">-</td>
+<td>bind (::) operator - 0</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">bind (::) operator - 1</td>
-<td style="text-align: left;">-</td>
+<td>bind (::) operator - 1</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">do expression</td>
-<td style="text-align: left;">-</td>
+<td>do expression</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Object.getOwnPropertyDescriptors</td>
-<td style="text-align: left;">-</td>
+<td>Object.getOwnPropertyDescriptors</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Map.prototype.toJSON</td>
-<td style="text-align: left;">-</td>
+<td>Map.prototype.toJSON</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Set.prototype.toJSON</td>
-<td style="text-align: left;">-</td>
+<td>Set.prototype.toJSON</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">String.prototype.at</td>
-<td style="text-align: left;">-</td>
+<td>String.prototype.at</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">array comprehensions</td>
-<td style="text-align: left;">-</td>
+<td>array comprehensions</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">generator comprehensions</td>
-<td style="text-align: left;">-</td>
+<td>generator comprehensions</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">destructuring in comprehensions</td>
-<td style="text-align: left;">-</td>
+<td>destructuring in comprehensions</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Reflect.Realm</td>
-<td style="text-align: left;">-</td>
+<td>Reflect.Realm</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">RegExp.escape</td>
-<td style="text-align: left;">-</td>
+<td>RegExp.escape</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">generator functions can't be used with &quot;new&quot;</td>
-<td style="text-align: left;">-</td>
+<td>generator functions can’t be used with “new”</td>
+<td>-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">strict fn w/ non-strict non-simple params is error</td>
-<td style="text-align: left;">-</td>
+<td>strict fn w/ non-strict non-simple params is error</td>
+<td>-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">nested rest destructuring</td>
-<td style="text-align: left;">-</td>
+<td>nested rest destructuring</td>
+<td>-</td>
 </tr>
 </tbody>
 </table>
@@ -3029,7 +3254,7 @@ node ../compat-table/cli.js es7 tests | jsontool -a name &gt; es7.txt</code></pr
 </ul>
 <h1 id="links">Links</h1>
 <ul>
-<li><a href="https://www.sitepen.com/blog/2013/04/03/introducing-dojo-amd-converter">https://www.sitepen.com/blog/2013/04/03/introducing-dojo-amd-converter</a></li>
+<li><a href="https://www.sitepen.com/blog/2013/04/03/introducing-dojo-amd-converter" class="uri">https://www.sitepen.com/blog/2013/04/03/introducing-dojo-amd-converter</a></li>
 </ul>
 </body>
 </html>
