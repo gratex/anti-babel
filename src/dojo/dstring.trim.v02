@@ -1,10 +1,13 @@
 #!/bin/bash
 
-# simples variant matching only single identifier
-# if v01 not run it will produce ugly (x).trim
-# this is intended for patterns line dstring.trim(x || "")
+# simple variant matching tring expression
+# adds expr || "" to avoid NPE 
+# and normalises any duplicit ||"" to single one
+
+
 grasp \
 	-e 'dstring.trim($expr)' \
-	-R '({{expr}}).trim()' \
-	"$@"
+	-R '({{expr}} || "").trim()' \
+	"$@" |\
+	grasp -e '$a || "" || ""' -R '{{a}} || ""'
 
