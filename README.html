@@ -6,13 +6,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <title>-</title>
   <style>
-    code{white-space: pre-wrap;}
-    span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
-    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    ul.task-list{list-style: none;}
-  </style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+
+ul.task-list[class]{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+font-size: inherit;
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
   <style type="text/css">
 
 
@@ -225,16 +233,18 @@ width: 5px;
 td.sourceCode {
 padding-left: 2px;
 }</style>
-  <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-  <![endif]-->
 </head>
 <body>
 <h1 id="anti-babel">anti-babel</h1>
 <h2 id="tldr">TL;DR;</h2>
-<p>Refactorings from proptietary libraries code to ES5, ES6 constructions.</p>
+<p>Refactorings from proptietary libraries code to ES5, ES6
+constructions.</p>
 <p>See also more general project called <a href="https://github.com/mohebifar/lebab">lebab</a></p>
-<p>NOTE: The code of scripts DOES NOT cover all possible scenarios, some usages of api may not me matched, or we just do not want to automate their usage (working on safest possible scenarios, but sometimes it is better to convert border cases by humans). You are always welcomed to CONTRIBUTE another variants.</p>
+<p>NOTE: The code of scripts DOES NOT cover all possible scenarios, some
+usages of api may not me matched, or we just do not want to automate
+their usage (working on safest possible scenarios, but sometimes it is
+better to convert border cases by humans). You are always welcomed to
+CONTRIBUTE another variants.</p>
 <p>Currently available refactoring scripts:</p>
 <ul>
 <li>all</li>
@@ -251,12 +261,14 @@ padding-left: 2px;
 <li>js/substring.length</li>
 <li>js/substring.tail</li>
 <li>lodash/array.forEach</li>
+<li>node/mkdirp.sync</li>
 </ul>
 <p>Install external tools:</p>
 <pre><code>npm install -g grasp    #yes for now as global, sorry</code></pre>
 <p>Apply refactoring (on sample files)</p>
 <pre><code>&lt; samples/hitch2bind/hitch2bind.before.js src/dojo/hitch2bind.v01 # NOTE: should apply all versions step by step</code></pre>
-<p>Check what is changed and if behaves same (naive samples for now):</p>
+<p>Check what is changed and if behaves same (naive samples for
+now):</p>
 <pre><code># before: print source and results
 
 &lt; samples/lodash/array.forEach.js tee /dev/fd/2 | node
@@ -298,27 +310,45 @@ $AB/src/lodash/array.forEach.v00 -i -r .
 $AB/src/lodash/array.forEach.v01 -i -r .
 $AB/src/lodash/array.forEach.v02 -i -r .
 $AB/src/lodash/array.forEach.v03 -i -r .
+$AB/src/node/mkdirp.sync.v00 -i -r .
 # review
 git diff
 
 # test</code></pre>
-<p>Study <a href="http://www.graspjs.com/">grasp.js</a> for CLI parameters (we pass all to underlying grasp now)</p>
+<p>Study <a href="http://www.graspjs.com/">grasp.js</a> for CLI
+parameters (we pass all to underlying grasp now)</p>
 <h2 id="details">Details</h2>
-<p>There are <a href="https://github.com/addyosmani/es6-tools">plenty of projects</a> to translate es6 syntax to older syntaxes. This allows you to write modern syntax and run on ‘old machines’.</p>
+<p>There are <a href="https://github.com/addyosmani/es6-tools">plenty of
+projects</a> to translate es6 syntax to older syntaxes. This allows you
+to write modern syntax and run on ‘old machines’.</p>
 <p>This project is opposite.</p>
-<p>Helping you to CONVERT OLD CODE BASE TO NEW API AND SYNTAX. (hence anti- in the name and <a href="https://babeljs.io">babel</a> as one of ‘them’.)</p>
+<p>Helping you to CONVERT OLD CODE BASE TO NEW API AND SYNTAX. (hence
+anti- in the name and <a href="https://babeljs.io">babel</a> as one of
+‘them’.)</p>
 <h2 id="background">Background</h2>
-<p>We are writing JavaScript from ‘dark ages’ (somewhere 19XX), and we are running big projects, this means we have to maintain them, for ages sometimes.</p>
-<p>This could help to modernize them into something more readable today.</p>
-<p>Today we are developing in dojo, so many samples may involve ‘old dojo’ APIs and refactoring to ES5,6 APIs, but the idea can be taken to other codes as well.</p>
-<p>To see if you can/should refactor you can use <a href="https://kangax.github.io/compat-table/es6/">compat-tables as UI</a> or <a href="https://github.com/gratex/compat-table">out CLI</a></p>
+<p>We are writing JavaScript from ‘dark ages’ (somewhere 19XX), and we
+are running big projects, this means we have to maintain them, for ages
+sometimes.</p>
+<p>This could help to modernize them into something more readable
+today.</p>
+<p>Today we are developing in dojo, so many samples may involve ‘old
+dojo’ APIs and refactoring to ES5,6 APIs, but the idea can be taken to
+other codes as well.</p>
+<p>To see if you can/should refactor you can use <a href="https://kangax.github.io/compat-table/es6/">compat-tables as
+UI</a> or <a href="https://github.com/gratex/compat-table">out
+CLI</a></p>
 <h2 id="dojo">dojo</h2>
-<p>We are developing in dojo. Dojo contains a lot of good ideas, but a lot of APIs is not needed anymore.</p>
+<p>We are developing in dojo. Dojo contains a lot of good ideas, but a
+lot of APIs is not needed anymore.</p>
 <p>For Example</p>
-<p><a href="https://dojotoolkit.org/reference-guide/1.7/dojo/string/trim.html">dojo/string/trim</a> vs. <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim">String.prototype.trim</a></p>
+<p><a href="https://dojotoolkit.org/reference-guide/1.7/dojo/string/trim.html">dojo/string/trim</a>
+vs. <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim">String.prototype.trim</a></p>
 <h1 id="unlearn-dojo-learn-es56">‘Unlearn dojo’, learn es5,6</h1>
-<p>es5 features mapped to dojo apis. This is only approx mapping and for caveats you must learn both APIs, to understand if you can(not) refactor:</p>
-<p>ES5 features mapped to dojo API, all of these except strict mode are supported in IE9.</p>
+<p>es5 features mapped to dojo apis. This is only approx mapping and for
+caveats you must learn both APIs, to understand if you can(not)
+refactor:</p>
+<p>ES5 features mapped to dojo API, all of these except strict mode are
+supported in IE9.</p>
 <table>
 <thead>
 <tr class="header">
@@ -480,8 +510,8 @@ node ../compat-table/cli.js es7 tests | jsontool -a name &gt; es7.txt</code></pr
 <p>ES6 features (TODO: mapping)</p>
 <table>
 <colgroup>
-<col style="width: 37%"></col>
-<col style="width: 62%"></col>
+<col style="width: 37%" />
+<col style="width: 62%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -503,11 +533,13 @@ node ../compat-table/cli.js es7 tests | jsontool -a name &gt; es7.txt</code></pr
 <td>-</td>
 </tr>
 <tr class="even">
-<td>default function parameters - explicit undefined defers to the default</td>
+<td>default function parameters - explicit undefined defers to the
+default</td>
 <td>-</td>
 </tr>
 <tr class="odd">
-<td>default function parameters - defaults can refer to previous params</td>
+<td>default function parameters - defaults can refer to previous
+params</td>
 <td>-</td>
 </tr>
 <tr class="even">
@@ -571,11 +603,13 @@ node ../compat-table/cli.js es7 tests | jsontool -a name &gt; es7.txt</code></pr
 <td>-</td>
 </tr>
 <tr class="odd">
-<td>spread (…) operator - with astral plane strings, in function calls</td>
+<td>spread (…) operator - with astral plane strings, in function
+calls</td>
 <td>-</td>
 </tr>
 <tr class="even">
-<td>spread (…) operator - with astral plane strings, in array literals</td>
+<td>spread (…) operator - with astral plane strings, in array
+literals</td>
 <td>-</td>
 </tr>
 <tr class="odd">
@@ -603,7 +637,8 @@ node ../compat-table/cli.js es7 tests | jsontool -a name &gt; es7.txt</code></pr
 <td>-</td>
 </tr>
 <tr class="odd">
-<td>spread (…) operator - spreading non-iterables is a runtime error</td>
+<td>spread (…) operator - spreading non-iterables is a runtime
+error</td>
 <td>-</td>
 </tr>
 <tr class="even">
@@ -983,7 +1018,8 @@ node ../compat-table/cli.js es7 tests | jsontool -a name &gt; es7.txt</code></pr
 <td>-</td>
 </tr>
 <tr class="even">
-<td>arrow functions - no line break between params and <code>=&gt;</code></td>
+<td>arrow functions - no line break between params and
+<code>=&gt;</code></td>
 <td>-</td>
 </tr>
 <tr class="odd">
@@ -1779,7 +1815,8 @@ node ../compat-table/cli.js es7 tests | jsontool -a name &gt; es7.txt</code></pr
 <td>-</td>
 </tr>
 <tr class="odd">
-<td>Reflect - Reflect.construct creates instance from newTarget argument</td>
+<td>Reflect - Reflect.construct creates instance from newTarget
+argument</td>
 <td>-</td>
 </tr>
 <tr class="even">
@@ -1891,7 +1928,8 @@ node ../compat-table/cli.js es7 tests | jsontool -a name &gt; es7.txt</code></pr
 <td>-</td>
 </tr>
 <tr class="odd">
-<td>well-known symbols - Symbol.species, RegExp.prototype[Symbol.split]</td>
+<td>well-known symbols - Symbol.species,
+RegExp.prototype[Symbol.split]</td>
 <td>-</td>
 </tr>
 <tr class="even">
@@ -1991,7 +2029,8 @@ node ../compat-table/cli.js es7 tests | jsontool -a name &gt; es7.txt</code></pr
 <td>-</td>
 </tr>
 <tr class="even">
-<td>function “name” property - shorthand methods (no lexical binding)</td>
+<td>function “name” property - shorthand methods (no lexical
+binding)</td>
 <td>-</td>
 </tr>
 <tr class="odd">
@@ -2103,23 +2142,28 @@ node ../compat-table/cli.js es7 tests | jsontool -a name &gt; es7.txt</code></pr
 <td>-</td>
 </tr>
 <tr class="even">
-<td>Array static methods - Array.from, instances of generic iterables</td>
+<td>Array static methods - Array.from, instances of generic
+iterables</td>
 <td>-</td>
 </tr>
 <tr class="odd">
-<td>Array static methods - Array.from map function, array-like objects</td>
+<td>Array static methods - Array.from map function, array-like
+objects</td>
 <td>-</td>
 </tr>
 <tr class="even">
-<td>Array static methods - Array.from map function, generator instances</td>
+<td>Array static methods - Array.from map function, generator
+instances</td>
 <td>-</td>
 </tr>
 <tr class="odd">
-<td>Array static methods - Array.from map function, generic iterables</td>
+<td>Array static methods - Array.from map function, generic
+iterables</td>
 <td>-</td>
 </tr>
 <tr class="even">
-<td>Array static methods - Array.from map function, instances of iterables</td>
+<td>Array static methods - Array.from map function, instances of
+iterables</td>
 <td>-</td>
 </tr>
 <tr class="odd">
@@ -2603,7 +2647,8 @@ node ../compat-table/cli.js es7 tests | jsontool -a name &gt; es7.txt</code></pr
 <td>-</td>
 </tr>
 <tr class="odd">
-<td>Proxy, internal ‘deleteProperty’ calls - Array.prototype.copyWithin</td>
+<td>Proxy, internal ‘deleteProperty’ calls -
+Array.prototype.copyWithin</td>
 <td>-</td>
 </tr>
 <tr class="even">
@@ -2611,7 +2656,8 @@ node ../compat-table/cli.js es7 tests | jsontool -a name &gt; es7.txt</code></pr
 <td>-</td>
 </tr>
 <tr class="odd">
-<td>Proxy, internal ‘deleteProperty’ calls - Array.prototype.reverse</td>
+<td>Proxy, internal ‘deleteProperty’ calls -
+Array.prototype.reverse</td>
 <td>-</td>
 </tr>
 <tr class="even">
@@ -2623,7 +2669,8 @@ node ../compat-table/cli.js es7 tests | jsontool -a name &gt; es7.txt</code></pr
 <td>-</td>
 </tr>
 <tr class="even">
-<td>Proxy, internal ‘deleteProperty’ calls - Array.prototype.unshift</td>
+<td>Proxy, internal ‘deleteProperty’ calls -
+Array.prototype.unshift</td>
 <td>-</td>
 </tr>
 <tr class="odd">
@@ -2631,15 +2678,18 @@ node ../compat-table/cli.js es7 tests | jsontool -a name &gt; es7.txt</code></pr
 <td>-</td>
 </tr>
 <tr class="even">
-<td>Proxy, internal ‘getOwnPropertyDescriptor’ calls - Object.assign</td>
+<td>Proxy, internal ‘getOwnPropertyDescriptor’ calls -
+Object.assign</td>
 <td>-</td>
 </tr>
 <tr class="odd">
-<td>Proxy, internal ‘getOwnPropertyDescriptor’ calls - Object.prototype.hasOwnProperty</td>
+<td>Proxy, internal ‘getOwnPropertyDescriptor’ calls -
+Object.prototype.hasOwnProperty</td>
 <td>-</td>
 </tr>
 <tr class="even">
-<td>Proxy, internal ‘getOwnPropertyDescriptor’ calls - Function.prototype.bind</td>
+<td>Proxy, internal ‘getOwnPropertyDescriptor’ calls -
+Function.prototype.bind</td>
 <td>-</td>
 </tr>
 <tr class="odd">
@@ -2659,11 +2709,13 @@ node ../compat-table/cli.js es7 tests | jsontool -a name &gt; es7.txt</code></pr
 <td>-</td>
 </tr>
 <tr class="odd">
-<td>Object static methods accept primitives - Object.getOwnPropertyDescriptor</td>
+<td>Object static methods accept primitives -
+Object.getOwnPropertyDescriptor</td>
 <td>-</td>
 </tr>
 <tr class="even">
-<td>Object static methods accept primitives - Object.getOwnPropertyNames</td>
+<td>Object static methods accept primitives -
+Object.getOwnPropertyNames</td>
 <td>-</td>
 </tr>
 <tr class="odd">
@@ -2675,7 +2727,8 @@ node ../compat-table/cli.js es7 tests | jsontool -a name &gt; es7.txt</code></pr
 <td>-</td>
 </tr>
 <tr class="odd">
-<td>Object static methods accept primitives - Object.preventExtensions</td>
+<td>Object static methods accept primitives -
+Object.preventExtensions</td>
 <td>-</td>
 </tr>
 <tr class="even">
@@ -2767,7 +2820,8 @@ node ../compat-table/cli.js es7 tests | jsontool -a name &gt; es7.txt</code></pr
 <td>-</td>
 </tr>
 <tr class="even">
-<td>non-strict function semantics - hoisted block-level function declaration</td>
+<td>non-strict function semantics - hoisted block-level function
+declaration</td>
 <td>-</td>
 </tr>
 <tr class="odd">
@@ -2775,7 +2829,8 @@ node ../compat-table/cli.js es7 tests | jsontool -a name &gt; es7.txt</code></pr
 <td>-</td>
 </tr>
 <tr class="even">
-<td>non-strict function semantics - function statements in if-statement clauses</td>
+<td>non-strict function semantics - function statements in if-statement
+clauses</td>
 <td>-</td>
 </tr>
 <tr class="odd">
@@ -2819,7 +2874,8 @@ node ../compat-table/cli.js es7 tests | jsontool -a name &gt; es7.txt</code></pr
 <td>-</td>
 </tr>
 <tr class="odd">
-<td>Object.prototype.__proto__ - present in Object.getOwnPropertyNames()</td>
+<td>Object.prototype.__proto__ - present in
+Object.getOwnPropertyNames()</td>
 <td>-</td>
 </tr>
 <tr class="even">
@@ -2867,7 +2923,8 @@ node ../compat-table/cli.js es7 tests | jsontool -a name &gt; es7.txt</code></pr
 <td>-</td>
 </tr>
 <tr class="odd">
-<td>RegExp syntax extensions - invalid backreferences become octal escapes</td>
+<td>RegExp syntax extensions - invalid backreferences become octal
+escapes</td>
 <td>-</td>
 </tr>
 <tr class="even">

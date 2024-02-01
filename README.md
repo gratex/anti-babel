@@ -28,6 +28,7 @@ Currently available refactoring scripts:
 - js/substring.length
 - js/substring.tail
 - lodash/array.forEach
+- node/mkdirp.sync
 
 
 
@@ -84,6 +85,7 @@ Run on your project:
 	$AB/src/lodash/array.forEach.v01 -i -r .
 	$AB/src/lodash/array.forEach.v02 -i -r .
 	$AB/src/lodash/array.forEach.v03 -i -r .
+	$AB/src/node/mkdirp.sync.v00 -i -r .
 	# review
 	git diff
 

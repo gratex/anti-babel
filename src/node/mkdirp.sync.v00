@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# node supports recursive true since v7.6.0
+# beware ret vals !!! in v13.11.0, v12.17.0, In recursive mode, the first created path is returned now.
+
+grasp \
+	-e 'mkdirp.sync($dest);' \
+	-R 'fs.mkdirSync({{dest}}, { recursive: true });' \
+	"$@"
